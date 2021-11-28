@@ -1,0 +1,34 @@
+<style>
+
+  .side a::after {
+    content: "+";
+    position: absolute;
+    left: 2px;
+  }
+
+  .side a{
+    position: relative;
+    height: 100px;
+    width: 100px;
+  }
+
+  .side {
+    background-color: #8fbc8f;
+    width:200px;
+    height:735px;
+    text-align:center;
+  }
+
+#   .entry-more-btn::before {
+#     font-size: 18px;
+#     line-height: 1;
+#     position: absolute;
+#     top: calc(50% - 9px);
+#     left: 20px;
+#     content: "＋";
+#     opacity: 0.5;
+# }
+</style>
+<div class="side">
+  <p><%= "ジャンル" %><a href=""><%= "○" %></a></p>
+</div>

@@ -1,0 +1,16 @@
+<header>
+  <p>my note</p>
+  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto main-nav align-items-center">
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-item">らんてっく たろう</div>
+            <div class="dropdown-divider"></div>
+            <%= 'プロフィール' %>
+
+            <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', method: :delete %>
+          </div>
+      </ul>
+    </div>
+  </nav>
+</header>
