@@ -18,6 +18,114 @@
     height:735px;
     text-align:center;
   }
+  .knopf.shade {
+      --knopf-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+  .knopf.pill {
+    --knopf-border-radius: 9999px;
+  }
+  .knopf.even {
+    --knopf-inline-padding: var(--knopf-padding);
+  }
+  .knopf.inverse {
+    --knopf-background-alpha: 0;
+    --knopf-text-color: var(--knopf-color);
+    --knopf-hover-background-alpha: 100%;
+    --knopf-hover-background-color: var(--knopf-color);
+    --knopf-hover-text-color: var(--knopf-white);
+    --knopf-hover-background-alpha: 100%;
+    --knopf-active-background-color: var(--knopf-color-dark);
+    --knopf-active-text-color: var(--knopf-white);
+  }
+  .knopf.knopf {
+    --knopf-color: var(--knopf-hue) var(--knopf-saturation) var(--knopf-luminosity);
+    --knopf-color-light: var(--knopf-hue) var(--knopf-saturation) calc(var(--knopf-luminosity) + 10%);
+    --knopf-color-lighter: var(--knopf-hue) var(--knopf-saturation) calc(var(--knopf-luminosity) + 15%);
+    --knopf-color-dark: var(--knopf-hue) var(--knopf-saturation) calc(var(--knopf-luminosity) - 10%);
+    --knopf-color-darker: var(--knopf-hue) var(--knopf-saturation) calc(var(--knopf-luminosity) - 15%);
+    --knopf-background-alpha: 100%;
+    --knopf-background-color: var(--knopf-color);
+    --knopf-border-color: var(--knopf-color);
+    --knopf-gradient-from: var(--knopf-color-light);
+    --knopf-gradient-to: var(--knopf-color-dark);
+    --knopf-text-color: var(--knopf-white);
+    --knopf-hover-background-alpha: 100%;
+    --knopf-hover-background-color: var(--knopf-color-dark);
+    --knopf-hover-border-color: var(--knopf-color-dark);
+    --knopf-hover-gradient-from: var(--knopf-color-lighter);
+    --knopf-hover-gradient-to: var(--knopf-color);
+    --knopf-hover-text-color: var(--knopf-white);
+    --knopf-active-background-alpha: 100%;
+    --knopf-active-background-color: var(--knopf-color-darker);
+    --knopf-active-border-color: var(--knopf-color-darker);
+    --knopf-active-gradient-from: var(--knopf-color-dark);
+    --knopf-active-gradient-to: var(--knopf-color);
+    --knopf-active-text-color: var(--knopf-white);
+    --knopf-block-padding: var(--knopf-padding);
+    --knopf-inline-padding: calc(var(--knopf-padding) * 2);
+    --knopf-focus-ring: 0 0 0 .15em hsl(var(--knopf-color) / 40%);
+    all: unset;
+    -webkit-user-drag: element;
+    align-items: center;
+    background-color: var(--knopf-named-background-color,hsl(var(--knopf-background-color) / var(--knopf-background-alpha)));
+    background-image: var(--knopf-background-image);
+    background-origin: border-box;
+    border-color: hsl(var(--knopf-border-color) / var(--knopf-border-alpha));
+    border-radius: var(--knopf-border-radius);
+    border-style: var(--knopf-border-style);
+    border-width: var(--knopf-border-width);
+    box-shadow: var(--knopf-box-shadow);
+    box-sizing: border-box;
+    color: hsl(var(--knopf-text-color));
+    -webkit-text-fill-color: hsl(var(--knopf-text-color));
+    cursor: pointer;
+    display: var(--knopf-display);
+    flex-direction: var(--knopf-flex-direction);
+    font-family: var(--knopf-font-family);
+    font-size: var(--knopf-font-size,inherit);
+    font-weight: var(--knopf-font-weight);
+    line-height: var(--knopf-line-height);
+    justify-content: var(--knopf-justify-content);
+    padding-block-end: var(--knopf-block-padding);
+    padding-block-start: var(--knopf-block-padding);
+  }
+  .m-8 {
+    margin: 8px
+  !important;
+  }
+  button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+  }
 
 #   .entry-more-btn::before {
 #     font-size: 18px;
@@ -32,3 +140,8 @@
 <div class="side">
   <p><%= "ジャンル" %><a href=""><%= "○" %></a></p>
 </div>
+<button class="knopf even pill shade inverse m-8">
+  <svg class="icon">
+    <use xlink:href="#icon-add"></use>
+  </svg>
+</button>
