@@ -25,20 +25,18 @@
   <span><%= "ジャンル" %></span>
   <span>
   　<!-- フォームが表示されていればこっちのボタン表示  -->
-    <% if display %>
-    <button id="gbtn", onclick="clickbtn('inline');", class="knopf even pill shade inverse m-">
-        <svg class="icon">
-          <use xlink:href="#icon-add"></use>
-        </svg>
-    </button>
-    <!-- フォームが表示されていなければこっちののボタンを表示 -->
-    <% else %>
+    <!-- if -->
     <button id="gbtn", onclick="clickbtn('none');", class="knopf even pill shade inverse m-">
       <svg class="icon">
         <use xlink:href="#icon-add"></use>
       </svg>
     </button>
-    <% end %>
+    <!-- フォームが表示されていなければこっちののボタンを表示 -->
+    <button id="gbtn", onclick="clickbtn('inline');", class="knopf even pill shade inverse m-">
+        <svg class="icon">
+          <use xlink:href="#icon-add"></use>
+        </svg>
+    </button>
   </span>
 　<span id="gform">
   <%= form_with model: genre do |form| %>
