@@ -1,11 +1,5 @@
 <style>
 
-  .side a::after {
-    content: "+";
-    position: absolute;
-    left: 2px;
-  }
-
   .side a{
     position: relative;
     height: 100px;
@@ -21,7 +15,6 @@
 </style>
 
 <div class="side">
-  <p><%= "ジャンル" %><a href=""><%= "○" %></a></p>
 
   <svg style="display: none;">
     <symbol id="icon-add" viewBox="0 0 24 24">
@@ -29,19 +22,36 @@
     </symbol>
   </svg>
 
-<button id="gbtn" class="knopf even pill shade inverse m-">
-    <svg class="icon">
-      <use xlink:href="#icon-add"></use>
-    </svg>
-</button>
+  <span><%= "ジャンル" %></span>
+  <span>
+  　<!-- フォームが表示されていればこっちのボタン表示  -->
+    <% if display %>
+    <button id="gbtn", onclick="clickbtn('inline');", class="knopf even pill shade inverse m-">
+        <svg class="icon">
+          <use xlink:href="#icon-add"></use>
+        </svg>
+    </button>
+    <!-- フォームが表示されていなければこっちののボタンを表示 -->
+    <% else %>
+    <button id="gbtn", onclick="clickbtn('none');", class="knopf even pill shade inverse m-">
+      <svg class="icon">
+        <use xlink:href="#icon-add"></use>
+      </svg>
+    </button>
+    <% end %>
+  </span>
+　<span id="gform">
+  <%= form_with model: genre do |form| %>
+    <%= form.text_field :name %>
+    <%= form.submit "登録" %>
+  <% end %>
+  </span>
 </div>
 
 <script>
-　// +ボタン押したら、フォーム画面を出現させる
-  const genrebtn = document.getElementById('gbtn');　// 定数の定義
-  var form = document.createElement('form');　// グローバル変数の定義
+　// ボタンの見た目は変わらないが、フォームが表示されているときは非表示ボタンに、フォームが非表示のときは表示ボタンに！
+  function clickbtn( disp ) {
+    document.getElementById('gform').style.display = disp;
+  }
 
-  genrebtn.addEventListener('click', () => { // genrebtnつまりbuttonタグをクリックしたら
-    document.body.appendChild(form); // formタグ(要素)をuse要素の後ろに追加する
-  });
 </script>
