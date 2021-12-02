@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :genres, only: %i[index] 
   resources :password_resets, only: %i[new create edit update]
-  root to: 'home#top'
+  root to: 'homes#top'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

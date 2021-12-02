@@ -23,33 +23,35 @@
   </svg>
 
   <span><%= "ジャンル" %></span>
+
   <span>
-  　<!-- フォームが表示されていればこっちのボタン表示  -->
-    <!-- if -->
-    <button id="gbtn", onclick="clickbtn('none');", class="knopf even pill shade inverse m-">
+    <button id="gbtn" onclick="clickbtn();" class="knopf even pill shade inverse m-">
       <svg class="icon">
         <use xlink:href="#icon-add"></use>
       </svg>
     </button>
-    <!-- フォームが表示されていなければこっちののボタンを表示 -->
-    <button id="gbtn", onclick="clickbtn('inline');", class="knopf even pill shade inverse m-">
-        <svg class="icon">
-          <use xlink:href="#icon-add"></use>
-        </svg>
-    </button>
   </span>
+
 　<span id="gform">
-  <%= form_with model: genre do |form| %>
-    <%= form.text_field :name %>
+    <%= form_with model: genre do |form| %>
+      <%= form.text_field :name %>
     <%= form.submit "登録" %>
-  <% end %>
+    <% end %>
   </span>
+
 </div>
 
 <script>
-　// ボタンの見た目は変わらないが、フォームが表示されているときは非表示ボタンに、フォームが非表示のときは表示ボタンに！
-  function clickbtn( disp ) {
-    document.getElementById('gform').style.display = disp;
-  }
+　// フォームが表示されているときにボタンをクリックするとフォームが非表示になり、フォームが非表示のときにボタンをクリックするとフォームが表示される
+  const btn = document.getElementById('gbtn');
+  const form = document.getElementById('gform');
+  btn.addEventListener('click', () => {
 
+    if (form.style.display === 'none'){
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+
+  })
 </script>
