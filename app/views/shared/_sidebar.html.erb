@@ -1,16 +1,16 @@
 <style>
-
-  .side a{
-    position: relative;
-    height: 100px;
-    width: 100px;
-  }
-
   .side {
     background-color: #8fbc8f;
     width:200px;
     height:735px;
     text-align:center;
+    position: relative;
+  }
+
+  .genreform {
+    position: absolute;
+    top: 30px;
+    left: 200px;
   }
 </style>
 
@@ -25,33 +25,61 @@
   <span><%= "ジャンル" %></span>
 
   <span>
-    <button id="gbtn" onclick="clickbtn();" class="knopf even pill shade inverse m-">
+    <button id="gbtn" class="knopf even pill shade inverse m-">
       <svg class="icon">
         <use xlink:href="#icon-add"></use>
       </svg>
     </button>
   </span>
 
-　<span id="gform">
-    <%= form_with model: genre do |form| %>
+  <!-- 登録したデータを取得し、ジャンルの下に出す。その際、「あかさたな...」でグループ分けする -->
+  <div class="genrelist">
+    <% genres = Genre.all %>
+    <% genres.each do |g| %>
+      <title><%= g.name.to_hiragana('g') %></title>
+      <div class='edit-delete-btn'>
+        <span class="list-inline-item">
+          <%= link_to edit_genre_path(g.id), id: 'button-edit-#{g.id}' do %>
+          <i id="pen" class="fas fa-pen"></i>
+          <% end %>
+        </span>
+
+        <span class="list-inline-item">
+          <%= link_to genre_path(g.id), id: 'button-delete-#{g.id}', method: :delete, data: { confirm: "ジャンル「#{g.name}」を削除しますが、よろしいですか？" } do %>
+          <i id="trash" class="fas fa-trash"></i>
+          <% end %>
+        </span>
+      </div>
+
+    <% end %>
+  </div>
+
+　<span class="genreform" id="gform">
+    <%= form_with model: genre, local: true do |form| %>
       <%= form.text_field :name %>
-    <%= form.submit "登録" %>
+      <%= form.submit "登録" %>
     <% end %>
   </span>
 
 </div>
 
 <script>
-　// フォームが表示されているときにボタンをクリックするとフォームが非表示になり、フォームが非表示のときにボタンをクリックするとフォームが表示される
   const btn = document.getElementById('gbtn');
   const form = document.getElementById('gform');
   btn.addEventListener('click', () => {
 
     if (form.style.display === 'none'){
       form.style.display = 'block';
-    } else {
+    } else (form.style.display === 'block'){
       form.style.display = 'none';
     }
-
   })
+
+  // 登録したジャンルを編集できるようにする
+　// ペンマークをクリックすると、編集フォームが出てきて、ジャンルを編集できるようにする。「登録」を押すと編集され、「登録しない」を押すと編集されないようにする
+  let editgenre = document.getElementById('button-delete-#{g.id}');
+  editgenre.addEventListener('click', {} =>
+
+  
+  )
 </script>

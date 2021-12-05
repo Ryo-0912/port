@@ -42,6 +42,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
+  gem 'mechanize'
 end
 
 group :development do
