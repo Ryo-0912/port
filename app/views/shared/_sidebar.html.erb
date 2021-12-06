@@ -36,7 +36,16 @@
   <div class="genrelist">
     <% genres = Genre.all %>
     <% genres.each do |g| %>
-      <title><%= g.name.to_hiragana('g') %></title>
+      <!-- フォームに入力されたものが「漢字」(漢字→ひらがなに変換)「ひらがな・カタカナ」「英語」で場合分けし、それを「あかさたな...」で分ける -->
+      <!-- 受け取ったものを変換し、その頭文字でグループ分け -->
+      <% if g.name == kanji %>
+        k_hiragana  =  g.name.to_hiragana(kanji)
+        k_hiragana.kanji_to_kana
+
+      <% end %>
+      
+
+      <title><%= g.name %></title>
       <div class='edit-delete-btn'>
         <span class="list-inline-item">
           <%= link_to edit_genre_path(g.id), id: 'button-edit-#{g.id}' do %>
@@ -67,19 +76,10 @@
   const btn = document.getElementById('gbtn');
   const form = document.getElementById('gform');
   btn.addEventListener('click', () => {
-
     if (form.style.display === 'none'){
       form.style.display = 'block';
     } else (form.style.display === 'block'){
       form.style.display = 'none';
     }
   })
-
-  // 登録したジャンルを編集できるようにする
-　// ペンマークをクリックすると、編集フォームが出てきて、ジャンルを編集できるようにする。「登録」を押すと編集され、「登録しない」を押すと編集されないようにする
-  let editgenre = document.getElementById('button-delete-#{g.id}');
-  editgenre.addEventListener('click', {} =>
-
-  
-  )
 </script>
