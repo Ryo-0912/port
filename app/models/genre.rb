@@ -9,6 +9,7 @@ class Genre < ApplicationRecord
   def self.grouping_genres
     Genre.all.group_by do |genre|
       name = genre.name
+      # 漢字が含まれている場合はひらがなに変換する
       if genre.name.match(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
       end
