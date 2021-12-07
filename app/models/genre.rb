@@ -6,50 +6,37 @@ class Genre < ApplicationRecord
   AGENT = Mechanize.new
   BASE_URL = 'https://yomikatawa.com/kanji/'
 
-  def to_hiragana(kanji)
-    AGENT.get(BASE_URL + kanji).search('#content p').first.inner_text
-  end
+  def self.grouping_genres
+    Genre.all.group_by do |genre|
+      name = genre.name
+      if genre.name.match(/[一-龠々]/)
+        name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
+      end
 
-  def to_romaji(kanji)
-    AGENT.get(BASE_URL + kanji).search('#content p')[1].inner_text
-  end
-
-  # 検索結果が正しくない可能性がある時、alertがでるのでそれを所得するメソッド
-  # ひらがな所得時に確実性をもたせたい時に使う。
-  def certain?(kanji)
-    AGENT.get(BASE_URL + kanji).search('.alert').empty?
-  end
-
-  def kanji_to_kana
-    genres = %w[あかがい うなぎ ほたて]
-
-    kana = genres.group_by do |item|
-      case item[0]
+      case name[0]
       when /[ぁ-お]/
-        'あ'
+        ['あ']
       when /[か-ご]/
-        'か'
+        ['か']
       when /[さ-ぞ]/
-        'さ'
+        ['さ']
       when /[た-ど]/
-        'た'
+        ['た']
       when /[な-の]/
-        'な'
+        ['な']
       when /[は-ぽ]/
-        'は'
+        ['は']
       when /[ま-も]/
-        'ま'
+        ['ま']
       when /[ゃ-よ]/
-        'や'
+        ['や']
       when /[ら-ろ]/
-        'ら'
+        ['ら']
       when /[ゎ-を]/
-        'わ'
+        ['わ']
       else
-        item[0]
+        [name[0]]
       end
     end
-
   end
-
 end

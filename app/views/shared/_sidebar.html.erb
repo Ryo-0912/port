@@ -32,34 +32,28 @@
     </button>
   </span>
 
-  <!-- 登録したデータを取得し、ジャンルの下に出す。その際、「あかさたな...」でグループ分けする -->
   <div class="genrelist">
-    <% genres = Genre.all %>
+    <% genres = Genre.grouping_genres %>
+    <% genres.map { |Genre.id| |Genre.name| }.to_h %>
     <% genres.each do |g| %>
-      <!-- フォームに入力されたものが「漢字」(漢字→ひらがなに変換)「ひらがな・カタカナ」「英語」で場合分けし、それを「あかさたな...」で分ける -->
-      <!-- 受け取ったものを変換し、その頭文字でグループ分け -->
-      <% if g.name == kanji %>
-        k_hiragana  =  g.name.to_hiragana(kanji)
-        k_hiragana.kanji_to_kana
+      <p><%= g[0] %></p>
+      <p><%= g[1] %></p>
 
-      <% end %>
-      
-
-      <title><%= g.name %></title>
-      <div class='edit-delete-btn'>
+      <div class='edit-btn'>
         <span class="list-inline-item">
-          <%= link_to edit_genre_path(g.id), id: 'button-edit-#{g.id}' do %>
+          
           <i id="pen" class="fas fa-pen"></i>
-          <% end %>
-        </span>
-
-        <span class="list-inline-item">
-          <%= link_to genre_path(g.id), id: 'button-delete-#{g.id}', method: :delete, data: { confirm: "ジャンル「#{g.name}」を削除しますが、よろしいですか？" } do %>
-          <i id="trash" class="fas fa-trash"></i>
-          <% end %>
+        
         </span>
       </div>
 
+      <div class='delete-btn'>
+        <span class="list-inline-item">
+          
+          <i id="trash" class="fas fa-trash"></i>
+          
+        </span>
+      </div>
     <% end %>
   </div>
 
@@ -76,6 +70,7 @@
   const btn = document.getElementById('gbtn');
   const form = document.getElementById('gform');
   btn.addEventListener('click', () => {
+
     if (form.style.display === 'none'){
       form.style.display = 'block';
     } else (form.style.display === 'block'){
