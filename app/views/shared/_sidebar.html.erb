@@ -12,6 +12,7 @@
     top: 30px;
     left: 200px;
   }
+  
 </style>
 
 <div class="side">
@@ -22,7 +23,7 @@
     </symbol>
   </svg>
 
-  <span><%= "ジャンル" %></span>
+  <span class="genre"><%= "ジャンル" %></span>
 
   <span>
     <button id="gbtn" class="knopf even pill shade inverse m-">
@@ -32,29 +33,35 @@
     </button>
   </span>
 
-  <div class="genrelist">
-    <% genres = Genre.grouping_genres %>
-    <% genres.map { |Genre.id| |Genre.name| }.to_h %>
-    <% genres.each do |g| %>
-      <p><%= g[0] %></p>
-      <p><%= g[1] %></p>
+  <div class="accordion"　id="accordionExample">
+    <div class="accordion-item">
+      <% genres = Genre.grouping_genres %>
+        <% genres.each do |key, value| %>
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <%= key %>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+            <% value.each do |v| %>
+              <span class="gen"><%= v.name %></span>
 
-      <div class='edit-btn'>
-        <span class="list-inline-item">
-          
-          <i id="pen" class="fas fa-pen"></i>
-        
-        </span>
-      </div>
-
-      <div class='delete-btn'>
-        <span class="list-inline-item">
-          
-          <i id="trash" class="fas fa-trash"></i>
-          
-        </span>
-      </div>
-    <% end %>
+              <span class="edit-btn">
+                <%= link_to edit_genre_path(v.id), id: 'button-edit-#{v.id}' do %>
+                  <i id="pen" class="fas fa-pen"></i>
+                <% end %>
+              </span>
+              <span class="delete-btn">
+                <%= link_to genre_path(v.id), id: 'button-delete-#{v.id}', method: :delete, data: { confirm: "ジャンル「#{v.name}」を削除しますが、よろしいですか？"} do %>
+                  <i id="trash" class="fas fa-trash"></i>
+                <% end %>
+              </span></br>
+            <% end %>
+            </div>
+          </div>
+        <% end %>
+    </div>
   </div>
 
 　<span class="genreform" id="gform">
@@ -63,14 +70,12 @@
       <%= form.submit "登録" %>
     <% end %>
   </span>
-
 </div>
 
 <script>
   const btn = document.getElementById('gbtn');
   const form = document.getElementById('gform');
   btn.addEventListener('click', () => {
-
     if (form.style.display === 'none'){
       form.style.display = 'block';
     } else (form.style.display === 'block'){

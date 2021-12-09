@@ -15,27 +15,27 @@ class Genre < ApplicationRecord
 
       case name[0]
       when /[ぁ-お]/
-        ['あ']
+        'あ'
       when /[か-ご]/
-        ['か']
+        'か'
       when /[さ-ぞ]/
-        ['さ']
+        'さ'
       when /[た-ど]/
-        ['た']
+        'た'
       when /[な-の]/
-        ['な']
+        'な'
       when /[は-ぽ]/
-        ['は']
+        'は'
       when /[ま-も]/
-        ['ま']
+        'ま'
       when /[ゃ-よ]/
-        ['や']
+        'や'
       when /[ら-ろ]/
-        ['ら']
+        'ら'
       when /[ゎ-を]/
-        ['わ']
+        'わ'
       else
-        [name[0]]
+        name[0]
       end
     end
   end

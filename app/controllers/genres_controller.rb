@@ -14,10 +14,14 @@ class GenresController < ApplicationController
     end
   end
 
+  def edit
+    @genre = current_user.genres.find(params[:id])
+  end
+
   def update
     @genre = current_user.genres.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to @genre
+      redirect_to genres_path
     else
       render :edit
     end
