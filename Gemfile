@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sorcery'
 gem 'config'
 gem 'draper'
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 5.0.0'
 gem 'jquery-rails'
 
 group :development, :test do
