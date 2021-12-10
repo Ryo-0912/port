@@ -73,13 +73,15 @@
 </div>
 
 <script>
-  const btn = document.getElementById('gbtn');
+const btn = document.getElementById('gbtn');
   const form = document.getElementById('gform');
   btn.addEventListener('click', () => {
+
     if (form.style.display === 'none'){
       form.style.display = 'block';
-    } else (form.style.display === 'block'){
+    } else {
       form.style.display = 'none';
     }
+
   })
 </script>
