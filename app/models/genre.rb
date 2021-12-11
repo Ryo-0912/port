@@ -4,6 +4,7 @@ class Genre < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
+
   AGENT = Mechanize.new
   BASE_URL = 'https://yomikatawa.com/kanji/'
 

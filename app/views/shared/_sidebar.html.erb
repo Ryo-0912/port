@@ -32,16 +32,21 @@
     </button>
   </span>
 
+　
+  <%#= idとclass名がアコーディオンの開閉に影響している。idのOne,Twoなどは「数字or"数字"」では認識しない %>
+  <%#= ちなみに、OneやTwoを消してもそこ関連する記述を消せば、特に影響はない。OneやRwoは無視していいかも %>
+  <%#= アコーディングの開閉の前後のclaa名を見ると、class名が変わる %>
+
   <div class="accordion"　id="accordionExample">
     <div class="accordion-item">
       <% genres = Genre.grouping_genres %>
         <% genres.each do |key, value| %>
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <h2 class="accordion-header" id="heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="true" aria-controls="collapse">
               <%= key %>
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapse" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.each do |v| %>
               <span class="gen"><%= v.name %></span>
@@ -83,4 +88,15 @@
     }
 
   })
+
+  const heading = document.getElementById('heading');
+
+  heading.addEventListener('click', () => {
+    if ( element.className == 'accordion-collapse collapse' ) {
+      element.classList.replace('accordion-collapse collapse', 'accordion-collapse collapse show');
+    } else {
+      element.classList.replace('accordion-collapse collapse show', 'accordion-collapse collapse');
+    }
+  });
+
 </script>
