@@ -4,7 +4,7 @@ class Genre < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
-  def self.key_to_asc
+  def self.to_asc
     Genre.all.order("name ASC")
   end
 
@@ -38,6 +38,26 @@ class Genre < ApplicationRecord
       when /[ら-ろ]/
         'ら'
       when /[ゎ-を]/
+        'わ'
+      when /[ァ-オ]/
+        'あ'
+      when /[カ-ゴ]/
+        'か'
+      when /[サ-ゾ]/
+        'さ'
+      when /[タ-ド]/
+        'た'
+      when /[ナ-ノ]/
+        'な'
+      when /[ハ-ポ]/
+        'は'
+      when /[マ-モ]/
+        'ま'
+      when /[ャ-ヨ]/
+        'や'
+      when /[ラ-ロ]/
+        'ら'
+      when /[ヮ-ヲ]/
         'わ'
       when /[aA]/
         'A'
