@@ -4,6 +4,9 @@ class Genre < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
+  def self.key_to_asc
+    Genre.all.order("name ASC")
+  end
 
   AGENT = Mechanize.new
   BASE_URL = 'https://yomikatawa.com/kanji/'

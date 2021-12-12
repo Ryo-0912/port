@@ -39,14 +39,14 @@
 
   <div class="accordion"　id="accordionExample">
     <div class="accordion-item">
-      <% genres = Genre.grouping_genres %>
-        <% genres.each do |key, value| %>
+      <% genres = Genre.key_to_asc.grouping_genres %>
+        <% genres.each_with_index do |(key, value), index| %>
           <h2 class="accordion-header" id="heading">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="true" aria-controls="collapse">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
               <%= key %>
             </button>
           </h2>
-          <div id="collapse" class="accordion-collapse collapse show" aria-labelledby="heading" data-bs-parent="#accordionExample">
+          <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.each do |v| %>
               <span class="gen"><%= v.name %></span>
@@ -88,15 +88,5 @@
     }
 
   })
-
-  const heading = document.getElementById('heading');
-
-  heading.addEventListener('click', () => {
-    if ( element.className == 'accordion-collapse collapse' ) {
-      element.classList.replace('accordion-collapse collapse', 'accordion-collapse collapse show');
-    } else {
-      element.classList.replace('accordion-collapse collapse show', 'accordion-collapse collapse');
-    }
-  });
 
 </script>
