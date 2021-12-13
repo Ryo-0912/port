@@ -1,11 +1,12 @@
 class Genre < ApplicationRecord
   require 'mechanize'
+  require "nkf"
 
   belongs_to :user
   validates :name, presence: true
 
   def self.to_asc
-    Genre.all.order("name ASC")
+    Genre.all.order("kana ASC")
   end
 
   AGENT = Mechanize.new
@@ -16,6 +17,15 @@ class Genre < ApplicationRecord
       name = genre.name
       if genre.name.match(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
+        genre.kana = name
+        genre.save
+      elsif genre.name.match(/[ァ-ヴ]/)
+        genre.kana  = NKF.nkf("-h1 -w", name)
+        
+        genre.save
+      else
+        genre.kana = name
+        genre.save
       end
 
       case name[0]
