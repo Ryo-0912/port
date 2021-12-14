@@ -1,21 +1,23 @@
 <header>
   <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <span>My Note</span>
+      <nav class="logout">
+      　<%= link_to logout_path, method: :delete do %>
+          <i class="fas fa-running"></i>
+        <% end %>
+      </nav>
+      <nav class="mypage">
+        <%= link_to logout_path do %>
+          
+          <i class="fas fa-address-card"></i>
+        <% end %>
+      </nav>
       <ul class="navbar-nav ml-auto main-nav align-items-center">
-        
-        <li class="nav-item dropdown dropdown-slide">
+        <li class="nav-item dropdown-slide">
           <a href="/genres" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
             <%= image_tag 'sample', size: '40x40', class: 'rounded-circle mr15'%>
           </a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-item">ユーザー名</div>
-            <div class="dropdown-divider"></div>
-            <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
-
-            <%= link_to 'ログアウト', 'logout_path', class: 'dropdown-item', method: :delete %>
-          </div>
         </li>
       </ul>
     </div>

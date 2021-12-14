@@ -1,3 +1,10 @@
+<header>
+<% if logged_in? %>
+  <%= link_to 'マイページへ', genres_path %>
+<% else %>
+  <%= link_to '新規登録', new_user_path %>/<%= link_to 'ログイン', login_path %>
+<% end %>
+</header>
 
 <p>記憶ノート</p>
 

@@ -9,7 +9,7 @@
 
   .genreform {
     position: absolute;
-    top: 30px;
+    top: 32.8px;
     left: 200px;
   }
   
@@ -32,14 +32,9 @@
     </button>
   </span>
 
-　
-  <%#= idとclass名がアコーディオンの開閉に影響している。idのOne,Twoなどは「数字or"数字"」では認識しない %>
-  <%#= ちなみに、OneやTwoを消してもそこ関連する記述を消せば、特に影響はない。OneやRwoは無視していいかも %>
-  <%#= アコーディングの開閉の前後のclaa名を見ると、class名が変わる %>
-
   <div class="accordion"　id="accordionExample">
     <div class="accordion-item">
-      <% genres = Genre.to_asc.grouping_genres %>
+      <% genres = Genre.grouping_genres.sort_by{ |g| g[0] } %>
         <% genres.each_with_index do |(key, value), index| %>
           <h2 class="accordion-header" id="heading">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
@@ -48,9 +43,8 @@
           </h2>
           <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-            <% value.each do |v| %>
+            <% value.sort_by{ |g| g.hiragana }.each do |v| %>
               <span class="gen"><%= v.name %></span>
-
               <span class="edit-btn">
                 <%= link_to edit_genre_path(v.id), id: 'button-edit-#{v.id}' do %>
                   <i id="pen" class="fas fa-pen"></i>

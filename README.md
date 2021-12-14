@@ -26,4 +26,4 @@
 -https://xd.adobe.com/view/7598290b-8248-46a9-b9b3-a473bc88dddb-20cb/  
 -  
 -*ER図*  
--https://drive.google.com/file/d/1fsUsGgcNmCCOg0TeCIS7TSe3iXbDHeWs/view?usp=sharing
+-https://drive.google.com/file/d/1fsUsGgcNmCCOg0TeCIS7TSe3iXbDHeWs/view

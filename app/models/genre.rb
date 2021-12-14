@@ -9,6 +9,8 @@ class Genre < ApplicationRecord
     Genre.all.order("kana ASC")
   end
 
+  attr_accessor :hiragana
+
   AGENT = Mechanize.new
   BASE_URL = 'https://yomikatawa.com/kanji/'
 
@@ -17,15 +19,11 @@ class Genre < ApplicationRecord
       name = genre.name
       if genre.name.match(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
-        genre.kana = name
-        genre.save
+        genre.hiragana = name 
       elsif genre.name.match(/[ァ-ヴ]/)
-        genre.kana  = NKF.nkf("-h1 -w", name)
-        
-        genre.save
+        genre.hiragana  = NKF.nkf("-h1 -w", name)
       else
-        genre.kana = name
-        genre.save
+        genre.hiragana = name
       end
 
       case name[0]
