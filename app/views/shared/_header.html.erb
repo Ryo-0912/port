@@ -1,16 +1,60 @@
+<style>
+  .navbar navbar-expand-lg navigation navbar-light bg-light{
+    right: 30px;
+  }
+
+  .userinfo{
+    padding-top: 30px;
+    width: 100px;
+    left:5%;
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    visibility: hidden;
+  }
+
+  .mypage{
+    left: 40px;
+  }
+
+  .mypage:hover .userinfo{
+    visibility: visible;
+  }
+
+  .logoutlink{
+    position: relative;
+  }
+
+  .logout{
+    padding-top: 30px;
+    width: 100px;
+    left:60%;
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    visibility: hidden;
+  }
+
+  .logoutlink:hover .logout{
+    visibility: visible;
+  } 
+
+</style>
+
 <header>
-  <nav class="navbar navbar-expand-lg navigation navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <span>My Note</span>
-      <nav class="logout">
+      <nav class="logoutlink">
       　<%= link_to logout_path, method: :delete do %>
-          <i class="fas fa-running"></i>
+          <i class="fas fa-running fa-2x"></i>
+          <span class="logout"><%= "ログアウト" %></span>
         <% end %>
       </nav>
       <nav class="mypage">
-        <%= link_to logout_path do %>
-          
-          <i class="fas fa-address-card"></i>
+        <%= link_to user_path(current_user) do %>
+          <i class="fas fa-user fa-2x"></i>
+          <span class="userinfo"><%= "ユーザー情報" %></span>
         <% end %>
       </nav>
       <ul class="navbar-nav ml-auto main-nav align-items-center">

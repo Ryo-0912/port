@@ -7,6 +7,15 @@
     position: relative;
   }
 
+  .register{
+    visibility: hidden;
+  }
+
+  .newregister:hover .register{
+    visibility: visible;
+  } 
+
+
   .genreform {
     position: absolute;
     top: 32.8px;
@@ -24,13 +33,14 @@
 
   <span class="genre"><%= "ジャンル" %></span>
 
-  <span>
+  <span class="newregister">
     <button id="gbtn" class="knopf even pill shade inverse m-">
       <svg class="icon">
         <use xlink:href="#icon-add"></use>
       </svg>
     </button>
   </span>
+  <span id="register"><%= "新規登録" %></span>
 
   <div class="accordion"　id="accordionExample">
     <div class="accordion-item">
