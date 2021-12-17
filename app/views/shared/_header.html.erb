@@ -1,0 +1,94 @@
+<style>
+
+  .title{
+    font-family: cursive;
+    font-size: 50px;
+    right: 30px;
+    top: 150px;
+  }
+
+  .nav{
+    float: right;
+    padding-top: 25px;
+    padding-right: 25px;
+  }
+
+  .logoutlink{
+    position   : relative;
+    left: -160px;
+  }
+
+  .logoutlink:hover .logout{
+    display: block; 
+  }
+
+  .logout{
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 2px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:70px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 12px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+  }
+
+  .logout:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+
+  .mypage{
+    position   : relative;
+    left: -80px;
+  }
+
+  .mypage:hover .userinfo{
+    display: block;
+  }
+
+  .userinfo{
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 2px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:80px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 12px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+  }
+
+  .userinfo:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+
+
+</style>
+
+<header>
+    <span class="title"><%= "My Note" %></span>
+    <ul class="nav">
+      <li class="nav-item">
+      　  <span class="logoutlink"><%= link_to logout_path, method: :delete do %>
+            <i class="fas fa-running fa-2x"></i>
+            <span class="logout"><%= "ログアウト" %></span>
+          <% end %></span>
+      </li>
+      <li class="nav-item">
+          <span class="mypage"><%= link_to user_path(current_user) do %>
+            <i class="fas fa-user fa-2x"></i>
+            <span class="userinfo"><%= "ユーザー情報" %></span>
+          <% end %></span>
+      </li>
+      <li class="nav-item">
+          <a href="/genres" class="image">
+            <%= image_tag 'sample', size: '40x40', class: 'rounded-circle mr15'%>
+          </a>
+      </li>
+    </ul>
+</header>

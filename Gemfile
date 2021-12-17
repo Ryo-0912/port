@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sorcery'
 gem 'config'
+gem 'draper'
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
+  gem 'mechanize'
 end
 
 group :development do
