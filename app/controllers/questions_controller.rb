@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = current_user.genre.questions.build(question_params)
+    @question = genre.questions.build(question_params)
     if @question.save
       redirect_to genres_path, notice: "「#{@question.statement}」をジャンルに登録しました。"
     else
@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @genre = current_user.genres.find(params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
     @question = Question.new
   end
 
@@ -24,13 +24,15 @@ class QuestionsController < ApplicationController
   def show
   end
 
-  private
-  def genre_params
-    params.require(:genre).permit(:name)
+  def upgate
   end
 
+  def destroy
+  end
+
+  private
 
   def question_params
-    params.require(:question).permit(:statement, :image, :poor, :test)
+    params.require(:question).permit(:genre_id, :statement, :image, :poor, :test)
   end
 end

@@ -1,8 +1,7 @@
 <h1>Q.</h1>
 <span class="questionform" id="qform">
-    <%= form_with(model: [@genre, @question]) do |form| %>
+    <%= form_with(model: [@genre, @question], local: true) do |form| %>
       <%= form.label :statement %>
-
       <%= form.text_field :statement %>
       <%= form.submit "登録" %>
     <% end %>
