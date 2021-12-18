@@ -74,7 +74,7 @@
           <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-              <span class="gen"><%= v.name %></span>
+              <span class="gen"><%=link_to v.name, genre_questions_path(v.id) %></span>
               <span class="edit-btn">
                 <%= link_to edit_genre_path(v.id), id: 'button-edit-#{v.id}' do %>
                   <i id="pen" class="fas fa-pen"></i>

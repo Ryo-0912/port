@@ -44,6 +44,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'factory_bot_rails'
   gem 'mechanize'
+  gem 'carrierwave'
 end
 
 group :development do

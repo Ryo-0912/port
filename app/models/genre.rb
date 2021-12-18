@@ -3,6 +3,7 @@ class Genre < ApplicationRecord
   require "nkf"
 
   belongs_to :user
+  has_many :questions
   validates :name, presence: true
 
   def self.to_asc

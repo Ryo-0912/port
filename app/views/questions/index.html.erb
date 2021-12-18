@@ -1,0 +1,14 @@
+<style>
+.createQ{
+  float: right;
+  font-size: 50px;
+}
+
+
+
+</style>
+
+<%= render 'shared/header', genre: @genre %>
+<%= render 'shared/sidebar', genre: @genre %>
+
+<span class="createQ"><%=link_to "問題作成", new_genre_question_path %></span>

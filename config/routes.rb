@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :genres
+  resources :genres do
+    resources :questions
+  end
   resources :password_resets, only: %i[new create edit update]
   root to: 'homes#top'
 
