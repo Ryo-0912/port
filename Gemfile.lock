@@ -381,6 +381,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  actiontext
   bootsnap (>= 1.4.2)
   bootstrap (~> 5.0.0)
   byebug
@@ -390,6 +391,7 @@ DEPENDENCIES
   config
   draper
   factory_bot_rails
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener_web

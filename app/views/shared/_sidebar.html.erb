@@ -38,6 +38,7 @@
     position: absolute;
     top: 55.8px;
     left: 200px;
+    display: none;
   }
   
 </style>
@@ -91,7 +92,7 @@
         <% end %>
     </div>
   </div>
-
+  
 　<span class="genreform" id="gform">
     <%= form_with model: genre, local: true do |form| %>
       <%= form.text_field :name %>
