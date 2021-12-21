@@ -6,10 +6,6 @@ class Genre < ApplicationRecord
   has_many :questions
   validates :name, presence: true
 
-  def self.to_asc
-    Genre.all.order("kana ASC")
-  end
-
   attr_accessor :hiragana
 
   AGENT = Mechanize.new

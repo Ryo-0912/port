@@ -1,8 +1,13 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(6)
+    @questions = Question.all.includes(:genre).order(created_at: :desc)
     
+  end
+
+  def new
+    @genre = Genre.find(params[:genre_id])
+    @question = Question.new
   end
 
   def create
@@ -13,11 +18,6 @@ class QuestionsController < ApplicationController
     else
       render :index, notice: "登録に失敗しました。"
     end
-  end
-
-  def new
-    @genre = Genre.find(params[:genre_id])
-    @question = Question.new
   end
 
   def edit

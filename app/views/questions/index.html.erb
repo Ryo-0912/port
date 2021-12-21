@@ -15,9 +15,10 @@
 
 <div class="memoryindex">
 <div class="row row-cols-1 row-cols-md-2 g-4">
+  
   <% @questions.each do |question| %>
     <div class="col">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title"><%= "Q." %></h2>
           <% if question.image.present? %>
