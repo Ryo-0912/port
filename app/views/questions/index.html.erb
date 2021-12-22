@@ -10,7 +10,7 @@
 
 </style>
 
-<%= render 'shared/header', genre: @genre %>
+<%= render 'shared/header' %>
 <%= render 'shared/sidebar', genre: @genre %>
 
 <div class="memoryindex">
@@ -25,6 +25,7 @@
             <img src="..." class="card-img-top" alt="...">
           <% end %>
           <p class="card-text"><%= question.statement %></p>
+          <p class="card-text"><%= question.genre.id %></p>
         </div>
       </div>  
     </div>

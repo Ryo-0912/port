@@ -36,6 +36,7 @@
       <%= form_with(model: [@genre, @question], local: true) do |form| %>
           <p class="statement-title"><% form.label :statement %></p>
           <p class="statement-form"><%= form.rich_text_area :statement, placeholder: "本文や画像" %></p>
+
           <p class="form-btn"><%= form.submit "登録" %></p>
       <% end %>
     </span>

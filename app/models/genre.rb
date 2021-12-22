@@ -3,7 +3,7 @@ class Genre < ApplicationRecord
   require "nkf"
 
   belongs_to :user
-  has_many :questions
+  has_many :questions, dependent: :destroy
   validates :name, presence: true
 
   attr_accessor :hiragana
