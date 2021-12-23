@@ -16,7 +16,7 @@ class Genre < ApplicationRecord
       name = genre.name
       if genre.name.match(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
-        genre.hiragana = name 
+        genre.hiragana = name
       elsif genre.name.match(/[ァ-ヴ]/)
         genre.hiragana  = NKF.nkf("-h1 -w", name)
       else

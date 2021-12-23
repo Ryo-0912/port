@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.includes(:genre).order(created_at: :desc)
+    @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(2)
   end
 
   def new

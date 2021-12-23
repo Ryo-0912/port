@@ -1,13 +1,38 @@
 <style>
 .createQ{
-  float: right;
+  right: 50px;
   font-size: 50px;
+  top: 810px;
+  position: fixed;
 }
 .memoryindex{
   margin-left: 220px;
-  margin-top: -650px;
+  margin-top: -600px;
+  min-height: 10em;
+  max-height: 45em;
+  overflow-y: auto;
 }
 
+.page{
+  position: fixed;
+  top: 830px;
+}
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+  margin-left: 827px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 20px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 20px;    /*角を丸くする*/
+}
 </style>
 
 <%= render 'shared/header' %>
@@ -15,19 +40,15 @@
 
 <div class="memoryindex">
 <div class="row row-cols-1 row-cols-md-2 g-4">
-  
+
   <% @questions.each do |question| %>
     <div class="col">
       <div class="card h-100">
         <div class="card-body">
           <h2 class="card-title"><%= "Q." %></h2>
-          <% if question.image.present? %>
-            <img src="..." class="card-img-top" alt="...">
-          <% end %>
           <p class="card-text"><%= question.statement %></p>
-          <p class="card-text"><%= question.genre.id %></p>
         </div>
-      </div>  
+      </div>
     </div>
   <% end %>
 </div>
@@ -35,3 +56,4 @@
 </div>
 
 <span class="createQ"><%=link_to "問題作成", new_genre_question_path %></span>
+<div class="page"><%= paginate @questions %></div>

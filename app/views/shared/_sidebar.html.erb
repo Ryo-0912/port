@@ -31,7 +31,7 @@
 
   .newregister:hover .register{
     display: block;
-  } 
+  }
 
 
   .genreform {
@@ -40,7 +40,7 @@
     left: 200px;
     display: none;
   }
-  
+
 </style>
 <br>
 <div class="side">
@@ -63,7 +63,7 @@
   <br>
 
   <br>
-  <div class="accordion"　id="accordionExample">
+<div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <% genres = Genre.grouping_genres.sort_by{ |g| g[0] } %>
         <% genres.each_with_index do |(key, value), index| %>
@@ -92,8 +92,8 @@
         <% end %>
     </div>
   </div>
-  
-　<span class="genreform" id="gform">
+
+  <span class="genreform" id="gform">
     <%= form_with model: genre, local: true do |form| %>
       <%= form.text_field :name %>
       <%= form.submit "登録" %>

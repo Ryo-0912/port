@@ -46,6 +46,7 @@ group :development, :test do
   gem 'mechanize'
   gem 'carrierwave'
   gem 'actiontext'
+  gem 'kaminari'
 end
 
 group :development do
