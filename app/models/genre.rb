@@ -3,11 +3,8 @@ class Genre < ApplicationRecord
   require "nkf"
 
   belongs_to :user
+  has_many :questions, dependent: :destroy
   validates :name, presence: true
-
-  def self.to_asc
-    Genre.all.order("kana ASC")
-  end
 
   attr_accessor :hiragana
 
@@ -19,7 +16,7 @@ class Genre < ApplicationRecord
       name = genre.name
       if genre.name.match(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
-        genre.hiragana = name 
+        genre.hiragana = name
       elsif genre.name.match(/[ァ-ヴ]/)
         genre.hiragana  = NKF.nkf("-h1 -w", name)
       else

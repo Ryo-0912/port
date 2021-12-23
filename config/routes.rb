@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :genres
+  resources :genres do
+    resources :questions
+  end
   resources :password_resets, only: %i[new create edit update]
   root to: 'homes#top'
 
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :users
+  resources :genres
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

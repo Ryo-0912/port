@@ -74,10 +74,11 @@
     <span class="title"><%= "My Note" %></span>
     <ul class="nav">
       <li class="nav-item">
-      　  <span class="logoutlink"><%= link_to logout_path, method: :delete do %>
+        <span class="logoutlink"><%= link_to logout_path, method: :delete do %>
             <i class="fas fa-running fa-2x"></i>
             <span class="logout"><%= "ログアウト" %></span>
-          <% end %></span>
+          <% end %>
+        </span>
       </li>
       <li class="nav-item">
           <span class="mypage"><%= link_to user_path(current_user) do %>
