@@ -11,12 +11,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    
     genre = Genre.find(params[:genre_id])
     @question = genre.questions.build(question_params)
     if @question.save
-      redirect_to genre_questions_path, notice: "「#{@question.statement}」をジャンルに登録しました。"
-      
+      redirect_to new_question_answer_path(@question)
     else
       render :index, notice: "登録に失敗しました。"
     end
