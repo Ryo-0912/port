@@ -10,8 +10,6 @@
   left: 40px;
   display: inline;
 }
-
-
 .form-btn{
   position: relative;
   left: 290px;
@@ -62,7 +60,7 @@
     <h1 class="card-title"><%= "A." %></h1>
     <div class="answerform" id="asform">
       <%= form_with(model: [@question, @answer], local: true) do |form| %>
-        <%= form.text_field :answer, class: 'form' %>
+        <%= form.text_field :solution, class: 'form' %>
         <%= form.text_area :process, class: 'form-control', placeholder: "プロセス" %>
         <%= form.submit '登録', class: 'submit-btn' %>
       <% end %>

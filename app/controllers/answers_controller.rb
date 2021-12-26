@@ -8,10 +8,10 @@ class AnswersController < ApplicationController
   end
 
   def create
-    question = Question.find(params[:question_id])
-    @answer = question.build_answer(answer_params)
+    @question = Question.find(params[:question_id])
+    @answer = @question.build_answer(answer_params)
     if @answer.save
-      redirect_to question_answer_path(question, @answer)
+      redirect_to question_answer_path(@answer)
     else
       render :index, notice: "登録に失敗しました。"
     end
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:question_id, :solution, :process, :id)
+    params.require(:answer).permit(:solution, :process, :id)
   end
 
 end
