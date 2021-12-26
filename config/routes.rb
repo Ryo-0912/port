@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :questions do
-    resources :answers, only: %i[new create index] # 答えは一つしかないのであればresourceにしていいかな。
+    resources :answers, only: %i[new create index show] # 答えは一つしかないのであればresourceにしていいかな。
   end
 
   resources :genres do
