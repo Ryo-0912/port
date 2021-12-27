@@ -29,7 +29,7 @@
 }
 .test-form{
   margin-left: 10px;
-  width: 90px;
+  width: 250px;
   height: 60px;
   font-size: 30px;
   text-align: center;
@@ -49,6 +49,13 @@
   font-size: 30px;
   transform: translate(2px,100px)
 }
+.answer{
+  font-size: 50px;
+  margin-top: -50px;
+}
+.card-content{
+  font-size: 30px;
+}
 </style>
 
 
@@ -58,7 +65,7 @@
   <div class="card border-dark mb-3" style="width: 40rem;">
     <div class="card-body">
       <h1 class="card-title"><%= "Q." %></h1>
-      <h1><%= @question.statement %></h1>
+      <h1 class="card-content"><%= @question.statement %></h1>
       </span>
     </div>
   </div>
@@ -68,17 +75,18 @@
   <div class="card border-dark mb-3" style="width: 40rem;">
     <div class="card-body">
       <h1 class="card-title"><%= "A." %></h1>
-      <p><%= @answer.solution %></p>
-      <p><%= @answer.process %></p>
+      <p class="answer"><%= @answer.solution %></p>
+      <p ><%= "~プロセス~"%></p>
+      <p class="card-content"><%= @answer.process %></p>
     </div>
   </div>
 </div>
 
   <div class="testday">
-  <%= form_with(model: [@question], local: true) do |form| %>
+  <%= form_with model: @question, method: :patch do |form| %>
     <span class="before-text"><%= "この問題を" %></span>
-    <%= form.number_field :test, class: "test-form", min: 1, max: 31 %>
+    <%= form.date_field  :test, class: "test-form" %>
     <%= form.submit "登録", class: "submit-btn" %>
-    <span class="after-text"><%= "日後にテストする" %></span>
+    <span class="after-text"><%= "にテストする" %></span>
   <% end %>
   </div>

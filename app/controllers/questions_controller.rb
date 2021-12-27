@@ -26,7 +26,10 @@ class QuestionsController < ApplicationController
   def show
   end
 
-  def upgate
+  def update
+    @question = Question.find(params[:id])
+    @question.update!(question_params)
+    redirect_to genres_path
   end
 
   def destroy

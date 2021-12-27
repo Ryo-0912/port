@@ -10,8 +10,8 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.build_answer(answer_params)
-    if @answer.save
-      redirect_to question_answer_path(@answer)
+    if @answer.save!
+      redirect_to question_answer_path(@question, @answer)
     else
       render :index, notice: "登録に失敗しました。"
     end
