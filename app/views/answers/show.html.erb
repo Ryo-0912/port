@@ -1,0 +1,92 @@
+<style>
+.span{
+  margin-left: 530px;
+  margin-top: 90px;
+  margin-bottom: -50px;
+}
+
+.question-card{
+  margin-left: 200px;
+  margin-top: 150px;
+}
+.question-card .card-body{
+  height: 300px;
+}
+.answer-card{
+  margin-left: 900px;
+  margin-top: -320px;
+  margin-bottom: 100px;
+}
+.answer-card .card-body{
+  height: 300px;
+}
+.submit-btn{
+  position: relative;
+  margin-left: -100px;
+  font-size: 50px;
+  margin-bottom: 40px;
+  transform: translate(2px,100px)
+}
+.test-form{
+  margin-left: 10px;
+  width: 250px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  transform: translate(10px,2px)
+}
+.before-text{
+  position: relative;
+  margin-left: 650px;
+  font-size: 30px;
+  padding-top: 60px;
+}
+.testday{
+  position: absolute;
+}
+.testday .after-text{
+  position: relative;
+  font-size: 30px;
+  transform: translate(2px,100px)
+}
+.answer{
+  font-size: 50px;
+  margin-top: -50px;
+}
+.card-content{
+  font-size: 30px;
+}
+</style>
+
+
+<h2 class="span"><%= "問題なければ、問題出現スパンを決めましょう！"%></h2>
+
+<div class="question-card">
+  <div class="card border-dark mb-3" style="width: 40rem;">
+    <div class="card-body">
+      <h1 class="card-title"><%= "Q." %></h1>
+      <h1 class="card-content"><%= @question.statement %></h1>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="answer-card">
+  <div class="card border-dark mb-3" style="width: 40rem;">
+    <div class="card-body">
+      <h1 class="card-title"><%= "A." %></h1>
+      <p class="answer"><%= @answer.solution %></p>
+      <p ><%= "~プロセス~"%></p>
+      <p class="card-content"><%= @answer.process %></p>
+    </div>
+  </div>
+</div>
+
+  <div class="testday">
+  <%= form_with model: @question, method: :patch do |form| %>
+    <span class="before-text"><%= "この問題を" %></span>
+    <%= form.date_field  :test, class: "test-form" %>
+    <%= form.submit "登録", class: "submit-btn" %>
+    <span class="after-text"><%= "にテストする" %></span>
+  <% end %>
+  </div>

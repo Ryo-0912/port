@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :genres do
-    resources :questions
+  resources :questions do
+    resources :answers, only: %i[new create index show] # 答えは一つしかないのであればresourceにしていいかな。
   end
+
+  resources :genres do
+    resources :questions, only: %i[index new create]
+  end
+  resources :questions, only: %i[edit show update destroy]
+
+
   resources :password_resets, only: %i[new create edit update]
   root to: 'homes#top'
 
@@ -10,7 +17,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :users
-  resources :genres
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
