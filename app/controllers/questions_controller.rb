@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(2)
+    @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
   end
 
   def new
@@ -24,6 +24,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
   end
 
   def update
