@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answer = @question.build_answer(answer_params)
+    @answer = @question.answer
   end
 
   def update

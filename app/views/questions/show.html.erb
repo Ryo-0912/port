@@ -1,1 +1,27 @@
-<p><%= @question.statement %><p>
+<style>
+.question-card{
+  margin-left: 550px;
+  margin-top: 150px;
+  transition: 0.5s;
+}
+.question-card:active{
+  transform-origin: 25.5% 50% 0;
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+.question-card .card-body{
+  height: 650px;
+  max-height: 45em;
+  overflow-y: auto;
+}
+
+</style>
+
+<div class="question-card">
+  <div class="card border-dark mb-3" style="width: 40rem;">
+    <div class="card-body">
+      <h1 class="card-title"><%= "Q." %></h1>
+      <h1 class="card-content"><%= @question.statement %></h1>
+      <h1 class="card-content"><%= @answer.solution %></h1>
+    </div>
+  </div>
+</div>
