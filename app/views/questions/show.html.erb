@@ -3,37 +3,55 @@
   margin-left: 550px;
   margin-top: 150px;
   transition: 0.5s;
-  .Qcard-body{
-    opacity: 1.0;
-  }
+  position: absolute;
+}
+.question-card .qcard-body{
+  opacity: 1.0;
 }
 .question-card:active{
   transform-origin: 25.5% 50% 0;
   transform: rotate3d(0, 1, 0, 180deg);
-  .Qcard-body{
-    opacity: 0;
-  }
+}
+.question-card:active .qcard-body{
+  opacity: 0;
 }
 
-.question-card .Qcard-body{
-  height: 500px;
+.question-card .qcard-body{
+  position: relative;
+  top: 20px;
+  height: 550px;
   max-height: 45em;
   overflow-y: auto;
 }
-
-
+.question-card .qcard-body .card-title{
+  position: relative;
+  left: 20px;
+}
+.question-card .acard-body{
+  position: relative;
+  transform: scale(-1, 1);
+  top: -480px;
+  opacity: 0;
+}
+.question-card:active .acard-body{
+  opacity: 1.0;
+}
+.question-card .acard-body .card-title{
+  position: relative;
+  left: 20px;
+}
 
 </style>
 
-<div class="question-card">
+<div class="question-card" id="qacard">
   <div class="card border-dark mb-3" style="width: 40rem;">
-    <div class="Qcard-body">
+    <div class="qcard-body">
       <h1 class="card-title"><%= "Q." %></h1>
       <h1 class="card-content"><%= @question.statement %></h1>
       <h1 class="card-content"><%= @answer.solution %></h1>
     </div>
 
-    <div class="Acard-body">
+    <div class="acard-body" id="abody">
       <h1 class="card-title"><%= "A." %></h1>
       <p class="answer"><%= @answer.solution %></p>
       <p ><%= "~プロセス~"%></p>
@@ -41,3 +59,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  const qacard = document.getElementById('qacard');
+  const abody = document.getElementById('abody');
+  qacard.addEventListener('click', () => {
+    if (abody.style.display === 'none'){
+      abody.style.display = 'block';
+    } else {
+      abody.style.display = 'none';
+    }
+  })
+</script>
