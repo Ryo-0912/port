@@ -9,7 +9,7 @@
   opacity: 1.0;
 }
 .question-card:active{
-  transform-origin: 25.5% 50% 0;
+  transform-origin: 50% 50% 0;
   transform: rotate3d(0, 1, 0, 180deg);
 }
 .question-card:active .qcard-body{
@@ -19,8 +19,10 @@
 .question-card .qcard-body{
   position: relative;
   top: 20px;
-  height: 550px;
-  max-height: 45em;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 600px;
+  max-height: 600em;
   overflow-y: auto;
 }
 .question-card .qcard-body .card-title{
@@ -30,44 +32,67 @@
 .question-card .acard-body{
   position: relative;
   transform: scale(-1, 1);
-  top: -480px;
+  top: -440px;
   opacity: 0;
 }
 .question-card:active .acard-body{
+  text-align: center;
   opacity: 1.0;
 }
-.question-card .acard-body .card-title{
+.question-card .acard-body .acard-title{
   position: relative;
   left: 20px;
 }
+
+.qcard-title{
+  position: relative;
+  top: 15px;
+  left: 15px;
+  opacity: 1.0;
+}
+.question-card:active .qcard-title{
+  opacity: 0;
+}
+.acard-title{
+  position: relative;
+  transform: scale(-1, 1);
+  top: -380px;
+  left: -20px;
+  opacity: 0;
+}
+.question-card:active .acard-title{
+  opacity: 1.0;
+}
+.answer{
+  display: block;
+  font-size: 45px;
+}
+.acard-content{
+  display: block;
+  font-size: 25px;
+}
+
 
 </style>
 
 <div class="question-card" id="qacard">
   <div class="card border-dark mb-3" style="width: 40rem;">
+      <h1 class="qcard-title"><%= "Q." %></h1>
     <div class="qcard-body">
-      <h1 class="card-title"><%= "Q." %></h1>
-      <h1 class="card-content"><%= @question.statement %></h1>
-      <h1 class="card-content"><%= @answer.solution %></h1>
+      <h1 class="qcard-content"><%= @question.statement %></h1>
     </div>
 
+      <h1 class="acard-title"><%= "A." %></h1>
     <div class="acard-body" id="abody">
-      <h1 class="card-title"><%= "A." %></h1>
-      <p class="answer"><%= @answer.solution %></p>
-      <p ><%= "~プロセス~"%></p>
-      <p class="card-content"><%= @answer.process %></p>
+      <span class="answer"><%= @answer.solution %></span>
+      <span><%= "~プロセス~"%></span>
+      <span class="acard-content"><%= @answer.process %></span>
     </div>
   </div>
 </div>
 
-<script>
-  const qacard = document.getElementById('qacard');
-  const abody = document.getElementById('abody');
-  qacard.addEventListener('click', () => {
-    if (abody.style.display === 'none'){
-      abody.style.display = 'block';
-    } else {
-      abody.style.display = 'none';
-    }
-  })
-</script>
+<span class="edit-btn">
+  <%= link_to genres_path do %>
+    <i id="pen" class="fas fa-pen"></i>
+  <% end %>
+</span>
