@@ -1,1 +1,83 @@
-<p><%= @question %><p>
+<style>
+.question-card{
+  margin-left: 550px;
+  margin-top: 150px;
+  transition: 0.5s;
+  position: absolute;
+}
+.question-card .qcard-body{
+  opacity: 1.0;
+}
+.question-card:active{
+  transform-origin: 50% 50% 0;
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+.question-card:active .qcard-body{
+  opacity: 0;
+}
+
+.question-card .qcard-body{
+  position: relative;
+  top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 350px;
+  max-height: 600em;
+  overflow-y: auto;
+}
+
+.question-card .acard-body{
+  transform: scale(-1, 1);
+  top: -440px;
+  opacity: 0;
+}
+.question-card:active .acard-body{
+  text-align: center;
+  opacity: 1.0;
+}
+
+.qcard-title{
+  position: relative;
+  top: 15px;
+  left: 20px;
+  opacity: 1.0;
+}
+.question-card:active .qcard-title{
+  opacity: 0;
+}
+.question-card .acard-title{
+  position: relative;
+  transform: scale(-1, 1);
+  top: -380px;
+  left: -20px;
+  opacity: 0;
+}
+.question-card:active .acard-title{
+  opacity: 1.0;
+}
+.answer{
+  display: block;
+  font-size: 45px;
+  margin-top: -435px;
+}
+.acard-content{
+  display: block;
+  font-size: 25px;
+}
+</style>
+
+<div class="question-card" id="qacard">
+  <div class="card border-dark mb-3" style="width: 40rem;">
+      <h1 class="qcard-title"><%= "Q." %></h1>
+    <div class="qcard-body">
+      <h1 class="qcard-content"><%= @question.statement %></h1>
+    </div>
+
+      <h1 class="acard-title"><%= "A." %></h1>
+    <div class="acard-body" id="abody">
+      <span class="answer"><%= @answer.solution %></span>
+      <span><%= "~プロセス~"%></span>
+      <span class="acard-content"><%= @answer.process %></span>
+    </div>
+  </div>
+</div>

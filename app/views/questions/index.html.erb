@@ -1,21 +1,20 @@
 <style>
 .createQ{
   right: 50px;
-  font-size: 50px;
-  top: 810px;
+  font-size: 30px;
+  top: 918px;
   position: fixed;
 }
 .memoryindex{
   margin-left: 220px;
-  margin-top: -600px;
-  min-height: 10em;
-  max-height: 45em;
+  margin-top: -550px;
+  max-height: 50.5em;
   overflow-y: auto;
 }
 
 .page{
   position: fixed;
-  top: 830px;
+  top: 920px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
@@ -33,6 +32,19 @@
 .pagination>li>a:hover {
   border-radius: 20px;    /*角を丸くする*/
 }
+.card{
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
+}
+.card:hover{
+  box-shadow: 10px 10px 15px -10px;
+	transform: translateY(-4px);
+}
+.card-body{
+  min-height: 10em;
+  max-height: 30em;
+  overflow-y: auto;
+}
 </style>
 
 <%= render 'shared/header' %>
@@ -41,9 +53,9 @@
 <div class="memoryindex">
 <div class="row row-cols-1 row-cols-md-2 g-4">
 
-  <% @questions.each do |question| %>
-    <div class="col">
-      <div class="card border-dark mb-3 h-100">
+  <% @questions.each_with_index do |question, index| %>
+    <div class="cards" id="card<%= index %>" data-name="card" data-url="/questions/<%= question.id %>">
+      <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">
         <div class="card-body">
           <h2 class="card-title"><%= "Q." %></h2>
           <p class="card-text"><%= question.statement %></p>
@@ -57,3 +69,14 @@
 
 <span class="createQ"><%=link_to "問題作成", new_genre_question_path %></span>
 <div class="page"><%= paginate @questions %></div>
+
+<script>
+    const cards = document.getElementsByClassName('cards') /* クラス名が「cards」の要素をすべて取得し、定数cardsとして代入する
+                                                           ただ、ここで取得できるのは「配列に似ているが、実際には配列ではなく、HTMLcollectionオブジェクトを返す」 */
+    for (let card of cards) {                              //for (仮変数 of 配列){(処理)} この構文では配列の中の値を出力
+      card.addEventListener('click', () => {
+        console.log(card);                                  //ここで呼び出される値は各cardの情報データ?
+        open (card.dataset.url);                           //各cardのdata属性のURLを取得し、openメソッドを適用
+      })
+    }
+</script>
