@@ -21,16 +21,12 @@
   top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  height: 600px;
+  height: 350px;
   max-height: 600em;
   overflow-y: auto;
 }
-.question-card .qcard-body .card-title{
-  position: relative;
-  left: 20px;
-}
+
 .question-card .acard-body{
-  position: relative;
   transform: scale(-1, 1);
   top: -440px;
   opacity: 0;
@@ -39,21 +35,17 @@
   text-align: center;
   opacity: 1.0;
 }
-.question-card .acard-body .acard-title{
-  position: relative;
-  left: 20px;
-}
 
 .qcard-title{
   position: relative;
   top: 15px;
-  left: 15px;
+  left: 20px;
   opacity: 1.0;
 }
 .question-card:active .qcard-title{
   opacity: 0;
 }
-.acard-title{
+.question-card .acard-title{
   position: relative;
   transform: scale(-1, 1);
   top: -380px;
@@ -66,13 +58,12 @@
 .answer{
   display: block;
   font-size: 45px;
+  margin-top: -435px;
 }
 .acard-content{
   display: block;
   font-size: 25px;
 }
-
-
 </style>
 
 <div class="question-card" id="qacard">
@@ -90,9 +81,3 @@
     </div>
   </div>
 </div>
-
-<span class="edit-btn">
-  <%= link_to genres_path do %>
-    <i id="pen" class="fas fa-pen"></i>
-  <% end %>
-</span>
