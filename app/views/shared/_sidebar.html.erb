@@ -65,6 +65,7 @@
   <br>
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
+    <%= link_to "復習一覧", genres_review_questions_path %>
       <% genres = Genre.grouping_genres.sort_by{ |g| g[0] } %>
         <% genres.each_with_index do |(key, value), index| %>
           <h2 class="accordion-header" id="heading">
