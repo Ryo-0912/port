@@ -21,7 +21,7 @@
   top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  height: 350px;
+  height: 550px;
   max-height: 600em;
   overflow-y: auto;
 }
@@ -48,7 +48,7 @@
 .question-card .acard-title{
   position: relative;
   transform: scale(-1, 1);
-  top: -380px;
+  top: -580px;
   left: -20px;
   opacity: 0;
 }
@@ -58,12 +58,25 @@
 .answer{
   display: block;
   font-size: 45px;
-  margin-top: -435px;
+  margin-top: -640px;
 }
 .acard-content{
   display: block;
   font-size: 25px;
 }
+.review{
+  padding-left: 1400px;
+  padding-top: 300px;
+  font-size: 30px;
+}
+.review .checkbox-label{
+  padding-right: 20px;
+}
+
+.review .checkbox-btn{
+  margin-left: 20px;
+}
+
 </style>
 
 <div class="question-card" id="qacard">
@@ -80,4 +93,12 @@
       <span class="acard-content"><%= @answer.process %></span>
     </div>
   </div>
+</div>
+
+<div class="review">
+<%= form_with model: @question, local: true do |form| %>
+  <%= form.label "要復習", class: 'checkbox-label' %>
+  <%= form.check_box :poor ,{ style: 'transform: scale(2.5);', class: 'check-box' }, "true", "false" %>
+  <%= form.submit "登録", class: 'checkbox-btn' %>
+<% end %>
 </div>

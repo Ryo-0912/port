@@ -4,6 +4,10 @@ class QuestionsController < ApplicationController
     @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
   end
 
+  def review_index
+    @questions = Question.where(poor: true).order(created_at: :desc)
+  end
+
   def new
 
     @genre = Genre.find(params[:genre_id])
