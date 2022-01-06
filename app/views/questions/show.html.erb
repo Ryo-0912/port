@@ -126,10 +126,12 @@
 
 <script>
 let trash = document.getElementById('trash');
-let qcard = document.querySelector('.qcard-body');
+let qcard = document.querySelector('.question-card');
 
-trash.addEventListener('click', () => {
+trash.addEventListener('click', function(){
   qcard.remove();
-  window.close();
-})
+  setTimeout(function(){
+    window.close();
+  }, 1000);
+});
 </script>

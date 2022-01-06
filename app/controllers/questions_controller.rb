@@ -36,6 +36,12 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update!(question_params)
+    redirect_to question_path(@question)
+  end
+
+  def updating
+    @question = Question.find(params[:id])
+    @question.update!(question_params)
     redirect_to genres_path
   end
 
