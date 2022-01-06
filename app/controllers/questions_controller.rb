@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update!(question_params)
-    redirect_to question_path(@question)
+    redirect_to genres_path
   end
 
   def destroy

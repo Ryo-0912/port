@@ -28,12 +28,11 @@ class AnswersController < ApplicationController
   end
 
   def update
-    @answer = Answer.find(params[:id])  showeditどちらからもupdateにいくため遷移がおかしくなる
+    @answer = Answer.find(params[:id])
     @question = @answer.question
     @answer.update!(answer_params)
     redirect_to question_path(@question)
   end
-
 
   private
   def answer_params
