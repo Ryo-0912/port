@@ -1,0 +1,13 @@
+<h1>問題の編集</h1>
+<div class="card border-dark mb-3" style="width: 50rem;">
+  <div class="card-body">
+    <h1 class="card-title"><%= "Q." %></h1>
+    <span class="questionform" id="qform">
+      <%= form_with model: @question, local: true do |form| %>
+          <p class="statement-title"><% form.label :statement %></p>
+          <p class="statement-form"><%= form.rich_text_area :statement, placeholder: "本文や画像" %></p>
+          <p class="form-btn"><%= form.submit "登録" %></p>
+      <% end %>
+    </span>
+    </div>
+</div>

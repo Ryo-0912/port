@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   resources :questions do
-    resources :answers, only: %i[new create index show] # 答えは一つしかないのであればresourceにしていいかな。
+    resources :answers, only: %i[new create index show]
   end
-  
+  post 'questions/:id' => 'questions#updating'
+
+  resources :answers, only: %i[edit update]
+
   get 'genres/review/questions' => 'questions#review_index'
   resources :genres do
     resources :questions, only: %i[index new create]
   end
   resources :questions, only: %i[edit show update destroy]
+
 
 
   resources :password_resets, only: %i[new create edit update]

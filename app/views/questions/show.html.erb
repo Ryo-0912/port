@@ -19,8 +19,8 @@
 .question-card .qcard-body{
   position: relative;
   top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   height: 550px;
   max-height: 600em;
   overflow-y: auto;
@@ -63,6 +63,8 @@
 .acard-content{
   display: block;
   font-size: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .review{
   padding-left: 1400px;
@@ -76,7 +78,18 @@
 .review .checkbox-btn{
   margin-left: 20px;
 }
-
+.question-edit{
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.answer-edit{
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.qdelete{
+  padding-left: 1400px;
+  font-size: 30px;
+}
 </style>
 
 <div class="question-card" id="qacard">
@@ -102,3 +115,23 @@
   <%= form.submit "登録", class: 'checkbox-btn' %>
 <% end %>
 </div>
+
+<div><%=link_to "問題編集", edit_question_path, class: 'question-edit' %></div>
+<div><%=link_to "解答編集", edit_answer_path, class: 'answer-edit' %></div>
+<span class="qdelete">
+  <%= link_to question_path(@question), method: :delete, data: { confirm: "ご覧の問題を削除しますが、よろしいですか？"} do %>
+    <i id="trash" class="fas fa-trash"></i>
+  <% end %>
+</span>
+
+<script>
+let trash = document.getElementById('trash');
+let qcard = document.querySelector('.question-card');
+
+trash.addEventListener('click', function(){
+  qcard.remove();
+  setTimeout(function(){
+    window.close();
+  }, 1000);
+});
+</script>

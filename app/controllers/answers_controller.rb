@@ -23,8 +23,16 @@ class AnswersController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
+    @answer = @question.answer
   end
 
+  def update
+    @answer = Answer.find(params[:id])
+    @question = @answer.question
+    @answer.update!(answer_params)
+    redirect_to question_path(@question)
+  end
 
   private
   def answer_params

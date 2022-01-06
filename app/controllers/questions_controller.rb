@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 
   def show
@@ -35,10 +36,18 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update!(question_params)
+    redirect_to question_path(@question)
+  end
+
+  def updating
+    @question = Question.find(params[:id])
+    @question.update!(question_params)
     redirect_to genres_path
   end
 
   def destroy
+    @question = Question.find(params[:id])
+    @question.destroy!
   end
 
   private
