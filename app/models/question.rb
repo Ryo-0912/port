@@ -4,17 +4,17 @@ class Question < ApplicationRecord
   has_one :answer, dependent: :destroy
   has_rich_text :statement
 
-  validate :test_valid?
+  validate :exam_valid?
 
   private
 
-  def test_valid?
-    if test == nil
-      test = nil
-    elsif test != nil && test > Date.today
+  def exam_valid?
+    if exam == nil
+      exam = nil
+    elsif exam != nil && exam > Date.today
       raise ZeroDivisionError
-    elsif test != nil && test < Date.today
-      test
+    elsif exam != nil && exam < Date.today
+      exam
     end
   end
 end

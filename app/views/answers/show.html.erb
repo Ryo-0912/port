@@ -88,7 +88,7 @@
   <div class="testday">
   <%= form_with model: @question, method: :post do |form| %>
     <span class="before-text"><%= "この問題を" %></span>
-    <%= form.date_field  :test, class: "test-form" %>
+    <%= form.date_field  :exam, class: "test-form" %>
     <%= form.submit "登録", class: "submit-btn" %>
     <span class="after-text"><%= "にテストする" %></span>
   <% end %>
