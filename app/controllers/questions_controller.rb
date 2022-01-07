@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
+    @genre = Genre.find(params[:genre_id])
+    @questions = @genre.questions.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
   end
 
   def review_index
@@ -18,9 +19,11 @@ class QuestionsController < ApplicationController
     genre = Genre.find(params[:genre_id])
     @question = genre.questions.build(question_params)
     if @question.save
+      flash[:success] = t('.success')
       redirect_to new_question_answer_path(@question)
     else
-      render :index, notice: "登録に失敗しました。"
+      flash.now[:danger] = t('.fail')
+      render :index
     end
   end
 

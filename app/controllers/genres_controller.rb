@@ -8,9 +8,11 @@ class GenresController < ApplicationController
   def create
     @genre = current_user.genres.build(genre_params)
     if @genre.save
-      redirect_to genres_path, notice: "「#{@genre.name}」をジャンルに登録しました。"
+      redirect_to genres_path
+      flash[:success] = t('.success')
     else
-      render :index, notice: "登録に失敗しました。"
+      render :index
+      flash.now[:danger] = t('.fail')
     end
   end
 

@@ -12,8 +12,10 @@ class AnswersController < ApplicationController
     @answer = @question.build_answer(answer_params)
     if @answer.save!
       redirect_to question_answer_path(@question, @answer)
+      flash[:success] = t('.success')
     else
-      render :index, notice: "登録に失敗しました。"
+      flash.now[:danger] = t('.fail')
+      render :index
     end
   end
 
