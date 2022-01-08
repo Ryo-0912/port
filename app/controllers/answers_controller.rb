@@ -36,9 +36,18 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question)
   end
 
+  def updating
+    @answer = Answer.find(params[:id])
+    exam = params[:answer][:exam]
+    @answer.exam = exam
+    @answer.save!
+    redirect_to genres_path
+  end
+
+
   private
   def answer_params
-    params.require(:answer).permit(:solution, :process, :id)
+    params.require(:answer).permit(:solution, :process, :exam, :id)
   end
 
 end

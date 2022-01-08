@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: %i[new create index show]
   end
-  post 'questions/:id' => 'questions#updating'
 
   resources :answers, only: %i[edit update]
+  post 'answers/:id' => 'answers#updating'
 
   get 'genres/review/questions' => 'questions#review_index'
   resources :genres do

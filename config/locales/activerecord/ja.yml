@@ -17,3 +17,5 @@ ja:
         name: "ジャンル名"
       answer:
         process: "プロセス"
+        solution: "解答"
+        exam: "テスト日"

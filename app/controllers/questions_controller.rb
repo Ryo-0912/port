@@ -1,5 +1,10 @@
 class QuestionsController < ApplicationController
 
+  def examing
+    @answers = Answer.where.not(exam: nil)
+    @questions = @answer.question
+  end
+
   def index
     @genre = Genre.find(params[:genre_id])
     @questions = @genre.questions.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
@@ -40,12 +45,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.update!(question_params)
     redirect_to question_path(@question)
-  end
-
-  def updating
-    @question = Question.find(params[:id])
-    @question.update!(question_params)
-    redirect_to genres_path
   end
 
   def destroy

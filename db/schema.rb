@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_07_134810) do
+ActiveRecord::Schema.define(version: 2022_01_07_144334) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 2022_01_07_134810) do
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "solution"
     t.text "process"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "question_id"
+    t.date "exam"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 2022_01_07_134810) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "poor", default: false, null: false
-    t.date "exam"
     t.index ["genre_id"], name: "index_questions_on_genre_id"
   end
 
