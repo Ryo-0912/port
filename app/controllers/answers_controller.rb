@@ -38,9 +38,7 @@ class AnswersController < ApplicationController
 
   def updating
     @answer = Answer.find(params[:id])
-    exam = params[:answer][:exam]
-    @answer.exam = exam
-    @answer.save!
+    @answer.save
     redirect_to genres_path
   end
 
