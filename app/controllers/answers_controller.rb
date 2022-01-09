@@ -1,4 +1,14 @@
 class AnswersController < ApplicationController
+
+  def exam
+    @answers = Answer.where.not(exam: nil)
+    @answers.each do |answer|
+      unless answer.exam == Date.today
+        redirect_to genres_path
+      end
+    end
+  end
+
   def index
   end
 
@@ -38,14 +48,24 @@ class AnswersController < ApplicationController
 
   def updating
     @answer = Answer.find(params[:id])
-    @answer.save
+    exam = params[:answer][:exam]
+    @answer.exam = exam
+    @answer.save!
     redirect_to genres_path
   end
 
-
   private
+
   def answer_params
     params.require(:answer).permit(:solution, :process, :exam, :id)
   end
 
+  def examing
+    @answers = Answer.where.not(exam: nil)
+    @answers.each do |answer|
+      unless answer.exam == Date.today
+        redirect_to genres_path
+      end
+    end
+  end
 end

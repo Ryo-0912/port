@@ -1,14 +1,5 @@
 class QuestionsController < ApplicationController
 
-  def examing
-    @answers = Answer.where.not(exam: nil)
-    @questions = @answer.question
-    @answer = @answers.each { |answer| answer }
-
-    Date.today = Date.new(@answer.exam)
-
-  end
-
   def index
     @genre = Genre.find(params[:genre_id])
     @questions = @genre.questions.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)

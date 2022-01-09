@@ -10,11 +10,7 @@ class Answer < ApplicationRecord
   private
 
   def exam_valid?
-    if exam == nil
-      exam
-    elsif exam != nil && exam > Date.today
-      exam
-    elsif exam != nil && exam <= Date.today
+    if exam != nil && exam <= Date.today
       errors.add(:exam, 'は今日以降の日付で設定してください。')
     end
   end
