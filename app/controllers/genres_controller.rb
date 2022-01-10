@@ -1,13 +1,5 @@
 class GenresController < ApplicationController
   before_action :require_login
-  before_action :exam, only: %i[index]
-
-  def exam
-    @answers = Answer.where(exam: Time.current.to_date)
-    if @answers.blank?
-      redirect_to genres_path
-    end
-  end
 
   def index
     @genre = Genre.new
