@@ -1,11 +1,10 @@
 class AnswersController < ApplicationController
+  before_action :exam, only: [:new]
 
   def exam
-    @answers = Answer.where.not(exam: nil)
-    @answers.each do |answer|
-      unless answer.exam == Date.today
-        redirect_to genres_path
-      end
+    @answers = Answer.where(exam: Time.current.to_date)
+    if @answers.blank?
+      redirect_to genres_path
     end
   end
 
