@@ -1,5 +1,15 @@
 class GenresController < ApplicationController
   before_action :require_login
+  before_action :exam, only: [:index]
+
+  def exam
+    @answers = Answer.where(exam: "2022/09/09")
+    unless @answers.blank?
+      render answers_exam_path #今日がテスト日であるときテスト画面が強制的映るようにする
+    else
+      redirect_back_or_to genres_path #今日がテスト画面でなかった場合、ジャンル一覧ページに遷移させる
+    end
+  end
 
   def index
     @genre = Genre.new
