@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_10_043538) do
+ActiveRecord::Schema.define(version: 2022_01_11_144921) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_043538) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "question_id"
     t.date "exam"
+    t.boolean "checked_view", default: false, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_043538) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.integer "access_count_to_reset_password_page", default: 0
+    t.boolean "status", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end

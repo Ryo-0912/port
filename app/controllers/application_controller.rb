@@ -12,6 +12,17 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def current_user_status
+    current_user.status == false #exams_index_pathにアクセスしたらstatusをdafaltにすればいい
+  end
+
+  def check_exam
+    @answers = Answer.where(exam: "2022/01/10")
+    if @answers.present?
+      redirect_to exams_index_path
+    end
+  end
+
   def not_authenticated
     redirect_to login_url
   end

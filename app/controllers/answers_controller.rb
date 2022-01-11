@@ -50,13 +50,4 @@ class AnswersController < ApplicationController
   def answer_params
     params.require(:answer).permit(:solution, :process, :exam, :id)
   end
-
-  def examing
-    @answers = Answer.where.not(exam: nil)
-    @answers.each do |answer|
-      unless answer.exam == Date.today
-        redirect_to genres_path
-      end
-    end
-  end
 end

@@ -1,0 +1,9 @@
+<% @answers.each do |answer| %>
+  <% answer.checked_view = true %>
+  <%= current_user.id %>
+  <% current_user.status = "defalt" %>
+  <%= current_user.status %>
+  <%= answer.exam %>
+  <%= answer.id %>
+  <%= answer.question.id %>
+<% end %>
