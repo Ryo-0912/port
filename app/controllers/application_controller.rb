@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def current_user_status
-    current_user.status == false #exams_index_pathにアクセスしたらstatusをdafaltにすればいい
+    current_user.status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
   end
 
   def check_exam

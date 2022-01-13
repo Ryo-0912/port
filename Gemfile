@@ -48,6 +48,7 @@ group :development, :test do
   gem 'carrierwave'
   gem 'actiontext'
   gem 'kaminari'
+  gem 'whenever', require: false
 end
 
 group :development do

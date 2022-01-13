@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
       redirect_back_or_to genres_path
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
