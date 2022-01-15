@@ -33,6 +33,7 @@ gem 'draper'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0'
+gem 'rails-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'carrierwave'
   gem 'actiontext'
   gem 'kaminari'
+  gem 'whenever', require: false
 end
 
 group :development do

@@ -1,5 +1,6 @@
 class GenresController < ApplicationController
   before_action :require_login
+  before_action :check_exam, only: [:index], if: :current_user_status# applicationコントローラーに記載
 
   def index
     @genre = Genre.new
@@ -8,9 +9,11 @@ class GenresController < ApplicationController
   def create
     @genre = current_user.genres.build(genre_params)
     if @genre.save
-      redirect_to genres_path, notice: "「#{@genre.name}」をジャンルに登録しました。"
+      redirect_to genres_path
+      flash[:success] = t('.success')
     else
-      render :index, notice: "登録に失敗しました。"
+      render :index
+      flash.now[:danger] = t('.fail')
     end
   end
 
@@ -34,6 +37,7 @@ class GenresController < ApplicationController
   end
 
   private
+
 
   def genre_params
     params.require(:genre).permit(:name)

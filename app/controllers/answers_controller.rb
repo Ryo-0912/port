@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+
   def index
   end
 
@@ -12,8 +13,10 @@ class AnswersController < ApplicationController
     @answer = @question.build_answer(answer_params)
     if @answer.save!
       redirect_to question_answer_path(@question, @answer)
+      flash[:success] = t('.success')
     else
-      render :index, notice: "登録に失敗しました。"
+      flash.now[:danger] = t('.fail')
+      render :index
     end
   end
 
@@ -34,9 +37,17 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question)
   end
 
-  private
-  def answer_params
-    params.require(:answer).permit(:solution, :process, :id)
+  def updating
+    @answer = Answer.find(params[:id])
+    exam = params[:answer][:exam]
+    @answer.exam = exam
+    @answer.save!
+    redirect_to genres_path
   end
 
+  private
+
+  def answer_params
+    params.require(:answer).permit(:solution, :process, :exam, :id)
+  end
 end

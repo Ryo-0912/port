@@ -4,5 +4,6 @@ class Question < ApplicationRecord
   has_one :answer, dependent: :destroy
   has_rich_text :statement
 
+  validates :statement, presence: true
 
 end

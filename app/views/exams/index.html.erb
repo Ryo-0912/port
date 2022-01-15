@@ -1,13 +1,8 @@
 <style>
-.createQ{
-  right: 50px;
-  font-size: 30px;
-  top: 918px;
-  position: fixed;
-}
+
 .memoryindex{
-  margin-left: 220px;
-  margin-top: -550px;
+  margin-left: 60px;
+  margin-top: 50px;
   max-height: 50.5em;
   overflow-y: auto;
 }
@@ -45,19 +40,22 @@
   max-height: 30em;
   overflow-y: auto;
 }
+.to_genre{
+  padding-top: 50px;
+  margin-left: 1500px;
+}
 </style>
 
-<%= render 'shared/header' %>
-<%= render 'shared/sidebar', genre: @genre %>
+
 
 <div class="memoryindex">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <% @questions.each do |question| %>
-      <div class="cards" id="card" data-name="card" data-url="/questions/<%= question.id %>">
+  <% @answers.each do |answer| %>
+      <div class="cards" id="card" data-name="card" data-url="/questions/<%= answer.question.id %>">
         <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">
           <div class="card-body">
             <h2 class="card-title"><%= (t '.q') %></h2>
-            <p class="card-text"><%= question.statement %></p>
+            <p class="card-text"><%= answer.question.statement %></p>
           </div>
         </div>
       </div>
@@ -65,8 +63,8 @@
   </div>
 </div>
 
-<span class="createQ"><%=link_to (t '.createq'), new_genre_question_path %></span>
-<div class="page"><%= paginate @questions %></div>
+<span class="to_genre"><%=link_to 'テストを終了する', genres_path %></span>
+
 
 <script>
     const cards = document.getElementsByClassName('cards') /* クラス名が「cards」の要素をすべて取得し、定数cardsとして代入する

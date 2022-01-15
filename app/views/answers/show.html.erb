@@ -67,7 +67,7 @@
 <div class="question-card">
   <div class="card border-dark mb-3" style="width: 40rem;">
     <div class="card-body">
-      <h1 class="card-title"><%= "Q." %></h1>
+      <h1 class="card-title"><%= (t '.q') %></h1>
       <h1 class="card-content"><%= @question.statement %></h1>
       </span>
     </div>
@@ -77,18 +77,18 @@
 <div class="answer-card">
   <div class="card border-dark mb-3" style="width: 40rem;">
     <div class="card-body">
-      <h1 class="card-title"><%= "A." %></h1>
+      <h1 class="card-title"><%= (t '.a') %></h1>
       <p class="answer"><%= @answer.solution %></p>
-      <p ><%= "~プロセス~"%></p>
+      <p ><%= (t '.process') %></p>
       <p class="card-content"><%= @answer.process %></p>
     </div>
   </div>
 </div>
 
   <div class="testday">
-  <%= form_with model: @question, method: :post do |form| %>
+  <%= form_with model: @answer, method: :post do |form| %>
     <span class="before-text"><%= "この問題を" %></span>
-    <%= form.date_field  :test, class: "test-form" %>
+    <%= form.date_field  :exam, class: "test-form" %>
     <%= form.submit "登録", class: "submit-btn" %>
     <span class="after-text"><%= "にテストする" %></span>
   <% end %>

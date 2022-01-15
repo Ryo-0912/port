@@ -1,0 +1,49 @@
+ja:
+  users:
+    new:
+      user-register: "ユーザー登録"
+      name: "アカウント名"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワード確認"
+    show:
+      name: "アカウント名"
+      email: "メールアドレス"
+  genres:
+    create:
+      success: "ジャンルの登録に成功しました"
+      fail: "ジャンルの登録に失敗しました"
+    edit:
+      gname-edit: "ジャンル名の編集"
+      name: "ジャンル名"
+  questions:
+    new:
+      q: "Q."
+    index:
+      q: "Q."
+      createq: "問題作成"
+    create:
+      success: "問題の登録に成功しました"
+      fail: "問題の登録に失敗しました"
+    edit:
+      q: "Q."
+      title-editq: "問題の編集"
+    show:
+      q: "Q."
+      poor: "要復習"
+      editq: "問題編集"
+      edita: "解答編集"
+      process: "~プロセス~"
+  answers:
+    new:
+      a: "A."
+    create:
+      success: "解答の登録に成功しました"
+      fail: "解答の登録に失敗しました"
+    edit:
+      a: "A."
+      title-edita: "解答の編集"
+    show:
+      q: "Q."
+      a: "A."
+      process: "プロセス"

@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      genre: 'ジャンル'
+      question: '問題'
+      answer: '解答'
+    attributes:
+      user:
+        name: 'アカウント名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認用'
+      question:
+        poor: "要復習"
+      genre:
+        name: "ジャンル名"
+      answer:
+        process: "プロセス"
+        solution: "解答"
+        exam: "テスト日"
