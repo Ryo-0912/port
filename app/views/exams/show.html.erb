@@ -1,2 +1,144 @@
-<h1>Exams#show</h1>
-<p>Find me in app/views/exams/show.html.erb</p>
+<style>
+.question-card{
+  margin-left: 550px;
+  margin-top: 150px;
+  transition: 0.5s;
+  position: absolute;
+}
+.question-card .qcard-body{
+  opacity: 1.0;
+}
+.question-card:active{
+  transform-origin: 50% 50% 0;
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+.question-card:active .qcard-body{
+  opacity: 0;
+}
+
+.question-card .qcard-body{
+  position: relative;
+  top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 550px;
+  max-height: 600em;
+  overflow-y: auto;
+}
+
+.question-card .acard-body{
+  transform: scale(-1, 1);
+  top: -440px;
+  opacity: 0;
+}
+.question-card:active .acard-body{
+  text-align: center;
+  opacity: 1.0;
+}
+
+.qcard-title{
+  position: relative;
+  top: 15px;
+  left: 20px;
+  opacity: 1.0;
+}
+.question-card:active .qcard-title{
+  opacity: 0;
+}
+.question-card .acard-title{
+  position: relative;
+  transform: scale(-1, 1);
+  top: -580px;
+  left: -20px;
+  opacity: 0;
+}
+.question-card:active .acard-title{
+  opacity: 1.0;
+}
+.answer{
+  display: block;
+  font-size: 45px;
+  margin-top: -640px;
+}
+.acard-content{
+  display: block;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.review{
+  padding-left: 1400px;
+  padding-top: 300px;
+  font-size: 30px;
+}
+.review .checkbox-label{
+  padding-right: 20px;
+}
+
+.review .checkbox-btn{
+  margin-left: 20px;
+}
+.question-edit{
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.answer-edit{
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.qdelete{
+  padding-left: 1400px;
+  font-size: 30px;
+}
+</style>
+
+<div class="question-card" id="qacard">
+  <div class="card border-dark mb-3" style="width: 40rem;">
+      <h1 class="qcard-title"><%= (t '.q') %></h1>
+    <div class="qcard-body">
+      <h1 class="qcard-content"><%= @question.statement %></h1>
+    </div>
+
+      <h1 class="acard-title"><%= (t '.a') %></h1>
+    <div class="acard-body" id="abody">
+      <span class="answer"><%= @answer.solution %></span>
+      <span><%= (t '.process') %></span>
+      <span class="acard-content"><%= @answer.process %></span>
+    </div>
+  </div>
+</div>
+
+
+<%= @answer.exam %>
+
+
+
+
+
+<div class="review">
+<%= form_with model: @question, local: true do |form| %>
+  <%= form.label :poor, class: 'checkbox-label' %>
+  <%= form.check_box :poor ,{ style: 'transform: scale(2.5);', class: 'check-box' }, "true", "false" %>
+  <%= form.submit "登録", class: 'checkbox-btn' %>
+<% end %>
+</div>
+
+<div><%=link_to (t '.editq'), edit_question_path, class: 'question-edit' %></div>
+<div><%=link_to (t '.edita'), edit_answer_path, class: 'answer-edit' %></div>
+<span class="qdelete">
+  <%= link_to question_path(@question), method: :delete, data: { confirm: "ご覧の問題を削除しますが、よろしいですか？"} do %>
+    <i id="trash" class="fas fa-trash"></i>
+  <% end %>
+</span>
+
+<script>
+let trash = document.getElementById('trash');
+let qcard = document.querySelector('.question-card');
+
+trash.addEventListener('click', function(){
+  qcard.remove();
+  setTimeout(function(){
+    window.close();
+  }, 1000);
+});
+</script>

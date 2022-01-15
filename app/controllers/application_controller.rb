@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_exam
-    @answers = Answer.where(exam: "2022/01/10")
+    @answers = Answer.where(exam: Time.current.to_date)
     if @answers.present?
       redirect_to exams_index_path
     end

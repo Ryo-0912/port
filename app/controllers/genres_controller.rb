@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   before_action :require_login
-  before_action :check_exam, only: [:index], if: :current_user_status
+  before_action :check_exam, only: [:index], if: :current_user_status# applicationコントローラーに記載
 
   def index
     @genre = Genre.new
