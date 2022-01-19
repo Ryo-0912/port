@@ -1,0 +1,39 @@
+<style>
+  .table {
+    text-align: center;
+  }
+</style>
+<div>
+  <%= "ユーザー数" %>
+  <%= @users.all.count %>
+
+  <%= "アクティブユーザー数" %>
+  <% if logged_in? %>
+    <%= @users.all.count %>
+  <% end %>
+
+  <table class="table table-sm table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">管理者</th>
+        <th scope="col">作成日</th>
+        <th scope="col">更新日</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          <td><%= user.admin? ? 'あり' : 'なし' %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.updated_at %></td>
+          <td><%= link_to "編集", edit_admin_user_path(user) %></td>
+          <td><%= link_to "削除", [:admin, user], method: :delete, data: { confirm: "ユーザー「#{user.name}」を削除します。よろしいですか？" } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

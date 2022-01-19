@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_144921) do
+ActiveRecord::Schema.define(version: 2022_01_19_101706) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 2022_01_11_144921) do
     t.index ["user_id"], name: "index_genres_on_user_id"
   end
 
+  create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "email"
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_inquiries_on_user_id"
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -85,12 +94,17 @@ ActiveRecord::Schema.define(version: 2022_01_11_144921) do
     t.datetime "reset_password_email_sent_at"
     t.integer "access_count_to_reset_password_page", default: 0
     t.boolean "status", default: false, null: false
+    t.boolean "admin", default: false, null: false
+    t.string "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "genres", "users"
+  add_foreign_key "inquiries", "users"
   add_foreign_key "questions", "genres"
 end
