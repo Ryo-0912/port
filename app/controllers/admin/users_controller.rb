@@ -2,7 +2,7 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.all
-    @inquiries = Inquiry.all
+    @inquiries = Inquiry.all.order(created_at: :desc)
   end
 
   def show

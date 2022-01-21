@@ -49,6 +49,7 @@ group :development, :test do
   gem 'actiontext'
   gem 'kaminari'
   gem 'whenever', require: false
+  gem 'dotenv-rails'
 end
 
 group :development do
