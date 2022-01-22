@@ -8,9 +8,9 @@
   <%= @users.count %>
 
   <%= "アクティブユーザー数" %>
-  <% if logged_in? %>
-  <%= User.where(id: session[:user_id]).count %>
-  <% end %>
+  <% from = Time.current.to_date %>
+  <% to = Time.current.to_date - 1.week %>
+  <%= User.where(last_activity_at: from..to).count %>
 
   <table class="table table-sm table-bordered border-primary">
     <thead>

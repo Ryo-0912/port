@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_093058) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.integer "access_count_to_reset_password_page", default: 0
+    t.boolean "status", default: false, null: false
     t.boolean "admin", default: false, null: false
     t.string "remember_me_token", default: "1"
     t.datetime "remember_me_token_expires_at"
