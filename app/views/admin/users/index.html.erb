@@ -5,11 +5,11 @@
 </style>
 <div>
   <%= "ユーザー数" %>
-  <%= @users.all.count %>
+  <%= @users.count %>
 
   <%= "アクティブユーザー数" %>
   <% if logged_in? %>
-    <%= @users.all.count %>
+  <%= User.where(id: session[:user_id]).count %>
   <% end %>
 
   <table class="table table-sm table-bordered border-primary">

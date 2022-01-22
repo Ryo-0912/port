@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
     AGENT.get(BASE_URL + number).search('#english-container p').first.inner_text
   end
 
-  private
+  protected
+
+  def current_user_status
+    #current_user.status == false exams_index_pathにアクセスしたらstatusをtrueにすればいい
+  end
 
   def check_exam
     @answers = Answer.where(exam: Time.current.to_date)

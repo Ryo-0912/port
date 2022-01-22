@@ -7,7 +7,10 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-
+  <div class="field">
+    <%= check_box_tag :remember, params[:remember], true %>
+    <%= label_tag :remember %>
+  </div>
   <div class="actions">
     <%= f.submit "Login" %>
   </div>

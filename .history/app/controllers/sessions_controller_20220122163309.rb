@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
 
   def create
     @user = login(params[:email], params[:password])
-    if @user
+    
+    if @user.save
 
       redirect_back_or_to genres_path
     else

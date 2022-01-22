@@ -39,7 +39,7 @@ class GenresController < ApplicationController
   private
 
   def current_user_status
-    current_user.status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
+    User.find(id: params[:id]).status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
   end
 
   def genre_params

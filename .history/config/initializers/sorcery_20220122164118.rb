@@ -1,5 +1,5 @@
 Rails.application.config.sorcery.submodules = [:reset_password, :activity_logging, :session_timeout]
-
+Rails.application.config.sorcery.submodules = [:session_timeout, :activity_logging]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|

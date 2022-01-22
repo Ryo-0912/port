@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = login(params[:email], params[:password])
     if @user
 
-      redirect_back_or_to genres_path
+      redirect_to genres_path
     else
       flash.now[:danger] = t('.fail')
       render :new
