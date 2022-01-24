@@ -3,12 +3,20 @@
     text-align: center;
   }
 </style>
+
 <div>
   <%= "ユーザー数" %>
   <%= @users.count %>
 
   <%= "アクティブユーザー数" %>
   <%= User.where(last_login_at: 1.week.ago.beginning_of_day..Time.zone.now.end_of_day).count %>
+
+  <% if current_user.admin == true %>
+    <% if unchecked_notifications.any? %>
+        <i class="far fa-bell"></i>
+    <% end %>
+    <%=link_to "通知一覧へ", notifications_path %>
+  <% end %>
 
   <table class="table table-sm table-bordered border-primary">
     <thead>
@@ -35,16 +43,3 @@
     </tbody>
   </table>
 </div>
-
-
-
-<ol class="list-group list-group-numbered">
-<% @inquiries.each do |inquiry| %>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold"><%= inquiry.email %></div>
-    </div>
-    <span class="badge bg-primary rounded-pill"><%= inquiry.email %></span>
-  </li>
-  <% end %>
-</ol>
