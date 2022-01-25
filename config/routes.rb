@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :notifications, only: :index
+  resources :notifications, only: %i[create index destroy]
 
   resources :inquiries
   namespace :admin do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_044428) do
+ActiveRecord::Schema.define(version: 2022_01_24_092506) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_044428) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.boolean "viewed", default: false, null: false
     t.index ["user_id"], name: "index_inquiries_on_user_id"
   end
 
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 2022_01_23_044428) do
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "viewed"
     t.index ["admin_user_id"], name: "index_notifications_on_admin_user_id"
     t.index ["end_user_id"], name: "index_notifications_on_end_user_id"
     t.index ["inquiry_id"], name: "index_notifications_on_inquiry_id"

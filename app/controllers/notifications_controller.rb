@@ -5,4 +5,16 @@ class NotificationsController < ApplicationController
       notification.update(checked: true)
     end
   end
+
+  def create
+    @notification = Notification.find(params[:id])
+    @notification.update
+    redirect_to admin_users_path
+  end
+
+  def destroy
+    @notification = Notification.find(params[:id])
+    @notification.destroy!
+    redirect_to notifications_path
+  end
 end
