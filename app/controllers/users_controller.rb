@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def new
     @user = User.new
   end
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to login_path
     else
-      render :new
+      render new_user_path
     end
   end
 

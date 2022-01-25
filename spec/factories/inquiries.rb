@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :inquiry do
-    email { "MyString" }
-    message { "MyString" }
+    email { "test@example.com" }
+    message { "メール届いてますか？" }
   end
 end
