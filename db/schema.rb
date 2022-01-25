@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_11_144921) do
+ActiveRecord::Schema.define(version: 2022_01_24_092506) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -62,6 +62,30 @@ ActiveRecord::Schema.define(version: 2022_01_11_144921) do
     t.index ["user_id"], name: "index_genres_on_user_id"
   end
 
+  create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "email"
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.boolean "viewed", default: false, null: false
+    t.index ["user_id"], name: "index_inquiries_on_user_id"
+  end
+
+  create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "end_user_id", null: false
+    t.integer "admin_user_id", null: false
+    t.integer "inquiry_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "viewed"
+    t.index ["admin_user_id"], name: "index_notifications_on_admin_user_id"
+    t.index ["end_user_id"], name: "index_notifications_on_end_user_id"
+    t.index ["inquiry_id"], name: "index_notifications_on_inquiry_id"
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -78,19 +102,27 @@ ActiveRecord::Schema.define(version: 2022_01_11_144921) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "password"
-    t.string "password_confirmation"
     t.string "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.integer "access_count_to_reset_password_page", default: 0
     t.boolean "status", default: false, null: false
+    t.boolean "admin", default: false, null: false
+    t.string "remember_me_token", default: "1"
+    t.datetime "remember_me_token_expires_at"
+    t.datetime "last_login_at"
+    t.datetime "last_logout_at"
+    t.datetime "last_activity_at"
+    t.string "last_login_from_ip_address"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["last_logout_at", "last_activity_at"], name: "index_users_on_last_logout_at_and_last_activity_at"
+    t.index ["remember_me_token"], name: "index_users_on_remember_me_token"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "genres", "users"
+  add_foreign_key "inquiries", "users"
   add_foreign_key "questions", "genres"
 end

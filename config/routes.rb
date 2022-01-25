@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  resources :notifications, only: %i[create index destroy]
+
+  resources :inquiries
+  namespace :admin do
+    resources :users
+  end
+
   get 'exams/index'
-  get 'exams/show'
+
   resources :questions do
     resources :answers, only: %i[new create index show]
   end
