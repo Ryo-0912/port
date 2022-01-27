@@ -11,12 +11,13 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # /users/new
   def create
     @user = User.new(user_params)
     if @user.save
       redirect_to login_path
     else
-      render new_user_path
+      render :new #/users
     end
   end
 
