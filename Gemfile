@@ -40,8 +40,7 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'mechanize'
   gem 'carrierwave'

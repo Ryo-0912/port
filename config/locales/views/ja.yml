@@ -9,6 +9,9 @@ ja:
     show:
       name: "アカウント名"
       email: "メールアドレス"
+  sessions:
+    new:
+      
   genres:
     create:
       success: "ジャンルの登録に成功しました"
