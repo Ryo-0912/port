@@ -11,13 +11,11 @@ RSpec.describe 'ジャンルの新規登録', type: :system do
         # ジャンル画面へ遷移
         visit genres_path
         # +ボタンをクリック
-        find('#gbtn', visible: false).click
+        find("#gbtn").click
         # フォームに「ジャンル」と入力
         fill_in 'genre[name]', with: 'ジャンル'
         # 「登録」ボタンをクリック
         click_button '登録'
-
-        expect(current_path).to eq genres_path
         # 遷移されたページに'User was successfully created.'の文字列があることを期待する
         expect(page).to have_content 'ジャンルの登録に成功しました'
         end
