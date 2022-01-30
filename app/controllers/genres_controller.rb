@@ -12,8 +12,8 @@ class GenresController < ApplicationController
       redirect_to genres_path
       flash[:success] = t('.success')
     else
-      render :index
       flash.now[:danger] = t('.fail')
+      render :index
     end
   end
 

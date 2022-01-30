@@ -9,7 +9,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
         it 'ログインできること' do
           visit login_path
           fill_in 'email', with: user.email
-          fill_in 'password', with: user.password
+          fill_in 'password', with: 'test123'
           click_button 'ログイン'
           expect(page).to have_content 'My Note'
         end
@@ -19,7 +19,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
         it 'ログインできないこと' do
           visit login_path
           fill_in 'email', with: 'zzz@example.com'
-          fill_in 'password', with: user.password
+          fill_in 'password', with: 'test123'
           click_button 'ログイン'
           expect(current_path).to eq login_path
         end
