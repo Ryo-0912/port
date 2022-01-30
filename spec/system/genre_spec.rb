@@ -1,8 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'ジャンルの新規登録', type: :system do
+  let!(:user) { FactoryBot.create(:user) }
+
   before do
-    @user = FactoryBot.build(:user)
+    visit login_path
+    fill_in "email", with: user.email
+    fill_in "password", with: user.password
+    click_button 'ログイン'
   end
 
   describe 'Genre' do
