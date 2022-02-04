@@ -1,14 +1,19 @@
 require "rails_helper"
 
-RSpec.describe InquiryMailer, type: :mailer do
+describe InquiryMailer do
 
-  let(:user){ FactoryBot.create(:user) }
-  let(:admin){ FactoryBot.create(:admin) }
   let(:inquiry) { FactoryBot.create(:inquiry) }
-  let(:mail) { InquiryMailer.send_mail }
 
-  it 'when send mail' do
-    expect(mail(inquiry).from.first).to eq(user.mail)
-    expect(mail(inquiry).to.first).to eq(admin.mail)
+  describe '#send_mail' do
+    subject(:mail) do
+      InquiryMailer.send_mail.deliver_now
+      ActionMailer::Base.deliveries.last
+    end
+
+    context 'when send_mail' do
+      it { expect(mail(inquiry).from.first).to eq('test@example.com') }
+      it { expect(mail(inquiry).to.first).to eq('admin@example.com') }
+      it { expect(mail(inquiry).subject).to eq('お問い合わせ通知') }
+    end
   end
 end

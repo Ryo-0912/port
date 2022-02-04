@@ -1,5 +1,5 @@
 class InquiryMailer < ApplicationMailer
-  default to: "aaa@sample.co.jp"
+  default to: "admin@example.com"
   def send_mail(inquiry)
     @inquiry = inquiry
     mail(
