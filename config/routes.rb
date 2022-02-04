@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'exams/index'
 
   resources :questions do
-    resources :answers, only: %i[new create index show]
+    resources :answers, only: %i[new create show]
   end
 
   resources :answers, only: %i[edit update]

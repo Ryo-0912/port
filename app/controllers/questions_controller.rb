@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
       redirect_to new_question_answer_path(@question)
     else
       flash.now[:danger] = t('.fail')
-      render :index
+      render :new
     end
   end
 

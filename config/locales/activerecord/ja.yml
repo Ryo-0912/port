@@ -5,6 +5,7 @@ ja:
       genre: 'ジャンル'
       question: '問題'
       answer: '解答'
+      inquiry: "お問い合わせ"
     attributes:
       user:
         name: 'アカウント名'
@@ -19,3 +20,6 @@ ja:
         process: "プロセス"
         solution: "解答"
         exam: "テスト日"
+      inquiry:
+        email: "メールアドレス"
+        message: "お問い合わせ内容"

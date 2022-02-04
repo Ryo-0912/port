@@ -32,5 +32,19 @@ RSpec.describe '問題の新規登録', type: :system do
         expect(page).to have_content '問題の登録に成功しました'
       end
     end
+
+    context 'フォームの入力値が異常' do
+      it '問題の登録に失敗' do
+        # 遷移されたページに'User was successfully created.'の文字列があることを期待する
+        expect(page).to have_content 'さ'
+        click_button 'さ'
+        click_link 'ジャンル'
+        find(".createQ").double_click
+        expect(page).to have_content 'Q.'
+        find('#question_statement', visible: false).set(nil)
+        click_button '登録'
+        expect(page).to have_content '問題の登録に失敗しました'
+      end
+    end
   end
 end

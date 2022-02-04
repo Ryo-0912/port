@@ -1,8 +1,5 @@
 class AnswersController < ApplicationController
 
-  def index
-  end
-
   def new
     @question = Question.find(params[:question_id])
     @answer = Answer.new
@@ -11,12 +8,11 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.build_answer(answer_params)
-    if @answer.save!
-      redirect_to question_answer_path(@question, @answer)
+    if @answer.save
       flash[:success] = t('.success')
+      redirect_to question_answer_path(@question, @answer)
     else
-      flash.now[:danger] = t('.fail')
-      render :index
+      render :new
     end
   end
 
@@ -41,8 +37,13 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     exam = params[:answer][:exam]
     @answer.exam = exam
-    @answer.save!
-    redirect_to genres_path
+    if @answer.save
+      flash[:success] = t('.success')
+      redirect_to genres_path
+    else
+      flash.now[:danger] = t('.fail')
+      render :show
+    end
   end
 
   private
