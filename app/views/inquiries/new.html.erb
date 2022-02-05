@@ -1,7 +1,10 @@
+<%= render 'shared/inquiry_validates_error_messages' %>
+
+<h2>お問い合わせフォーム</h2>
 <%= form_with model: @inquiry, local: true do |form| %>
-  <p class="email"><%= form.label :email, "メールアドレス" %></p>
+  <p class="email"><%= form.label :email, (t '.email') %></p>
   <p class="email-form"><%= form.text_field :email  %></p>
-  <p class="message"><%= form.label :message, "お問い合わせ内容" %></p>
+  <p class="message"><%= form.label :message, (t '.message') %></p>
   <p class="message-form"><%= form.text_area :message, placeholder: "問い合わせ内容" %></p>
-  <p class="form-btn"><%= form.submit "登録" %></p>
+  <p class="form-btn"><%= form.submit "送信" %></p>
 <% end %>

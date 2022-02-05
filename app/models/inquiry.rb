@@ -2,6 +2,9 @@ class Inquiry < ApplicationRecord
   belongs_to :user
   has_one :notification, dependent: :destroy
 
+  validates :email, presence: true
+  validates :message, presence: true
+
   def create_notification_inquiry!(current_user)
     admin = User.find_by(admin: true)
     save_notification_inquiry!(current_user, admin.id)

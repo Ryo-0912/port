@@ -40,14 +40,14 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'mechanize'
   gem 'carrierwave'
   gem 'actiontext'
   gem 'kaminari'
   gem 'whenever', require: false
+  gem 'sorcery'
 end
 
 group :development do
@@ -59,7 +59,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
   gem 'letter_opener_web'
-  gem 'sorcery'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -9,7 +9,10 @@ class InquiriesController < ApplicationController
       @mail = InquiryMailer.send_mail(@inquiry)
       @inquiry.create_notification_inquiry!(current_user)
       @mail.deliver
+      flash[:success] = t('.success')
       redirect_to genres_path
+    else
+      render :new
     end
   end
 

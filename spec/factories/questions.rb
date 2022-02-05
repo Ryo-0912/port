@@ -1,9 +1,8 @@
 FactoryBot.define do
   factory :question do
-    statement { "MyText" }
-    image { "MyString" }
+    statement { "test_question" }
     poor { false }
-    test { "2021-12-17" }
-    genre { nil }
+    exam { "2030-01-01" }
+    genre
   end
 end

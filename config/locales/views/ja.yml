@@ -9,6 +9,9 @@ ja:
     show:
       name: "アカウント名"
       email: "メールアドレス"
+  sessions:
+    new:
+      
   genres:
     create:
       success: "ジャンルの登録に成功しました"
@@ -47,3 +50,13 @@ ja:
       q: "Q."
       a: "A."
       process: "プロセス"
+    updating:
+      success: "テスト日を正常に設定しました"
+      fail: "テスト日は今日以降の日付で設定してください。"
+  inquiries:
+    new:
+      email: "メールアドレス"
+      message: "お問い合わせ内容"
+    create:
+      success: "正常にお問い合わせできました"
+      fail: "入力フォームに不備があります"

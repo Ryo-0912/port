@@ -4,7 +4,7 @@ class Genre < ApplicationRecord
 
   belongs_to :user
   has_many :questions, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   attr_accessor :hiragana
 
