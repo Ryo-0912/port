@@ -1,18 +1,41 @@
+<style>
+  .register-title {
+    font-family: YuMincho;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .user-register {
+    font-family: YuMincho;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25px;
+  }
+</style>
 <%= render 'shared/error_messages' %>
 
-<h1><%= (t '.user-register') %></h1>
+<h1 class="register-title"><%= (t '.user-register') %></h1>
+<div class="user-register">
 <%= form_with model: @user, local: true do |f| %>
-  <%= f.label :name, (t '.name') %>
+  <div class="field">
+  <%= f.label :name, (t '.name') %><br>
   <%= f.text_field :name  %>
-
-  <%= f.label :email, (t '.email') %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :email, (t '.email') %><br>
   <%= f.text_field :email  %>
-
-  <%= f.label :password, (t '.password') %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :password, (t '.password') %><br>
   <%= f.password_field :password  %>
-
-  <%= f.label :password_confirmation, (t '.password_confirmation') %>
+  </div>
+  <br>
+  <div class="field">
+  <%= f.label :password_confirmation, (t '.password_confirmation') %><br>
   <%= f.password_field :password_confirmation  %>
-
+  </div>
+  <br>
   <%= f.submit '登録' %>
 <% end %>
+</div>

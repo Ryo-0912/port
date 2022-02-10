@@ -1,4 +1,26 @@
 <style>
+  .review-index {
+    font-family: YuMincho;
+    text-decoration: none;
+  }
+  .genre {
+    font-family: YuMincho;
+  }
+  .accordion {
+    font-family: YuMincho;
+  }
+  .edit-btn {
+    margin-left: 30px;
+    text-decoration: none;
+  }
+  .gen {
+    font-family: YuMincho;
+    text-decoration: none;
+  }
+  .delete-btn {
+    right: 5px;
+    text-decoration: none;
+  }
   .side {
     background-color: #8fbc8f;
     width:200px; # 200から1000
@@ -12,6 +34,7 @@
   }
 
   .register{
+    font-family: YuMincho;
     position   : absolute;                /* 親要素を基準 */
     display: none;                        /* 要素を非表示 */
     padding: 2px;                         /* テキストの前後の余白 */
@@ -35,6 +58,7 @@
 
 
   .genreform {
+    font-family: YuMincho;
     position: absolute;
     top: 55.8px;
     left: 200px;
@@ -44,6 +68,7 @@
 </style>
 <br>
 <div class="side">
+<%= javascript_pack_tag 'hello_vue' %>
   <svg style="display: none;">
     <symbol id="icon-add" viewBox="0 0 24 24">
       <path d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"></path>
@@ -65,7 +90,7 @@
   <br>
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
-    <%= link_to "復習一覧", genres_review_questions_path %>
+    <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
       <% genres = Genre.grouping_genres.sort_by{ |g| g[0] } %>
         <% genres.each_with_index do |(key, value), index| %>
           <h2 class="accordion-header" id="heading">
@@ -76,10 +101,10 @@
           <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-              <span class="gen"><%=link_to v.name, genre_questions_path(v.id) %></span>
+              <span><%=link_to v.name, genre_questions_path(v.id), {class: "gen"} %></span>
               <span class="edit-btn">
                 <%= link_to edit_genre_path(v.id), id: 'button-edit-#{v.id}' do %>
-                  <i id="pen" class="fas fa-pen"></i>
+                  <i id="pen" class="fas fa-pen" v-on:click="editg"></i>
                 <% end %>
               </span>
               <span class="delete-btn">
@@ -102,6 +127,11 @@
   </span>
 </div>
 
+
+    <div id="hello2">
+      <p>{{ message }}</p>
+    </div>
+
 <script>
 
   const Gebtn = document.getElementById('gbtn');
@@ -113,4 +143,5 @@
       Geform.style.display = 'none';
     }
   })
+
 </script>

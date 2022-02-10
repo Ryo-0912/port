@@ -1,6 +1,21 @@
-<h1>パスワードリセット申請</h1>
+<style>
+    .reset-title {
+        font-family: YuMincho;
+        text-align: center;
+        margin-top: 100px;
+    }
+    .reset-form {
+        font-family: YuMincho;
+        text-align: center;
+        margin-top: 5%;
+        font-size: 25px;
+    }
+</style>
+<h1 class="reset-title">パスワードリセット申請</h1>
+<div class="reset-form">
 <%= form_with url: password_resets_path, local: true, method: :post do |f| %>
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email %>
-    <%= f.submit "送信する" %>
+    <p><%= f.label :email, "メールアドレス" %></p><br>
+    <p><%= f.email_field :email %></p><br>
+    <p><%= f.submit "送信する" %></p>
 <% end %>
+</div>

@@ -1,5 +1,7 @@
 <style>
 .createQ{
+  font-family: YuMincho;
+  text-decoration: none;
   right: 50px;
   font-size: 30px;
   top: 100px;
@@ -41,6 +43,7 @@
 	transform: translateY(-4px);
 }
 .card-body{
+  font-family: YuMincho;
   min-height: 10em;
   max-height: 30em;
   overflow-y: auto;
@@ -65,7 +68,7 @@
   </div>
 </div>
 
-<span class="createQ"><%=link_to (t '.createq'), new_genre_question_path %></span>
+<span><%=link_to (t '.createq'), new_genre_question_path, { class: "createQ"} %></span>
 <div class="page"><%= paginate @questions %></div>
 
 <script>

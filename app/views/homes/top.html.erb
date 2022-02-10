@@ -1,10 +1,26 @@
+<style>
+  .app_title{
+    font-family: cursive;
+    font-size: 100px;
+    padding-top: 20%;
+  }
+  .link {
+    font-family: YuMincho;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:5px 10px;/*内側の余白*/
+    border-radius: 20px;/*角を丸くする*/
+  }
+</style>
 <header>
 <% if logged_in? %>
-  <%= link_to 'マイページへ', genres_path %>
+  <%= link_to 'マイページへ', genres_path, {class: "link"} %>
 <% else %>
-  <%= link_to '新規登録', new_user_path %>/<%= link_to 'ログイン', login_path %>
+  <%= link_to '新規登録', new_user_path, {class: "link"} %>/<%= link_to 'ログイン', login_path, {class: "link"} %>
 <% end %>
 </header>
 
-<p>記憶ノート</p>
+<p class="app_title"><%= "My Note" %></p>
 
