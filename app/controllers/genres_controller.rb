@@ -8,7 +8,7 @@ class GenresController < ApplicationController
 
   def create
     @genre = current_user.genres.build(genre_params)
-    if @genre.save
+    if @genre.save.to_json
       redirect_to genres_path
       flash[:success] = t('.success')
     else

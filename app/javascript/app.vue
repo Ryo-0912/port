@@ -7,10 +7,9 @@
 <script>
 import axios from 'axios';
 export default {
-  data: function () {
-    return {
-      message: "vueの勉強"
-    }
+  props: ['to_edit_genre_id'],
+  created() {
+    let to_edit_genre_id = this.to_edit_genre_id;
   }
 }
 </script>

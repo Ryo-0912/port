@@ -1,16 +1,12 @@
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import axios from 'axios'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    el: '#pen',
+  var app = new Vue({
+    el: '#edform',
     data: {
-      message: "聞こえますか？これはvue.jsなのです。htmlの書き込みではありません"
-    },
-    methods: {
-      editg: function() {
-        
-      }
+      edit_form: false
     }
   })
 })
