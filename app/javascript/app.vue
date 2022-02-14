@@ -1,15 +1,40 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <i id="pen" class="fas fa-pen" @click="editgg"></i>
+    <form v-if="edit">
+      <input type="text" v-model="name">
+      <button @click="save">登録</button>
+    </form>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
-  props: ['to_edit_genre_id'],
-  created() {
-    let to_edit_genre_id = this.to_edit_genre_id;
+  props: ['id'],
+  data: function () {
+    return {
+      edit: false,
+      name: ''
+    }
+  },
+  mounted(){
+    console.log('aaaaa')
+  },
+  methods: {
+    editgg: function() {
+      this.edit = true
+      axios.get('/genres')
+            .then(res => console.log(res.name))
+    },
+    save: function() {
+      axios.patch('/genres/id')
+            .then(res => {
+              cosole.log("ジャンルを登録しました")
+              this.name = res.data;
+            });
+    }
   }
 }
 </script>

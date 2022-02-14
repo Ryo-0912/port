@@ -102,22 +102,13 @@
             <div class="accordion-body">
             <% value.sort_by{ |g| g.hiragana }.each do |v| %>
               <span><%=link_to v.name, genre_questions_path(v.id), class: "gen", data: { to_edit_genre_id: v.id } %></span>
-              <span class="edit-btn">
-                <%= link_to edit_genre_path(v.id), id: 'button-edit-#{v.id}' do %>
-                  <i id="pen" class="fas fa-pen" v-on:click="editg"></i>
-                <% end %>
-              </span>
+
+              <span id="edit-btn2" data-id='<%= v.id %>'></span>
               <span class="delete-btn">
-                <%= link_to genre_path(v.id), id: 'button-delete-#{v.id}', method: :delete, data: { confirm: "ジャンル「#{v.name}」を削除しますが、よろしいですか？"} do %>
+                <%= link_to genre_path(v.id), id: "button-delete-#{v.id}", method: :delete, data: { confirm: "ジャンル「#{v.name}」を削除しますが、よろしいですか？"} do %>
                   <i id="trash" class="fas fa-trash"></i>
                 <% end %>
-              </span>
-              <div id="edform" v-if="edit_form">
-              <%= form_with model: genre, local: true do |form| %>
-                <%= form.text_field :name %>
-                <%= form.submit "登録" %>
-              <% end %>
-              </div>
+              </span><br>
             <% end %>
             </div>
           </div>
