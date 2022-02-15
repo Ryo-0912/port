@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    {{id}}
     <i id="pen" class="fas fa-pen" @click="editgg"></i>
     <form v-if="edit">
       <input type="text" v-model="name">
@@ -26,12 +27,12 @@ export default {
     editgg: function() {
       this.edit = true
       axios.get('/genres')
-            .then(res => console.log(res.name))
+            .then(res => console.log(res))
     },
     save: function() {
-      axios.patch('/genres/id')
+      axios.patch(`/genres/${id}`)
             .then(res => {
-              cosole.log("ジャンルを登録しました")
+              console.log("ジャンルを登録しました")
               this.name = res.data;
             });
     }
