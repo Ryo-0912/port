@@ -2,7 +2,7 @@
   <div id="app">
     {{id}}
     <i id="pen" class="fas fa-pen" @click="editgg"></i>
-    <form action="/genres" v-if="edit">
+    <form v-if="edit">
       <label for="name" hidden></label>
       <input type="text" v-model="name" name="genre[name]" value="">
       <button @click="save">登録</button>
