@@ -1,20 +1,24 @@
 <style>
   .review-index {
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
     text-decoration: none;
   }
   .genre {
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
   }
   .accordion {
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
+    max-height: 50em;
+    overflow-x: visible;
+    overflow-y: scroll;
+    border-radius: 0 0 15px 15px;
   }
   .edit-btn {
     margin-left: 30px;
     text-decoration: none;
   }
   .gen {
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
     text-decoration: none;
   }
   .delete-btn {
@@ -22,8 +26,9 @@
     text-decoration: none;
   }
   .side {
-    background-color: #8fbc8f;
-    width:200px; # 200から1000
+    border-radius: 15px;
+    background-color: #afeeee;
+    width:210px; # 200から1000
     height:735px;
     text-align:center;
     position: relative;
@@ -34,7 +39,7 @@
   }
 
   .register{
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
     position   : absolute;                /* 親要素を基準 */
     display: none;                        /* 要素を非表示 */
     padding: 2px;                         /* テキストの前後の余白 */
@@ -45,6 +50,7 @@
     margin-bottom : 12px;                 /* 表示位置 */
     font-size: 80%;
     color: #FFFFFF;
+    border-radius: 5px;
   }
 
   .register:after{
@@ -58,12 +64,20 @@
 
 
   .genreform {
-    font-family: YuMincho;
+    font-family: ヒラギノ丸ゴ Pro;
+    border-radius: 15px;
     position: absolute;
-    top: 55.8px;
-    left: 200px;
+    top: 80.8px;
+    left: 210px;
     display: none;
   }
+  .genreform .gname{
+    border-radius: 5px;
+  }
+  .genreform .gn_btn{
+    border-radius: 5px;
+  }
+
 
 </style>
 <br>
@@ -101,14 +115,13 @@
           <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-              <span><%=link_to v.name, genre_questions_path(v.id), class: "gen", data: { to_edit_genre_id: v.id } %></span>
+              <span id="edit-btn2" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
 
-              <span id="edit-btn2" data-id='<%= v.id %>'></span>
               <span class="delete-btn">
                 <%= link_to genre_path(v.id), id: "button-delete-#{v.id}", method: :delete, data: { confirm: "ジャンル「#{v.name}」を削除しますが、よろしいですか？"} do %>
                   <i id="trash" class="fas fa-trash"></i>
                 <% end %>
-              </span><br>
+              </span>
             <% end %>
             </div>
           </div>
@@ -118,8 +131,8 @@
 
   <span class="genreform" id="gform">
     <%= form_with model: genre, local: true do |form| %>
-      <%= form.text_field :name %>
-      <%= form.submit "登録" %>
+      <%= form.text_field :name, class: 'gname' %>
+      <%= form.submit "登録", class: 'gn_btn' %>
     <% end %>
   </span>
 </div>
