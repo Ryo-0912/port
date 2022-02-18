@@ -39,10 +39,7 @@ export default {
   },
   methods: {
     genrelink: function() {
-      axios.get(`/genres/${this.id}/questions`)
-            .then(res => {
-              console.log("遷移しました")
-            });
+      location.href = `/genres/${this.id}/questions`;
     },
     editgg: function() {
       this.glink = false,

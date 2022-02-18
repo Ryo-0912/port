@@ -4,7 +4,7 @@ import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   var app = new Vue({
-    el: '#edit-btn2',
-    render: h => h(App, { props: $('#edit-btn2').data() })
+    el: '.edit-btn',
+    render: h => h(App, { props: $('.edit-btn').data() })
   })
 })

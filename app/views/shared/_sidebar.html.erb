@@ -115,7 +115,8 @@
           <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-              <span id="edit-btn2" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
+
+              <span class="edit-btn" id="edit-btn-<%= v.id %>" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
 
               <span class="delete-btn">
                 <%= link_to genre_path(v.id), id: "button-delete-#{v.id}", method: :delete, data: { confirm: "ジャンル「#{v.name}」を削除しますが、よろしいですか？"} do %>
