@@ -1,7 +1,12 @@
 <style>
+.guidance{
+  font-size:30px;
+  margin-left: 570px;
+}
 .question-card{
+  font-family: ヒラギノ丸ゴ Pro;
   margin-left: 550px;
-  margin-top: 150px;
+  margin-top: 120px;
   transition: 0.5s;
   position: absolute;
 }
@@ -37,6 +42,7 @@
 }
 
 .qcard-title{
+  font-weight: bold;
   position: relative;
   top: 15px;
   left: 20px;
@@ -59,6 +65,13 @@
   display: block;
   font-size: 45px;
   margin-top: -640px;
+  margin-left: 80px;
+  width: 500px;
+  white-space:nowrap;
+  overflow:scroll;
+}
+.acard-title{
+  font-weight: bold;
 }
 .acard-content{
   display: block;
@@ -67,6 +80,8 @@
   margin-right: 20px;
 }
 .review{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
   padding-left: 1400px;
   padding-top: 300px;
   font-size: 30px;
@@ -77,21 +92,27 @@
 
 .review .checkbox-btn{
   margin-left: 20px;
+  border-radius: 5px;
 }
 .question-edit{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
   padding-left: 1400px;
   font-size: 30px;
 }
 .answer-edit{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
   padding-left: 1400px;
   font-size: 30px;
 }
 .qdelete{
+  text-decoration: none;
   padding-left: 1400px;
   font-size: 30px;
 }
 </style>
-
+<span class="guidance">カードをクリックしたら、答えが見えるよ！</span>
 <div class="question-card" id="qacard">
   <div class="card border-dark mb-3" style="width: 40rem;">
       <h1 class="qcard-title"><%= (t '.q') %></h1>

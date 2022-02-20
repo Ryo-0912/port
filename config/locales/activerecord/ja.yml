@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      session: 'ログイン'
       genre: 'ジャンル'
       question: '問題'
       answer: '解答'
@@ -12,6 +13,10 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認用'
+      session:
+        title: 'メールアドレスでログイン'
+        email: 'メールアドレス'
+        password: 'パスワード'
       question:
         poor: "要復習"
       genre:

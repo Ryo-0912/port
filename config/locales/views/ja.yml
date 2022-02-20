@@ -11,7 +11,9 @@ ja:
       email: "メールアドレス"
   sessions:
     new:
-      
+      title: "メールアドレスでログイン"
+      email: "メールアドレス"
+      password: "パスワード"
   genres:
     create:
       success: "ジャンルの登録に成功しました"

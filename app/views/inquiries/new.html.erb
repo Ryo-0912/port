@@ -1,6 +1,20 @@
+<style>
+  .inquiry-title {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .inquiry-form {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25px;
+  }
+</style>
 <%= render 'shared/inquiry_validates_error_messages' %>
 
-<h2>お問い合わせフォーム</h2>
+<h2 class="inquiry-title">お問い合わせフォーム</h2>
+<div class="inquiry-form">
 <%= form_with model: @inquiry, local: true do |form| %>
   <p class="email"><%= form.label :email, (t '.email') %></p>
   <p class="email-form"><%= form.text_field :email  %></p>

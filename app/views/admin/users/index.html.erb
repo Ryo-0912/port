@@ -2,6 +2,9 @@
   .table {
     text-align: center;
   }
+  .fas {
+    color: #FF0000;
+  }
 </style>
 
 <div>
@@ -14,7 +17,7 @@
 
   <% if current_user.admin == true %>
     <% if unchecked_notifications.any? %>
-        <i class="far fa-bell"></i>
+      <i class="fas fa-burn"></i>
     <% end %>
     <%=link_to "通知一覧へ", notifications_path %>
   <% end %>

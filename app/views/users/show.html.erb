@@ -1,4 +1,20 @@
-<p><%= (t '.name') %></p>
-  <%= @user.name %>
-<p><%= (t '.email') %></p>
-  <%= @user.email %>
+<style>
+  .userinfo-title {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .user-info {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25px;
+  }
+</style>
+<h2 class="userinfo-title">ユーザー情報</h2>
+<div class="user-info">
+<p><%= (t '.name') %></p><br>
+  <p><%= @user.name %></p><br>
+<p><%= (t '.email') %></p><br>
+  <p><%= @user.email %></p><br>
+</div>

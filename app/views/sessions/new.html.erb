@@ -1,6 +1,21 @@
-<h1>メールアドレスでログイン</h1>
-
+<style>
+  .login-title {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 100px;
+  }
+  .login-form {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 25px;
+  }
+</style>
+<h1 class="login-title"><%= (t '.title')%></h1>
+<div class="login-form">
 <%= render 'form' %>
-
+<br>
 <div>パスワードをお忘れの方は<%= link_to 'こちら', new_password_reset_path %></div>
+<br>
 <div>まだアカウントをお持ちでない方は<%= link_to 'こちら', new_user_path %></div>
+</div>

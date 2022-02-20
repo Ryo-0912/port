@@ -1,13 +1,22 @@
+<style>
+  .field {
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+  .actions {
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+</style>
 <%= form_with url: login_path, method: :post do |f| %>
   <div class="field">
-    <%= f.label :email %><br/>
+    <%= f.label :email, "メールアドレス" %><br/>
     <%= f.text_field :email, id: 'session_email'%>
   </div>
+  <br>
   <div class="field">
-    <%= f.label :password %><br/>
+    <%= f.label :password, "パスワード" %><br/>
     <%= f.password_field :password, id: 'session_password' %>
   </div>
-
+  <br>
   <div class="actions">
     <%= f.submit "ログイン" %>
   </div>
