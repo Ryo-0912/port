@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    {{id}}
     <span v-if="glink">
       <span @click="genrelink">{{name}}</span>
     </span>
     <i id="pen" class="fas fa-pen" @click="editgg"></i>
+    <i id="trash" class="fas fa-trash" @click="deletegg"></i>
     <span class="egform">
       <form v-if="edit">
         <label for="name" hidden></label>
@@ -34,9 +34,6 @@ export default {
       counter: this.name
     }
   },
-  mounted(){
-    console.log('aaaaa')
-  },
   methods: {
     genrelink: function() {
       location.href = `/genres/${this.id}/questions`;
@@ -46,10 +43,16 @@ export default {
       this.edit = true,
       this.name = `${this.name}`
     },
+    deletegg: function() {
+      axios.delete(`/genres/${this.id}`)
+            .then(res => {
+              document.location.reload();
+            });
+    },
     save: function() {
       axios.patch(`/genres/${this.id}`, { genre: { name: this.name } })
             .then(res => {
-              console.log("ジャンルを登録しました")
+              document.location.reload();
             });
     },
     cancel: function() {
