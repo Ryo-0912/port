@@ -10,6 +10,7 @@
   font-family: ヒラギノ丸ゴ Pro;
   margin-left: 200px;
   margin-top: 150px;
+  border-radius: 5px;
 }
 .question-card .card-body{
   height: 300px;
@@ -22,6 +23,7 @@
   margin-left: 900px;
   margin-top: -320px;
   margin-bottom: 100px;
+  border-radius: 5px;
 }
 .answer-card .card-body{
   height: 300px;
@@ -29,13 +31,13 @@
 }
 .submit-btn{
   position: relative;
-  margin-left: -100px;
+  right: 450px;
   font-size: 50px;
   margin-bottom: 40px;
   transform: translate(2px,100px)
 }
 .test-form{
-  margin-left: 10px;
+  margin-left: -10px;
   width: 250px;
   height: 60px;
   font-size: 30px;
@@ -55,6 +57,7 @@
 .testday .after-text{
   position: relative;
   font-size: 30px;
+  margin-left: 10px;
   transform: translate(2px,100px)
 }
 .answer{
@@ -98,7 +101,7 @@
   <%= form_with model: @answer, method: :post do |form| %>
     <span class="before-text"><%= "この問題を" %></span>
     <%= form.date_field  :exam, class: "test-form" %>
-    <%= form.submit "登録", class: "submit-btn" %>
     <span class="after-text"><%= "にテストする" %></span>
+    <%= form.submit "登録", class: "submit-btn" %>
   <% end %>
   </div>

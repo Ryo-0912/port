@@ -3,14 +3,14 @@ class GenresController < ApplicationController
   before_action :check_exam, only: [:index], if: :current_user_status # applicationコントローラーに記載
 
   def index
-    @genre = Genre.new
+    @genre = current_user.genres.new
   end
 
   def create
     @genre = current_user.genres.build(genre_params)
     if @genre.save
-      redirect_to genres_path
       flash[:success] = t('.success')
+      redirect_to genres_path
     else
       flash.now[:danger] = t('.fail')
       render :index
@@ -24,6 +24,7 @@ class GenresController < ApplicationController
   def update
     @genre = current_user.genres.find(params[:id])
     if @genre.update(genre_params)
+      flash[:success] = t('.success')
       redirect_to genres_path
     else
       render :edit
@@ -33,7 +34,8 @@ class GenresController < ApplicationController
   def destroy
     @genre = current_user.genres.find(params[:id])
     @genre.destroy!
-    redirect_to genres_path, notice: "ジャンル「#{@genre.name}」を削除しました"
+    flash[:success] = t('.success')
+    redirect_to genres_path
   end
 
   private

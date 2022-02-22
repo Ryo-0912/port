@@ -10,6 +10,15 @@
     margin-top: 5%;
     font-size: 25px;
   }
+  .email-form{
+    border-radius: 5px;
+  }
+  .message-form{
+    border-radius: 5px;
+  }
+  .form-btn{
+    border-radius: 5px;
+  }
 </style>
 <%= render 'shared/inquiry_validates_error_messages' %>
 
@@ -17,8 +26,8 @@
 <div class="inquiry-form">
 <%= form_with model: @inquiry, local: true do |form| %>
   <p class="email"><%= form.label :email, (t '.email') %></p>
-  <p class="email-form"><%= form.text_field :email  %></p>
+  <p><%= form.text_field :email, class: "email-form" %></p>
   <p class="message"><%= form.label :message, (t '.message') %></p>
-  <p class="message-form"><%= form.text_area :message, placeholder: "問い合わせ内容" %></p>
-  <p class="form-btn"><%= form.submit "送信" %></p>
+  <p><%= form.text_area :message, placeholder: "問い合わせ内容", class: "message-form" %></p>
+  <p><%= form.submit "送信", class: "form-btn" %></p>
 <% end %>

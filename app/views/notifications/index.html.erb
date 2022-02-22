@@ -1,4 +1,21 @@
-<h1>通知一覧</h1>
+<style>
+.notifi_title{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.common-contents{
+  margin-top: 30px;
+  margin-left: 60px;
+  border-radius: 5px;
+  width: 90%;
+}
+.informations{
+  font-family: ヒラギノ丸ゴ Pro;
+}
+</style>
+
+<h1 class="notifi_title">通知一覧</h1>
 <div class="common-contents">
   <div class="informations">
     <% if @notifications.exists? %>

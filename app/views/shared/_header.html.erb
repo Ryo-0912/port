@@ -1,10 +1,10 @@
 <style>
 
-  .title{
+  .app_title{
     font-family: ヒラギノ丸ゴ Pro;
     font-size: 50px;
     right: 30px;
-    top: 150px;
+    margin-top: 100px;
   }
 
   .nav{
@@ -15,6 +15,7 @@
 
   .admin{
     position   : relative;
+    top: 8px;
     left: -240px;
   }
 
@@ -45,6 +46,7 @@
 
   .logoutlink{
     position   : relative;
+    top: 8px;
     left: -160px;
   }
 
@@ -74,6 +76,7 @@
 
   .mypage{
     position   : relative;
+    top: 8px;
     left: -80px;
   }
 
@@ -101,12 +104,15 @@
   content: "";                       /* コンテンツの挿入 */
   position: absolute;                /* 親要素を基準 */
   }
-
+  .image{
+    margin-top: -30px;
+    right: 10px;
+  }
 
 </style>
 
 <header>
-    <span class="title"><%= "My Note" %></span>
+    <span class="app_title"><%= "My Note" %></span>
     <ul class="nav">
     <% if current_user.admin == true %>
       <li class="nav-item">
@@ -140,7 +146,7 @@
       </li>
       <li class="nav-item">
           <a href="/genres" class="image">
-            <%= image_tag 'sample', size: '40x40', class: 'rounded-circle mr15'%>
+            <%= image_tag 'logo', size: '55x55', class: 'rounded-circle mr15'%>
           </a>
       </li>
     </ul>

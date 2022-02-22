@@ -10,6 +10,12 @@
     margin-top: 5%;
     font-size: 25px;
   }
+  .user_form{
+    border-radius: 5px;
+  }
+  .user_form_btn{
+    border-radius: 5px;
+  }
 </style>
 <%= render 'shared/error_messages' %>
 
@@ -18,24 +24,24 @@
 <%= form_with model: @user, local: true do |f| %>
   <div class="field">
   <%= f.label :name, (t '.name') %><br>
-  <%= f.text_field :name  %>
+  <%= f.text_field :name, class: "user_form"  %>
   </div>
   <br>
   <div class="field">
   <%= f.label :email, (t '.email') %><br>
-  <%= f.text_field :email  %>
+  <%= f.text_field :email, class: "user_form"  %>
   </div>
   <br>
   <div class="field">
   <%= f.label :password, (t '.password') %><br>
-  <%= f.password_field :password  %>
+  <%= f.password_field :password, class: "user_form"  %>
   </div>
   <br>
   <div class="field">
   <%= f.label :password_confirmation, (t '.password_confirmation') %><br>
-  <%= f.password_field :password_confirmation  %>
+  <%= f.password_field :password_confirmation, class: "user_form"  %>
   </div>
   <br>
-  <%= f.submit '登録' %>
+  <%= f.submit '登録', class: "user_form_btn" %>
 <% end %>
 </div>

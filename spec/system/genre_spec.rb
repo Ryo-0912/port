@@ -39,7 +39,7 @@ RSpec.describe 'ジャンルの新規登録', type: :system do
           click_button '登録'
           # 遷移されたページに'User was successfully created.'の文字列があることを期待する
           expect(page).to have_content 'ジャンルの登録に失敗しました'
-          end
         end
+      end
     end
   end
