@@ -36,7 +36,7 @@ ja:
       fail: "問題の登録に失敗しました"
     edit:
       q: "Q."
-      title-editq: "問題の編集"
+      titile-editq: "問題の編集"
     show:
       q: "Q."
       poor: "要復習"

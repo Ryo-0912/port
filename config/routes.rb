@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  get 'exams/index'
 
   resources :questions do
     resources :answers, only: %i[new create show]

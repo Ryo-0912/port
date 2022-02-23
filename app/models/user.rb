@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :genres, dependent: :destroy
+  has_many :questions, through: :genres
   has_many :inquiries, dependent: :destroy
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'end_user_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'admin_user_id', dependent: :destroy

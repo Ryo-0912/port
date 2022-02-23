@@ -92,14 +92,16 @@
   <br>
   <span class="genre"><%= "ジャンル" %></span>
 
-  <span class="newregister">
-    <button id="gbtn" class="knopf even pill shade inverse m-">
-      <svg class="icon">
-        <use xlink:href="#icon-add"></use>
-      </svg>
-    </button>
-    <span class="register"><%= "新規登録" %></span>
-  </span>
+  <% if current_page?(genres_path) %>
+    <span class="newregister">
+      <button id="gbtn" class="knopf even pill shade inverse m-">
+        <svg class="icon">
+          <use xlink:href="#icon-add"></use>
+        </svg>
+      </button>
+      <span class="register"><%= "新規登録" %></span>
+    </span>
+  <% end %>
   <br>
 
   <br>
