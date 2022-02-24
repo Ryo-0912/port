@@ -5,6 +5,6 @@ RSpec.describe 'Home' do
     visit root_path
     expect(page).to have_content '新規登録'
     expect(page).to have_content 'ログイン'
-    expect(page).to have_content '記憶ノート'
+    expect(page).to have_content 'My Note'
   end
 end

@@ -6,7 +6,7 @@ RSpec.describe 'お知らせ機能', type: :system do
 
   describe 'Inquiry' do
     context '新着のお問い合わせがある' do
-      it '鈴マークがある' do
+      it '炎マークがある' do
         admin
         #ユーザーがログインして、お問い合わせメッセージ送信
         visit login_path
@@ -28,12 +28,12 @@ RSpec.describe 'お知らせ機能', type: :system do
         click_button 'ログイン'
         expect(page).to have_content 'My Note'
         find(".admin").click
-        expect(page).to have_css('.far')
+        expect(page).to have_css('.fas')
       end
     end
 
     context '新着のお問い合わせがない' do
-      it '鈴マークがない' do
+      it '炎マークがない' do
         visit login_path
         fill_in "email", with: admin.email
         fill_in "password", with: 'admin123'

@@ -14,9 +14,15 @@ class ApplicationController < ActionController::Base
   private
 
   def check_exam
-    @answers = Answer.where(exam: Time.current.to_date)
+    @answers = Answer.joins({:question => :genre}).where(genres:{ user_id: current_user.id }, exam: Time.current.to_date)
     if @answers.present?
       redirect_to exams_path
+    end
+  end
+
+  def to_genres
+    if current_user.status == true
+      redirect_to genres_path
     end
   end
 

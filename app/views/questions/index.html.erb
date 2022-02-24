@@ -69,11 +69,6 @@
   </div>
 </div>
 
-
-<% current_user.genres.each do |genre| %>
-        <p class="card-text"><%= genre.name %></p>
-<% end %>
-
 <span><%=link_to (t '.createq'), new_genre_question_path, { class: "createQ"} %></span>
 <div class="page"><%= paginate @questions %></div>
 

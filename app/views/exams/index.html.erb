@@ -30,7 +30,6 @@
 }
 .card:hover{
   box-shadow: 10px 10px 15px -10px;
-	transform: translateY(-4px);
 }
 .card-body{
   min-height: 10em;
@@ -41,7 +40,7 @@
   font-size: 30px;
   text-decoration: none;
   font-family: ヒラギノ丸ゴ Pro;
-  margin-top: -50px;
+  margin-top: 50px;
   margin-left: 1500px;
 }
 .page{
@@ -51,26 +50,24 @@
 </style>
 
 
-
 <div class="memoryindex">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <% @answers.each do |answer| %>
-      <% if current_user.id == answer.question.user_id %>
-        <div class="cards" id="card" data-name="card" data-url="/questions/<%= answer.question.id %>">
-          <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">
-            <div class="card-body">
-              <h2 class="card-title"><%= (t '.q') %></h2>
-              <p class="card-text"><%= answer.question.statement %></p>
-            </div>
+  <% @answers.each do |answer| %>
+      <div class="cards" id="card" data-name="card" data-url="/questions/<%= answer.question.id %>">
+        <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">
+          <div class="card-body">
+            <h2 class="card-title"><%= (t '.q') %></h2>
+            <p class="card-text"><%= answer.question.statement %></p>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   </div>
 </div>
 
-<span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
 
+<span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
+<div class="page"><%= paginate @answers %></div>
 
 <script>
     const cards = document.getElementsByClassName('cards') /* クラス名が「cards」の要素をすべて取得し、定数cardsとして代入する

@@ -11,7 +11,7 @@ ja:
       email: "メールアドレス"
   sessions:
     new:
-      title: "ユーザー新規登録"
+      title: "メールアドレスでログイン"
       email: "メールアドレス"
       password: "パスワード"
   genres:

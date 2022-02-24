@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   before_action :require_login
-  before_action :check_exam, only: [:index], if: :current_user_status # applicationコントローラーに記載
+  before_action :check_exam, only: [:index], if: :before_current_user_status # applicationコントローラーに記載
 
   def index
     @genre = Genre.new
@@ -40,7 +40,7 @@ class GenresController < ApplicationController
 
   private
 
-  def current_user_status
+  def before_current_user_status
     current_user.status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
   end
 
