@@ -2,15 +2,11 @@
 
 .memoryindex{
   font-family: ヒラギノ丸ゴ Pro;
-  margin-left: 60px;
-  margin-top: 50px;
+  margin-left: 30px;
+  margin-top: 30px;
   max-height: 50.5em;
   overflow-y: auto;
-}
-
-.page{
-  position: fixed;
-  top: 920px;
+  width: 1400px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
@@ -34,7 +30,6 @@
 }
 .card:hover{
   box-shadow: 10px 10px 15px -10px;
-	transform: translateY(-4px);
 }
 .card-body{
   min-height: 10em;
@@ -42,13 +37,17 @@
   overflow-y: auto;
 }
 .to_genre{
+  font-size: 30px;
   text-decoration: none;
   font-family: ヒラギノ丸ゴ Pro;
-  padding-top: 50px;
+  margin-top: 50px;
   margin-left: 1500px;
 }
+.page{
+  position: fixed;
+  top: 920px;
+}
 </style>
-
 
 
 <div class="memoryindex">
@@ -66,8 +65,9 @@
   </div>
 </div>
 
-<span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
 
+<span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
+<div class="page"><%= paginate @answers %></div>
 
 <script>
     const cards = document.getElementsByClassName('cards') /* クラス名が「cards」の要素をすべて取得し、定数cardsとして代入する

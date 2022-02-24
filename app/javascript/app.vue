@@ -46,6 +46,7 @@ export default {
     deletegg: function() {
       axios.delete(`/genres/${this.id}`)
             .then(res => {
+              window.confirm(`ジャンル名「${this.name}」を削除しますが、よろしいですか？`);
               document.location.reload();
             });
     },

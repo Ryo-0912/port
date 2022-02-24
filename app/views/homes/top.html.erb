@@ -2,9 +2,14 @@
   .app_title{
     font-family: ヒラギノ丸ゴ Pro;
     font-size: 100px;
-    padding-top: 20%;
+    padding-top: 1%;
+  }
+  .links{
+    margin-top: 20px;
+    margin-left: 15px;
   }
   .link {
+    font-size: 40px;
     font-family: ヒラギノ丸ゴ Pro;
     font-weight: bold;/*太字に*/
     text-decoration: none;/*下線消す*/
@@ -13,14 +18,33 @@
     padding:5px 10px;/*内側の余白*/
     border-radius: 20px;/*角を丸くする*/
   }
+  .between{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 50px;
+    font-weight: bold
+  }
+  .sample01{
+    margin-left: 20px;
+    margin-right: 150px;
+  }
+  .sample02{
+    margin-left: 200px;
+    margin-top: 300px;
+  }
 </style>
-<header>
+<header class="links">
 <% if logged_in? %>
   <%= link_to 'マイページへ', genres_path, {class: "link"} %>
 <% else %>
-  <%= link_to '新規登録', new_user_path, {class: "link"} %>/<%= link_to 'ログイン', login_path, {class: "link"} %>
+  <%= link_to '新規登録', new_user_path, {class: "link"} %><span class='between'>/</span><%= link_to 'ログイン', login_path, {class: "link"} %>
 <% end %>
 </header>
 
-<p class="app_title"><%= "My Note" %></p>
+<span><%= image_tag 'sample01', size: '500x500', class: 'sample01' %></span>
+
+<span class="app_title"><%= "My Note" %></span>
+
+<span><%= image_tag 'sample02', size: '500x500', class: 'sample02'%></span>
+
+
 

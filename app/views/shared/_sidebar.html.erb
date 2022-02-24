@@ -92,21 +92,23 @@
   <br>
   <span class="genre"><%= "ジャンル" %></span>
 
-  <span class="newregister">
-    <button id="gbtn" class="knopf even pill shade inverse m-">
-      <svg class="icon">
-        <use xlink:href="#icon-add"></use>
-      </svg>
-    </button>
-    <span class="register"><%= "新規登録" %></span>
-  </span>
+  <% if current_page?(genres_path) %>
+    <span class="newregister">
+      <button id="gbtn" class="knopf even pill shade inverse m-">
+        <svg class="icon">
+          <use xlink:href="#icon-add"></use>
+        </svg>
+      </button>
+      <span class="register"><%= "新規登録" %></span>
+    </span>
+  <% end %>
   <br>
 
   <br>
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
     <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
-      <% genres = Genre.grouping_genres.sort_by{ |g| g[0] } %>
+      <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>
         <% genres.each_with_index do |(key, value), index| %>
           <h2 class="accordion-header" id="heading">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
@@ -134,7 +136,7 @@
   </span>
 </div>
 
-<%= javascript_pack_tag 'hello_vue' %>
+<%= javascript_pack_tag 'edit_delete_vue' %>
 
 <script>
 
@@ -146,6 +148,6 @@
     } else {
       Geform.style.display = 'none';
     }
-  })
+  });
 
 </script>

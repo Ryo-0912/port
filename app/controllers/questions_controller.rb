@@ -2,15 +2,14 @@ class QuestionsController < ApplicationController
 
   def index
     @genre = Genre.find(params[:genre_id])
-    @questions = @genre.questions.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(4)
+    @questions = @genre.questions.all.includes(:genre).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def review_index
-    @questions = Question.where(poor: true).order(created_at: :desc)
+    @questions = current_user.questions.where(poor: true).order(created_at: :desc)
   end
 
   def new
-
     @genre = Genre.find(params[:genre_id])
     @question = Question.new
   end

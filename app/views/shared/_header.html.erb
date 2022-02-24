@@ -1,10 +1,10 @@
 <style>
 
-  .title{
+  .app_title{
     font-family: ヒラギノ丸ゴ Pro;
     font-size: 50px;
     right: 30px;
-    top: 150px;
+    margin-top: 100px;
   }
 
   .nav{
@@ -15,7 +15,8 @@
 
   .admin{
     position   : relative;
-    left: -240px;
+    top: 8px;
+    left: -450px;
   }
 
   .admin:hover .admin_tag{
@@ -45,7 +46,8 @@
 
   .logoutlink{
     position   : relative;
-    left: -160px;
+    top: 8px;
+    left: -330px;
   }
 
   .logoutlink:hover .logout{
@@ -74,7 +76,8 @@
 
   .mypage{
     position   : relative;
-    left: -80px;
+    top: 8px;
+    left: -210px;
   }
 
   .mypage:hover .userinfo{
@@ -101,12 +104,40 @@
   content: "";                       /* コンテンツの挿入 */
   position: absolute;                /* 親要素を基準 */
   }
+  .image{
+    position   : relative;
+    top: -4px;
+    left: -90px;
+  }
+  .image:hover .image_genre{
+    display: block;
+  }
 
+  .image_genre{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 2px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width: 110px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 3px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 5px;
+  }
+
+  .image_genre:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
 
 </style>
 
 <header>
-    <span class="title"><%= "My Note" %></span>
+    <span class="app_title"><%= "My Note" %></span>
     <ul class="nav">
     <% if current_user.admin == true %>
       <li class="nav-item">
@@ -139,9 +170,10 @@
           <% end %></span>
       </li>
       <li class="nav-item">
-          <a href="/genres" class="image">
-            <%= image_tag 'sample', size: '40x40', class: 'rounded-circle mr15'%>
-          </a>
+        <span class="image"><%= link_to genres_path do %>
+          <%= image_tag 'logo', size: '55x55', class: 'rounded-circle mr15'%>
+          <span class="image_genre"><%= "ジャンルページへ" %></span>
+        <% end %></span>
       </li>
     </ul>
 </header>

@@ -1,7 +1,9 @@
 <style>
 .memoryindex{
+  width: 1400px;
+  position: fixed;
   margin-left: 220px;
-  margin-top: 50px;
+  margin-top: -100px;
   max-height: 50.5em;
   overflow-y: auto;
 }
@@ -11,7 +13,6 @@
 }
 .card:hover{
   box-shadow: 10px 10px 15px -10px;
-	transform: translateY(-4px);
 }
 .card-body{
   min-height: 10em;
@@ -25,7 +26,6 @@
 
 <div class="memoryindex">
 <div class="row row-cols-1 row-cols-md-2 g-4">
-
   <% @questions.each_with_index do |question, index| %>
     <div class="qacards" id="card" data-name="card" data-url="/questions/<%= question.id %>">
       <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">

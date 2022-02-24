@@ -16,11 +16,15 @@ ja:
       password: "パスワード"
   genres:
     create:
-      success: "ジャンルの登録に成功しました"
+      success: "ジャンル名の登録に成功しました"
       fail: "ジャンルの登録に失敗しました"
     edit:
       gname-edit: "ジャンル名の編集"
       name: "ジャンル名"
+    update:
+      success: "ジャンル名の編集に成功しました"
+    destroy:
+      success: "ジャンル名を正常に削除しました"
   questions:
     new:
       q: "Q."
@@ -32,7 +36,7 @@ ja:
       fail: "問題の登録に失敗しました"
     edit:
       q: "Q."
-      title-editq: "問題の編集"
+      titile-editq: "問題の編集"
     show:
       q: "Q."
       poor: "要復習"

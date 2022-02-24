@@ -19,11 +19,13 @@
   overflow-y: auto;
   left: 50px;
   text-align: left;
+  border-radius: 5px;
 }
 
 .form-btn{
   position: relative;
   left: 290px;
+  border-radius: 5px;
 }
 .card-link{
   position: relative;
@@ -39,8 +41,8 @@
     <span class="questionform" id="qform">
       <%= form_with(model: [@genre, @question], local: true) do |form| %>
           <p class="statement-title"><% form.label :statement %></p>
-          <p class="statement-form"><%= form.rich_text_area :statement, placeholder: "本文や画像" %></p>
-          <p class="form-btn"><%= form.submit "登録" %></p>
+          <p><%= form.rich_text_area :statement, placeholder: "本文や画像",  class: "statement-form" %></p>
+          <p><%= form.submit "登録", class: "form-btn" %></p>
       <% end %>
     </span>
     </div>

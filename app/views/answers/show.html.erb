@@ -2,14 +2,15 @@
 .span{
   font-family: ヒラギノ丸ゴ Pro;
   margin-left: 530px;
-  margin-top: 90px;
-  margin-bottom: -50px;
+  top: 80px;
+  position: absolute;
 }
-
 .question-card{
   font-family: ヒラギノ丸ゴ Pro;
+
   margin-left: 200px;
-  margin-top: 150px;
+  margin-top: 250px;
+  border-radius: 5px;
 }
 .question-card .card-body{
   height: 300px;
@@ -22,40 +23,33 @@
   margin-left: 900px;
   margin-top: -320px;
   margin-bottom: 100px;
+  border-radius: 5px;
 }
 .answer-card .card-body{
   height: 300px;
   overflow: scroll;
 }
 .submit-btn{
-  position: relative;
-  margin-left: -100px;
   font-size: 50px;
-  margin-bottom: 40px;
   transform: translate(2px,100px)
+  border-radius: 5px;
+  top: 100px;
+  position: relative;
+  right: 330px;
 }
 .test-form{
-  margin-left: 10px;
+  margin-left: -10px;
   width: 250px;
   height: 60px;
   font-size: 30px;
   text-align: center;
   transform: translate(10px,2px)
-}
-.before-text{
-  position: relative;
-  margin-left: 650px;
-  font-size: 30px;
-  padding-top: 60px;
+  border-radius: 5px;
 }
 .testday{
   font-family: ヒラギノ丸ゴ Pro;
-  position: absolute;
-}
-.testday .after-text{
-  position: relative;
   font-size: 30px;
-  transform: translate(2px,100px)
+  margin-left: 550px;
 }
 .answer{
   font-size: 30px;
@@ -64,6 +58,9 @@
   width: 500px;
   white-space:nowrap;
   overflow:scroll;
+}
+.card-title .answer{
+  text-align: center;
 }
 .card-content{
   font-size: 30px;
@@ -95,10 +92,10 @@
 </div>
 
   <div class="testday">
-  <%= form_with model: @answer, method: :post do |form| %>
-    <span class="before-text"><%= "この問題を" %></span>
-    <%= form.date_field  :exam, class: "test-form" %>
-    <%= form.submit "登録", class: "submit-btn" %>
-    <span class="after-text"><%= "にテストする" %></span>
-  <% end %>
+    <%= form_with model: @answer, method: :post do |form| %>
+      <%= "この問題を"%>
+      <%= form.date_field  :exam, class: "test-form" %>
+      <%= "にテストする"%>
+      <%= form.submit "登録", class: "submit-btn" %>
+    <% end %>
   </div>

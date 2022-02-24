@@ -10,12 +10,18 @@
         margin-top: 5%;
         font-size: 25px;
     }
+    .email_form{
+        border-radius: 5px;
+    }
+    .submit{
+        border-radius: 5px;
+    }
 </style>
 <h1 class="reset-title">パスワードリセット申請</h1>
 <div class="reset-form">
 <%= form_with url: password_resets_path, local: true, method: :post do |f| %>
     <p><%= f.label :email, "メールアドレス" %></p><br>
-    <p><%= f.email_field :email %></p><br>
-    <p><%= f.submit "送信する" %></p>
+    <p><%= f.email_field :email, { class: "email_form"} %></p><br>
+    <p><%= f.submit "送信", { class: "submit" } %></p>
 <% end %>
 </div>
