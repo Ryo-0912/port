@@ -5,7 +5,7 @@
     padding-top: 1%;
   }
   .links{
-    margin-top: 20px;
+    margin-top: 3px;
     margin-left: 15px;
   }
   .link {
@@ -31,6 +31,36 @@
     margin-left: 200px;
     margin-top: 300px;
   }
+  .privacies{
+    margin-left: 720px;
+    margin-top: 30px;
+  }
+  .terms {
+    font-size: 20px;
+    font-family: ヒラギノ丸ゴ Pro;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:5px 10px;/*内側の余白*/
+    border-radius: 20px;/*角を丸くする*/
+  }
+  .privacy {
+    font-size: 20px;
+    font-family: ヒラギノ丸ゴ Pro;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:5px 10px;/*内側の余白*/
+    border-radius: 20px;/*角を丸くする*/
+  }
+  .copywrite{
+    font-size: 15px;
+    font-family: ヒラギノ丸ゴ Pro;
+    margin-left: 1px;
+    margin-top: 20px;
+  }
 </style>
 <header class="links">
 <% if logged_in? %>
@@ -46,5 +76,9 @@
 
 <span><%= image_tag 'sample02', size: '500x500', class: 'sample02'%></span>
 
-
-
+<span class="privacies">
+  <%= link_to '利用規約', terms_path, {class: "terms"} %>
+  <%= link_to 'プライバリーポリシー', privacy_path, {class: "privacy"} %>
+</span>
+<br>
+<p class="copywrite"><%= "© 2022 My Note" %></p>
