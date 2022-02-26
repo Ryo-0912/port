@@ -64,7 +64,6 @@
           <td><%= user.admin? ? 'あり' : 'なし' %></td>
           <td><%= user.created_at %></td>
           <td><%= user.updated_at %></td>
-          <td><%= link_to "編集", edit_admin_user_path(user) %></td>
           <td><%= link_to "削除", [:admin, user], method: :delete, data: { confirm: "ユーザー「#{user.name}」を削除します。よろしいですか？" } %></td>
       <% end %>
     </tbody>
