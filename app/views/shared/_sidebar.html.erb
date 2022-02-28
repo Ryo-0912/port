@@ -20,24 +20,22 @@
   <br>
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
-    <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
-      <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>
-        <% genres.each_with_index do |(key, value), index| %>
-          <h2 class="accordion-header" id="heading">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
-              <%= key %>
-            </button>
-          </h2>
-          <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-            <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-
-              <span class="edit_btn" id="edit-btn" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
-
-            <% end %>
+      <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
+        <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>
+          <% genres.each_with_index do |(key, value), index| %>
+            <h2 class="accordion-header" id="heading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+                <%= key %>
+              </button>
+            </h2>
+            <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <% value.sort_by{ |g| g.hiragana }.each do |v| %>
+                  <span class="edit_btn" id="edit-btn" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
     </div>
   </div>
 

@@ -120,15 +120,15 @@
     <div class="card border-dark mb-3" style="width: 40rem;">
         <h1 class="qcard-title"><%= (t '.q') %></h1>
       <div class="qcard-body">
-      <h1 class="qcard-content"><%= @question.statement %></h1>
+        <h1 class="qcard-content"><%= @question.statement %></h1>
       </div>
       <h1 class="acard-title"><%= (t '.a') %></h1>
-    <div class="acard-body" id="abody">
-      <span class="answer"><%= @answer.solution %></span>
-      <span><%= (t '.process') %></span>
-      <span class="acard-content"><%= @answer.process %></span>
+      <div class="acard-body" id="abody">
+        <span class="answer"><%= @answer.solution %></span>
+        <span><%= (t '.process') %></span>
+        <span class="acard-content"><%= @answer.process %></span>
+      </div>
     </div>
-  </div>
   </div>
 </div>
 

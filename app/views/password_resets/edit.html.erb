@@ -1,7 +1,6 @@
 <h1>パスワードリセット画面</h1>
 
 <%= form_with model: @user, url: password_reset_path(@token), local: true, method: :put do |f| %>
-
   <%= f.label :email %>
   <%= @user.email %>
   <br>
@@ -11,5 +10,5 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <br>
-    <%= f.submit %>
+  <%= f.submit %>
 <% end %>

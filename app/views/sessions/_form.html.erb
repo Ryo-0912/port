@@ -2,13 +2,11 @@
   <div class="field">
     <%= f.label :email, "メールアドレス" %><br/>
     <%= f.text_field :email, id: 'session_email', class: "session_form"%>
-  </div>
-  <br>
+  </div><br>
   <div class="field">
     <%= f.label :password, "パスワード" %><br/>
     <%= f.password_field :password, id: 'session_password', class: "session_form" %>
-  </div>
-  <br>
+  </div><br>
   <div class="actions">
     <%= f.submit "ログイン", class: "session_form_btn" %>
   </div>

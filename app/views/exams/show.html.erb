@@ -98,7 +98,6 @@
     <div class="qcard-body">
       <h1 class="qcard-content"><%= @question.statement %></h1>
     </div>
-
       <h1 class="acard-title"><%= (t '.a') %></h1>
     <div class="acard-body" id="abody">
       <span class="answer"><%= @answer.solution %></span>
@@ -108,19 +107,14 @@
   </div>
 </div>
 
-
 <%= @answer.exam %>
 
-
-
-
-
 <div class="review">
-<%= form_with model: @question, local: true do |form| %>
-  <%= form.label :poor, class: 'checkbox-label' %>
-  <%= form.check_box :poor ,{ style: 'transform: scale(2.5);', class: 'check-box' }, "true", "false" %>
-  <%= form.submit "登録", class: 'checkbox-btn' %>
-<% end %>
+  <%= form_with model: @question, local: true do |form| %>
+    <%= form.label :poor, class: 'checkbox-label' %>
+    <%= form.check_box :poor ,{ style: 'transform: scale(2.5);', class: 'check-box' }, "true", "false" %>
+    <%= form.submit "登録", class: 'checkbox-btn' %>
+  <% end %>
 </div>
 
 <div><%=link_to (t '.editq'), edit_question_path, class: 'question-edit' %></div>
