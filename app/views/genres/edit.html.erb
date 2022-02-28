@@ -1,6 +1,0 @@
-<h1><%= (t '.gname-edit') %></h1>
-<%= form_with model: @genre, local: true do |form| %>
-  <%= form.label :name, (t '.name') %>
-  <%= form.text_field :name %>
-  <%= form.submit "登録" %>
-<% end %>

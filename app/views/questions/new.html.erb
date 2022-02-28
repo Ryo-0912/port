@@ -5,15 +5,15 @@
   padding-top: 30px;
   margin: 130px 300px 300px 450px;
 }
-.card-title{
+.qu_new_card-title{
   font-weight: bold;
   position: relative;
   left: 40px;
 }
-.questionform {
+.qu_new_questionform {
   font-family: ヒラギノ丸ゴ Pro;
 }
-.statement-form{
+.qu_new_statement-form{
   min-height: 10em;
   max-height: 30em;
   overflow-y: auto;
@@ -22,12 +22,12 @@
   border-radius: 5px;
 }
 
-.form-btn{
+.qu_new_form-btn{
   position: relative;
-  left: 290px;
+  left: 700px;
   border-radius: 5px;
 }
-.card-link{
+.qu_new_card-link{
   position: relative;
   text-align: right;
   padding-right: 50px;
@@ -37,12 +37,12 @@
 </style>
 <div class="card border-dark mb-3" style="width: 50rem;">
   <div class="card-body">
-    <h1 class="card-title"><%= (t '.q') %></h1>
-    <span class="questionform" id="qform">
+    <h1 class="qu_new_card-title"><%= (t '.q') %></h1>
+    <span class="qu_new_questionform" id="qform">
       <%= form_with(model: [@genre, @question], local: true) do |form| %>
-          <p class="statement-title"><% form.label :statement %></p>
-          <p><%= form.rich_text_area :statement, placeholder: "本文や画像",  class: "statement-form" %></p>
-          <p><%= form.submit "登録", class: "form-btn" %></p>
+          <p class="qu_new_statement-title"><% form.label :statement %></p>
+          <p><%= form.rich_text_area :statement, placeholder: "本文や画像",  class: "qu_new_statement-form" %></p>
+          <p><%= form.submit "登録", class: "qu_new_form-btn" %></p>
       <% end %>
     </span>
     </div>

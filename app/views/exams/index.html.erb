@@ -52,7 +52,7 @@
 
 <div class="memoryindex">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-  <% @answers.each do |answer| %>
+    <% @answers.each do |answer| %>
       <div class="cards" id="card" data-name="card" data-url="/questions/<%= answer.question.id %>">
         <div class="card border-dark mb-3 h-100" style="height: 30rem, width: 48rem;">
           <div class="card-body">
@@ -64,7 +64,6 @@
     <% end %>
   </div>
 </div>
-
 
 <span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
 <div class="page"><%= paginate @answers %></div>

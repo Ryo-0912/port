@@ -4,7 +4,7 @@
     margin-top: 10px;
     margin-left: 10px;
   }
-  .subtitle{
+  .admin_subtitle{
     margin-left: 50px;
     font-family: ヒラギノ丸ゴ Pro;
   }
@@ -18,20 +18,20 @@
   .fas {
     color: #FF0000;
   }
-  .notifications{
+  .admin_notifications{
     text-decoration: none;
   }
-  .table_title{
+  .admin_table_title{
     font-family: ヒラギノ丸ゴ Pro;
   }
-  .table_body{
+  .admin_table_body{
     font-family: ヒラギノ丸ゴ Pro;
   }
 </style>
 
 <div>
   <h2 class="admin-title">管理画面</h2>
-  <span class="subtitle">
+  <span class="admin_subtitle">
     <%= "ユーザー数" %>
     <%= @users.count %>
 
@@ -42,11 +42,11 @@
       <% if unchecked_notifications.any? %>
         <i class="fas fa-burn"></i>
       <% end %>
-      <%=link_to "通知一覧へ", notifications_path, { class: "notifications"} %>
+      <%=link_to "通知一覧へ", notifications_path, { class: "admin_notifications"} %>
     <% end %>
   </span>
   <table class="table table-sm table-bordered border-primary">
-    <thead class="table_title">
+    <thead class="admin_table_title">
       <tr>
         <th scope="col">id</th>
         <th scope="col">メールアドレス</th>
@@ -56,7 +56,7 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    <tbody class="table_body">
+    <tbody class="admin_table_body">
       <% @users.each do |user| %>
         <tr>
           <td><%= user.id %></td>
@@ -64,7 +64,6 @@
           <td><%= user.admin? ? 'あり' : 'なし' %></td>
           <td><%= user.created_at %></td>
           <td><%= user.updated_at %></td>
-          <td><%= link_to "編集", edit_admin_user_path(user) %></td>
           <td><%= link_to "削除", [:admin, user], method: :delete, data: { confirm: "ユーザー「#{user.name}」を削除します。よろしいですか？" } %></td>
       <% end %>
     </tbody>

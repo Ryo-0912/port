@@ -1,16 +1,16 @@
 <% end_user = notification.end_user %>
 <% admin_user = notification.admin_user %>
-<ul class="list-group">
-  <li class="list-group-item">
-    <% case notification.action %>
-      <% when 'information' then %>
-        <span class="delete-btn">
-          <%= link_to notification_path(notification.id), method: :delete, data: { confirm: "削除しますが、よろしいですか？"} do %>
-            <i id="trash" class="fas fa-trash"></i>
-          <% end %>
-        </span>
-        <span>【<%= current_user.name %><%= notification.inquiry.email %>より】お問い合わせが届きました</span>
-      <span><%= notification.inquiry.message %></span>
-    <% end %>
-  </li>
-</ul>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <% case notification.action %>
+        <% when 'information' then %>
+          <span class="delete-btn">
+            <%= link_to notification_path(notification.id), method: :delete, data: { confirm: "削除しますが、よろしいですか？"} do %>
+              <i id="trash" class="fas fa-trash"></i>
+            <% end %>
+          </span>
+          <span>【<%= current_user.name %><%= notification.inquiry.email %>より】お問い合わせが届きました</span>
+        <span><%= notification.inquiry.message %></span>
+      <% end %>
+    </li>
+  </ul>

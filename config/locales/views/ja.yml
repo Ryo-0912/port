@@ -43,6 +43,7 @@ ja:
       editq: "問題編集"
       edita: "解答編集"
       process: "~プロセス~"
+      a: "A."
   answers:
     new:
       a: "A."

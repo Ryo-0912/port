@@ -48,6 +48,7 @@ group :development, :test do
   gem 'kaminari'
   gem 'whenever', require: false
   gem 'sorcery'
+  gem 'meta-tags'
 end
 
 group :development do
