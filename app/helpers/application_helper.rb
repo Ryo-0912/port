@@ -19,7 +19,6 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('https://img14.shop-pro.jp/PA01308/843/etc/%A5%DE%A5%A4%A5%CE%A1%BC%A5%C89.JPG?cmsp_timestamp=20200721144234'),
         local: 'ja-JP',
       },
       twitter: {

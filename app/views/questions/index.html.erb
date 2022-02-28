@@ -12,7 +12,6 @@
 .accordion {
   font-family: ヒラギノ丸ゴ Pro;
   max-height: 45em;
-  overflow-x: visible;
   overflow-y: scroll;
   border-radius: 0 0 15px 15px;
 }
@@ -29,7 +28,6 @@
   text-decoration: none;
 }
 .side {
-  margin-top: 40px;
   border-radius: 15px;
   background-color: #afeeee;
   width:210px; # 200から1000
@@ -67,7 +65,6 @@
 }
 
 .createQ{
-  z-index: 2;
   font-family: ヒラギノ丸ゴ Pro;
   text-decoration: none;
   left: 1650px;
@@ -76,12 +73,9 @@
   position: fixed;
 }
 .memoryindex{
-  z-index: 1;
   width: 1400px;
   margin-left: 20px;
-  margin-top: 40px;
   max-height: 50.5em;
-  overflow-y: auto;
 }
 .page{
   position: fixed;
@@ -130,44 +124,42 @@
     <br>
     <span class="genre"><%= "ジャンル" %></span>
 
-  <% if current_page?(genres_path) %>
-    <span class="newregister">
-      <button id="gbtn" class="knopf even pill shade inverse m-">
-        <svg class="icon">
-          <use xlink:href="#icon-add"></use>
-        </svg>
-      </button>
-      <span class="register"><%= "新規登録" %></span>
-    </span>
-  <% end %>
+    <% if current_page?(genres_path) %>
+      <span class="newregister">
+        <button id="gbtn" class="knopf even pill shade inverse m-">
+          <svg class="icon">
+            <use xlink:href="#icon-add"></use>
+          </svg>
+        </button>
+        <span class="register"><%= "新規登録" %></span>
+      </span>
+    <% end %>
   <br>
 
   <br>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-    <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
-      <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>
-        <% genres.each_with_index do |(key, value), index| %>
-          <h2 class="accordion-header" id="heading">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
-              <%= key %>
-            </button>
-          </h2>
-          <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <% value.sort_by{ |g| g.hiragana }.each do |v| %>
-
-                <span class="edit_btn" id="edit-btn" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
-
-              <% end %>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+      <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
+        <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>
+          <% genres.each_with_index do |(key, value), index| %>
+            <h2 class="accordion-header" id="heading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="true" aria-controls="collapse<%= index %>">
+                <%= key %>
+              </button>
+            </h2>
+            <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <% value.sort_by{ |g| g.hiragana }.each do |v| %>
+                  <span class="edit_btn" id="edit-btn" data-name='<%= v.name %>' data-id='<%= v.id %>'></span>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<%= javascript_pack_tag 'edit_delete_vue' %>
+  <%= javascript_pack_tag 'edit_delete_vue' %>
 
   <div class="memoryindex">
     <div class="row row-cols-1 row-cols-md-2 g-4">

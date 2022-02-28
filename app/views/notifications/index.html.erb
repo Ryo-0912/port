@@ -1,29 +1,12 @@
-<style>
-.notifi_title{
-  font-family: ヒラギノ丸ゴ Pro;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-.common-contents{
-  margin-top: 30px;
-  margin-left: 60px;
-  border-radius: 5px;
-  width: 90%;
-}
-.informations{
-  font-family: ヒラギノ丸ゴ Pro;
-}
-</style>
-
 <h1 class="notifi_title">通知一覧</h1>
-<div class="common-contents">
-  <div class="informations">
+<div class="notifi_common-contents">
+  <div class="notifi_informations">
     <% if @notifications.exists? %>
-    <ul class="allnotifications-list">
+    <ul class="notifi_allnotifications-list">
       <%= render @notifications %>
     </ul>
     <% else %>
-    <p class="allnotifications-no">通知はありません</p>
+    <p class="notifi_allnotifications-no">通知はありません</p>
     <% end %>
   </div>
 </div>

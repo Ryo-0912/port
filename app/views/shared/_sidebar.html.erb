@@ -1,95 +1,9 @@
-<style>
-  .review-index {
-    font-family: ヒラギノ丸ゴ Pro;
-    text-decoration: none;
-  }
-  .genre {
-    font-family: ヒラギノ丸ゴ Pro;
-  }
-  .accordion {
-    font-family: ヒラギノ丸ゴ Pro;
-    max-height: 45em;
-    overflow-x: visible;
-    overflow-y: scroll;
-    border-radius: 0 0 15px 15px;
-  }
-  .edit-btn {
-    margin-left: 30px;
-    text-decoration: none;
-  }
-  .gen {
-    font-family: ヒラギノ丸ゴ Pro;
-    text-decoration: none;
-  }
-  .delete-btn {
-    right: 5px;
-    text-decoration: none;
-  }
-  .side {
-    border-radius: 15px;
-    background-color: #afeeee;
-    width:210px; # 200から1000
-    height:600px;
-    text-align:center;
-    position: relative;
-  }
-
-  .newregister{
-    position   : relative;
-  }
-
-  .register{
-    font-family: ヒラギノ丸ゴ Pro;
-    position   : absolute;                /* 親要素を基準 */
-    display: none;                        /* 要素を非表示 */
-    padding: 2px;                         /* テキストの前後の余白 */
-    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
-    width:70px;                          /* 吹き出し全体の幅 */
-    left : 80%;                           /* 表示位置 */
-    bottom : -200%;                        /* 表示位置 */
-    margin-bottom : 12px;                 /* 表示位置 */
-    font-size: 80%;
-    color: #FFFFFF;
-    border-radius: 5px;
-  }
-
-  .register:after{
-    content: "";                       /* コンテンツの挿入 */
-    position: absolute;                /* 親要素を基準 */
-  }
-
-  .newregister:hover .register{
-    display: block;
-  }
-
-
-  .genreform {
-    font-family: ヒラギノ丸ゴ Pro;
-    border-radius: 15px;
-    position: absolute;
-    top: 80.8px;
-    left: 210px;
-    display: none;
-  }
-  .genreform .gname{
-    border-radius: 5px;
-  }
-  .genreform .gn_btn{
-    border-radius: 5px;
-  }
-
-
-</style>
-<br>
 <div class="side">
-
-
   <svg style="display: none;">
     <symbol id="icon-add" viewBox="0 0 24 24">
       <path d="M18 13h-5v5c0 .55-.45 1-1 1s-1-.45-1-1v-5H6c-.55 0-1-.45-1-1s.45-1 1-1h5V6c0-.55.45-1 1-1s1 .45 1 1v5h5c.55 0 1 .45 1 1s-.45 1-1 1z"></path>
     </symbol>
-  </svg>
-  <br>
+  </svg><br>
   <span class="genre"><%= "ジャンル" %></span>
 
   <% if current_page?(genres_path) %>
@@ -101,11 +15,10 @@
       </button>
       <span class="register"><%= "新規登録" %></span>
     </span>
-  <% end %>
-  <br>
+  <% end %><br>
 
   <br>
-<div class="accordion" id="accordionExample">
+  <div class="accordion" id="accordionExample">
     <div class="accordion-item">
     <%= link_to "復習一覧", genres_review_questions_path, {class: "review-index"} %>
       <% genres = current_user.genres.grouping_genres.sort_by{ |g| g[0] } %>

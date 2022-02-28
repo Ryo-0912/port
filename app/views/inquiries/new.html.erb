@@ -1,33 +1,12 @@
-<style>
-  .inquiry-title {
-    font-family: ヒラギノ丸ゴ Pro;
-    text-align: center;
-    margin-top: 100px;
-  }
-  .inquiry-form {
-    font-family: ヒラギノ丸ゴ Pro;
-    text-align: center;
-    margin-top: 5%;
-    font-size: 25px;
-  }
-  .email-form{
-    border-radius: 5px;
-  }
-  .message-form{
-    border-radius: 5px;
-  }
-  .form-btn{
-    border-radius: 5px;
-  }
-</style>
 <%= render 'shared/inquiry_validates_error_messages' %>
 
 <h2 class="inquiry-title">お問い合わせフォーム</h2>
 <div class="inquiry-form">
-<%= form_with model: @inquiry, local: true do |form| %>
-  <p class="email"><%= form.label :email, (t '.email') %></p>
-  <p><%= form.text_field :email, class: "email-form" %></p>
-  <p class="message"><%= form.label :message, (t '.message') %></p>
-  <p><%= form.text_area :message, placeholder: "問い合わせ内容", class: "message-form" %></p>
-  <p><%= form.submit "送信", class: "form-btn" %></p>
-<% end %>
+  <%= form_with model: @inquiry, local: true do |form| %>
+    <p class="email"><%= form.label :email, (t '.email') %></p>
+    <p><%= form.text_field :email, class: "inq_email-form" %></p>
+    <p class="message"><%= form.label :message, (t '.message') %></p>
+    <p><%= form.text_area :message, placeholder: "問い合わせ内容", class: "inq_message-form" %></p>
+    <p><%= form.submit "送信", class: "to_admin_form-btn" %></p>
+  <% end %>
+</div>
