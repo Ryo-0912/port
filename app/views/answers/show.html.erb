@@ -21,11 +21,15 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
   <div class="testday">
     <%= form_with model: @answer, method: :post do |form| %>
       <%= "この問題を"%>
       <%= form.date_field  :exam, class: "ans_show_test-form" %>
       <%= "にテストする"%>
-      <%= form.submit "登録", class: "ans_show_submit-btn" %>
+      <%= form.submit "登録", class: "ans_show_submit_btn" %>
     <% end %>
   </div>
+  </div>
+</div>

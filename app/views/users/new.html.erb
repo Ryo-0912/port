@@ -4,21 +4,21 @@
 <div class="user_register">
   <%= form_with model: @user, local: true do |f| %>
     <div class="field">
-      <%= f.label :name, (t '.name') %><br>
-      <%= f.text_field :name, class: "user_form"  %>
-    </div><br>
+      <p><%= f.label :name, (t '.name') %></p>
+      <p><%= f.text_field :name, class: "user_form"  %></p>
+    </div>
     <div class="field">
-      <%= f.label :email, (t '.email') %><br>
-      <%= f.text_field :email, class: "user_form"  %>
-    </div><br>
+      <p><%= f.label :email, (t '.email') %></p>
+      <p><%= f.text_field :email, class: "user_form"  %></p>
+    </div>
     <div class="field">
-      <%= f.label :password, (t '.password') %><br>
-      <%= f.password_field :password, class: "user_form"  %>
-    </div><br>
+      <p><%= f.label :password, (t '.password') %></p>
+      <p><%= f.password_field :password, class: "user_form"  %></p>
+    </div>
     <div class="field">
-      <%= f.label :password_confirmation, (t '.password_confirmation') %><br>
-      <%= f.password_field :password_confirmation, class: "user_form"  %>
-    </div><br>
-    <%= f.submit '登録', class: "user_form_btn" %>
+      <p><%= f.label :password_confirmation, (t '.password_confirmation') %></p>
+      <p><%= f.password_field :password_confirmation, class: "user_form"  %></p>
+    </div>
+    <p><%= f.submit '登録', class: "user_form_btn" %></p>
   <% end %>
 </div>

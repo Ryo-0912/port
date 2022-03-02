@@ -48,7 +48,7 @@
 .testday{
   font-family: ヒラギノ丸ゴ Pro;
   font-size: 30px;
-  margin-left: 550px;
+  margin-left: 300px;
 }
 .ans_show_answer{
   font-size: 30px;
@@ -70,6 +70,7 @@
   text-align: center;
 }
 .testday .ans_show_submit_btn{
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 20px;
+  margin-left: 300px;
+  display: flex;
 }

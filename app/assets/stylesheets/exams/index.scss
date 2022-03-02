@@ -1,0 +1,47 @@
+.ex_index_memoryindex{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 30px;
+  margin-top: 30px;
+  max-height: 50.5em;
+  overflow-y: auto;
+  width: 1400px;
+}
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+  margin-left: 827px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 20px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 20px;    /*角を丸くする*/
+}
+.ex_index_card{
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+	transition: .3s;
+}
+.ex_index_card:hover{
+  box-shadow: 10px 10px 15px -10px;
+}
+.ex_index_card-body{
+  min-height: 10em;
+  max-height: 30em;
+  overflow-y: auto;
+}
+.to_genre{
+  font-size: 30px;
+  text-decoration: none;
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-top: 50px;
+  margin-left: 1500px;
+}
+.page{
+  position: fixed;
+  top: 920px;
+}
