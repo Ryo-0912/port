@@ -1,0 +1,114 @@
+.qu_show_guidance{
+  font-family: ヒラギノ丸ゴ Pro;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-left: 570px;
+}
+.qu_show_question-card{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: -30px;
+  margin-top: 80px;
+  transition: 0.5s;
+  position: absolute;
+}
+.qu_show_question-card .qu_show_qcard-body{
+  opacity: 1.0;
+}
+.qu_show_question-card:active{
+  transform-origin: 50% 50% 0;
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+.qu_show_question-card:active .qu_show_qcard-body{
+  opacity: 0;
+}
+
+.qu_show_question-card .qu_show_qcard-body{
+  position: relative;
+  top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 550px;
+  max-height: 600em;
+  overflow-y: auto;
+}
+
+.qu_show_question-card .qu_show_acard-body{
+  transform: scale(-1, 1);
+  top: -440px;
+  opacity: 0;
+}
+.qu_show_question-card:active .qu_show_acard-body{
+  text-align: center;
+  opacity: 1.0;
+}
+
+.qu_show_qcard-title{
+  font-weight: bold;
+  position: relative;
+  top: 15px;
+  left: 20px;
+  opacity: 1.0;
+}
+.qu_show_question-card:active .qu_show_qcard-title{
+  opacity: 0;
+}
+.qu_show_question-card .qu_show_acard-title{
+  position: relative;
+  transform: scale(-1, 1);
+  top: -580px;
+  left: -20px;
+  opacity: 0;
+}
+.qu_show_question-card:active .qu_show_acard-title{
+  opacity: 1.0;
+}
+.qu_show_answer{
+  display: block;
+  font-size: 45px;
+  margin-top: -640px;
+  margin-left: 80px;
+  width: 500px;
+  white-space:nowrap;
+  overflow:scroll;
+}
+.qu_show_acard-title{
+  font-weight: bold;
+}
+.qu_show_acard-content{
+  display: block;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.qu_show_review{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
+  padding-left: 1400px;
+  padding-top: 300px;
+  font-size: 30px;
+}
+.qu_show_review .qu_show_checkbox-label{
+  padding-right: 20px;
+}
+
+.qu_show_review .qu_show_checkbox-btn{
+  margin-left: 20px;
+  border-radius: 5px;
+}
+.qu_show_question-edit{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.qu_show_answer-edit{
+  font-family: ヒラギノ丸ゴ Pro;
+  text-decoration: none;
+  padding-left: 1400px;
+  font-size: 30px;
+}
+.qu_show_qdelete{
+  text-decoration: none;
+  padding-left: 1400px;
+  font-size: 30px;
+}

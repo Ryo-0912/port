@@ -1,0 +1,30 @@
+.qu_edit_title{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 450px;
+  margin-top: 60px;
+}
+.qu_edit_card{
+  font-family: ヒラギノ丸ゴ Pro;
+  position: absolute;
+  padding-top: 10px;
+  margin: 70px 100px 300px 450px;
+}
+.qu_edit_card-title{
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+}
+
+.qu_edit_statement-form{
+  min-height: 10em;
+  max-height: 30em;
+  overflow-y: auto;
+  left: 50px;
+  text-align: left;
+}
+
+.qu_edit_form-btn{
+  position: relative;
+  left: 710px;
+  border-radius: 5px;
+}

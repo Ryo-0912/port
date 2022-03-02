@@ -1,0 +1,75 @@
+.ans_show_attention{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 530px;
+  top: 80px;
+  position: absolute;
+}
+.ans_show_question-card{
+  font-family: ヒラギノ丸ゴ Pro;
+
+  margin-left: 200px;
+  margin-top: 250px;
+  border-radius: 5px;
+}
+.ans_show_question-card .ans_show_qu_card-body{
+  height: 300px;
+  min-height: 10em;
+  max-height: 45em;
+  overflow-y: auto;
+}
+.ans_show_answer-card{
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 900px;
+  margin-top: -320px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+}
+.ans_show_answer-card .ans_show_ans_card-body{
+  height: 300px;
+  overflow: scroll;
+}
+.ans_show_test_submit-btn{
+  font-size: 50px;
+  transform: translate(2px,100px);
+  border-radius: 5px;
+  top: 100px;
+  position: relative;
+  right: 330px;
+}
+.ans_show_test-form{
+  margin-left: -10px;
+  width: 250px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  transform: translate(10px,2px);
+  border-radius: 5px;
+}
+.testday{
+  font-family: ヒラギノ丸ゴ Pro;
+  font-size: 30px;
+  margin-left: 550px;
+}
+.ans_show_answer{
+  font-size: 30px;
+  margin-top: -50px;
+  margin-left: 80px;
+  width: 500px;
+  white-space:nowrap;
+  overflow:scroll;
+  text-align: center;
+}
+.card-title .answer{
+  text-align: center;
+}
+.card-content{
+  font-size: 30px;
+
+}
+.ans_show_process{
+  text-align: center;
+}
+.testday .ans_show_submit_btn{
+  margin-top: 200px;
+  margin-left: 100px;
+}

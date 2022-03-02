@@ -1,78 +1,8 @@
-<style>
-.span{
-  font-family: ヒラギノ丸ゴ Pro;
-  margin-left: 530px;
-  top: 80px;
-  position: absolute;
-}
-.question-card{
-  font-family: ヒラギノ丸ゴ Pro;
+<h2 class="ans_show_attention"><%= "問題なければ、問題出現スパンを決めましょう！"%></h2>
 
-  margin-left: 200px;
-  margin-top: 250px;
-  border-radius: 5px;
-}
-.question-card .card-body{
-  height: 300px;
-  min-height: 10em;
-  max-height: 45em;
-  overflow-y: auto;
-}
-.answer-card{
-  font-family: ヒラギノ丸ゴ Pro;
-  margin-left: 900px;
-  margin-top: -320px;
-  margin-bottom: 100px;
-  border-radius: 5px;
-}
-.answer-card .card-body{
-  height: 300px;
-  overflow: scroll;
-}
-.submit-btn{
-  font-size: 50px;
-  transform: translate(2px,100px)
-  border-radius: 5px;
-  top: 100px;
-  position: relative;
-  right: 330px;
-}
-.test-form{
-  margin-left: -10px;
-  width: 250px;
-  height: 60px;
-  font-size: 30px;
-  text-align: center;
-  transform: translate(10px,2px)
-  border-radius: 5px;
-}
-.testday{
-  font-family: ヒラギノ丸ゴ Pro;
-  font-size: 30px;
-  margin-left: 550px;
-}
-.answer{
-  font-size: 30px;
-  margin-top: -50px;
-  margin-left: 80px;
-  width: 500px;
-  white-space:nowrap;
-  overflow:scroll;
-}
-.card-title .answer{
-  text-align: center;
-}
-.card-content{
-  font-size: 30px;
-
-}
-</style>
-
-<h2 class="span"><%= "問題なければ、問題出現スパンを決めましょう！"%></h2>
-
-<div class="question-card">
+<div class="question-card ans_show_question-card">
   <div class="card border-dark mb-3" style="width: 40rem;">
-    <div class="card-body">
+    <div class="card-body ans_show_qu_card-body">
       <h1 class="card-title"><%= (t '.q') %></h1>
       <h1 class="card-content"><%= @question.statement %></h1>
       </span>
@@ -80,12 +10,12 @@
   </div>
 </div>
 
-<div class="answer-card">
+<div class="ans_show_answer-card">
   <div class="card border-dark mb-3" style="width: 40rem;">
-    <div class="card-body">
+    <div class="card-body ans_show_ans_card-body">
       <h1 class="card-title"><%= (t '.a') %></h1>
-      <p class="answer"><%= @answer.solution %></p>
-      <p ><%= (t '.process') %></p>
+      <p class="ans_show_answer"><%= @answer.solution %></p>
+      <p class="ans_show_process"><%= (t '.process') %></p>
       <p class="card-content"><%= @answer.process %></p>
     </div>
   </div>
@@ -94,8 +24,8 @@
   <div class="testday">
     <%= form_with model: @answer, method: :post do |form| %>
       <%= "この問題を"%>
-      <%= form.date_field  :exam, class: "test-form" %>
+      <%= form.date_field  :exam, class: "ans_show_test-form" %>
       <%= "にテストする"%>
-      <%= form.submit "登録", class: "submit-btn" %>
+      <%= form.submit "登録", class: "ans_show_submit-btn" %>
     <% end %>
   </div>
