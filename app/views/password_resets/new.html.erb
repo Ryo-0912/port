@@ -1,8 +1,8 @@
 <h1 class="pas_reset_new_title">パスワードリセット申請</h1>
 <div class="pas_reset_new_form">
     <%= form_with url: password_resets_path, local: true, method: :post do |f| %>
-        <p><%= f.label :email, "メールアドレス" %></p><br>
-        <p><%= f.email_field :email, { class: "pas_reset_new_email_form"} %></p><br>
+        <p><%= f.label :email, "メールアドレス" %></p>
+        <p><%= f.email_field :email, { class: "pas_reset_new_email_form"} %></p>
         <p><%= f.submit "送信", { class: "pas_reset_new_submit" } %></p>
     <% end %>
 </div>
