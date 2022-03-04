@@ -8,18 +8,17 @@
       </symbol>
     </svg>
     <div class="side_head">
-    <span class="qu_index_genre"><%= "ジャンル" %></span>
-
-    <% if current_page?(genres_path) %>
-      <span class="newregister">
-        <button id="gbtn" class="knopf even pill shade inverse m-">
-          <svg class="icon">
-            <use xlink:href="#icon-add"></use>
-          </svg>
-        </button>
-        <span class="register"><%= "新規登録" %></span>
-      </span>
-    <% end %>
+      <span class="qu_index_genre"><%= "ジャンル" %></span>
+      <% if current_page?(genres_path) %>
+        <span class="newregister">
+          <button id="gbtn" class="knopf even pill shade inverse m-">
+            <svg class="icon">
+              <use xlink:href="#icon-add"></use>
+            </svg>
+          </button>
+          <span class="register"><%= "新規登録" %></span>
+        </span>
+      <% end %>
     </div>
 
     <div class="accordion qu_index_accordion" id="accordionExample">
