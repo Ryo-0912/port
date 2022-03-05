@@ -1,0 +1,42 @@
+.ans_new_card{
+  font-family: ヒラギノ丸ゴ Pro;
+  position: absolute;
+  padding-top: 30px;
+  margin: 130px 300px 300px 450px;
+  height: 650px;
+}
+.ans_new_card-title{
+  font-weight: bold;
+  position: relative;
+  left: 40px;
+  display: inline;
+}
+.ans_new_answerform {
+  font-family: ヒラギノ丸ゴ Pro;
+}
+.ans_new_answerform .ans_new_form{
+  width: 500px;
+  height: 130px;
+  margin-top: -200px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-size: 80px;
+  text-align: center;
+}
+.ans_new_answerform .ans_new_form-control{
+  padding-left: 5px;
+  width: 700px;
+  height: 380px;
+  margin-left: 30px;
+  font-size: 30px;
+  border-radius: 5px;
+}
+.ans_new_answerform .ans_new_submit-btn{
+  margin-left: 650px;
+  margin-top: 25px;
+  font-size: 30px;
+  border-radius: 5px;
+}

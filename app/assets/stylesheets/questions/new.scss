@@ -1,0 +1,33 @@
+.qu_new_card{
+  font-family: ヒラギノ丸ゴ Pro;
+  position: absolute;
+  padding-top: 30px;
+  margin: 130px 300px 300px 450px;
+}
+.qu_new_card-title{
+  font-weight: bold;
+  position: relative;
+  left: 40px;
+}
+.qu_new_questionform {
+  font-family: ヒラギノ丸ゴ Pro;
+}
+.qu_new_statement-form{
+  min-height: 10em;
+  max-height: 30em;
+  overflow-y: auto;
+  left: 50px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.qu_new_form-btn{
+  position: relative;
+  left: 700px;
+  border-radius: 5px;
+}
+.qu_new_card-link{
+  position: relative;
+  text-align: right;
+  padding-right: 50px;
+}

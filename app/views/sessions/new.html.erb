@@ -1,8 +1,8 @@
 <h1 class="login-title"><%= (t '.title')%></h1>
 <div class="login-form">
   <%= render 'form' %>
-  <br>
-  <div>パスワードをお忘れの方は<%= link_to 'こちら', new_password_reset_path, {class: "to_pas"} %></div>
-  <br>
-  <div>まだアカウントをお持ちでない方は<%= link_to 'こちら', new_user_path, { class: "to_ac" } %></div>
+  <div class="to_merge">
+    <p>パスワードをお忘れの方は<%= link_to 'こちら', new_password_reset_path, {class: "to_pas"} %></p>
+    <p>まだアカウントをお持ちでない方は<%= link_to 'こちら', new_user_path, { class: "to_ac" } %></p>
+  </div>
 </div>
