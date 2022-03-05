@@ -16,6 +16,9 @@
     <meta property="og:title" content="My Note" />
     <meta property="og:description" content="学校のテストや試験本番で暗記したことが思い出せない・暗記が苦手、そんな方におすすめなのが「My Note」です。" />
     <meta property="og:image" content="https://img14.shop-pro.jp/PA01308/843/etc/%A5%DE%A5%A4%A5%CE%A1%BC%A5%C89.JPG?cmsp_timestamp=20200721144234" />
+    <% if Rails.env.production? %>
+      <%= render 'layouts/google_analytics' %>
+    <% end %>
   </head>
 
   <body>
