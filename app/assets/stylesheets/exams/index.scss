@@ -1,19 +1,19 @@
 .test_title{
-  margin: 30px 0px 30px 650px;
+  margin: 21px 0px 21px 615px;
   font-family: ヒラギノ丸ゴ Pro;
 }
 .ex_index_memoryindex{
   font-family: ヒラギノ丸ゴ Pro;
   margin-left: 30px;
   margin-top: 30px;
-  max-height: 50.5em;
+  max-height: 51.5em;
   overflow-y: auto;
   width: 1400px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
   color: #696969;   /*文字の色を変える*/
-  margin-left: 827px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
+  margin-left: 500px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
 }
 
 /* 表示しているページ番号のデザイン */
@@ -42,8 +42,9 @@
   font-size: 30px;
   text-decoration: none;
   font-family: ヒラギノ丸ゴ Pro;
-  margin-top: 10px;
+  top: 100px;
   margin-left: 1500px;
+  position: fixed;
 }
 .page{
   position: fixed;
