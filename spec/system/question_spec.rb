@@ -9,7 +9,7 @@ RSpec.describe '問題の新規登録', type: :system do
     fill_in "password", with: 'test123'
     click_button 'ログイン'
     # ジャンル画面へ遷移
-    expect(page).to have_content 'My Note'
+    expect(page).to have_content 'My Nort'
     # +ボタンをクリック
     find("#gbtn").double_click
     # フォームに「ジャンル」と入力

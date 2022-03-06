@@ -52,3 +52,4 @@ production:
   database: port_production
   username: port
   password: <%= ENV['PORT_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
