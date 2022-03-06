@@ -11,7 +11,7 @@ RSpec.describe 'お問い合わせの投稿', type: :system do
     fill_in "password", with: 'test123'
     click_button 'ログイン'
     # ジャンル画面へ遷移
-    expect(page).to have_content 'My Note'
+    expect(page).to have_content 'My Nort'
   end
 
   describe 'Inquiry' do
@@ -22,7 +22,7 @@ RSpec.describe 'お問い合わせの投稿', type: :system do
         fill_in "inquiry[email]", with: user.email
         fill_in "inquiry[message]", with: 'お問い合わせ'
         click_button '送信'
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
       end
     end
 

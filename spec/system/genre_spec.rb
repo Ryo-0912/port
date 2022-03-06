@@ -14,7 +14,7 @@ RSpec.describe 'ジャンルの新規登録', type: :system do
     context 'フォームの入力値が正常' do
       it 'ジャンルの登録に成功' do
         # ジャンル画面へ遷移
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
         # +ボタンをクリック
         find("#gbtn").double_click
         # フォームに「ジャンル」と入力
@@ -30,7 +30,7 @@ RSpec.describe 'ジャンルの新規登録', type: :system do
       context 'フォームの入力値が空白' do
         it 'ジャンルの登録にできない' do
           # ジャンル画面へ遷移
-          expect(page).to have_content 'My Note'
+          expect(page).to have_content 'My Nort'
           # +ボタンをクリック
           find("#gbtn").double_click
           # フォームに「ジャンル」と入力

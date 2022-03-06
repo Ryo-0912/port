@@ -1,11 +1,11 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'My Note',
-      title: 'My Note',
+      site: 'My Nort',
+      title: 'My Nort',
       reverse: true,
       charset: 'utf-8',
-      description: '学校のテスト本番で暗記したことが思い出せない・暗記が苦手、そんな方におすすめなのが「My Note」です。',
+      description: '学校のテスト本番で暗記したことが思い出せない・暗記が苦手、そんな方におすすめなのが「My Nort」です。',
       keywords: '勉強,暗記,苦手',
       canonical: request.original_url,
       separator: '|', # これで"タイトル | サイトネーム"ってなる
@@ -23,7 +23,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@MyNote02'
+        site: '@MyMemorial02'
       }
     }
   end

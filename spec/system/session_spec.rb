@@ -11,7 +11,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
           fill_in 'email', with: user.email
           fill_in 'password', with: 'test123'
           click_button 'ログイン'
-          expect(page).to have_content 'My Note'
+          expect(page).to have_content 'My Nort'
         end
       end
 

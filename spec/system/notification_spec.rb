@@ -13,20 +13,20 @@ RSpec.describe 'お知らせ機能', type: :system do
         fill_in "email", with: user.email
         fill_in "password", with: 'test123'
         click_button 'ログイン'
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
         find(".admin").click
         expect(page).to have_content 'お問い合わせフォーム'
         fill_in "inquiry[email]", with: user.email
         fill_in "inquiry[message]", with: 'お問い合わせ'
         click_button '送信'
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
         find(".logoutlink").click
         #adminユーザーがログイン
         visit login_path
         fill_in "email", with: admin.email
         fill_in "password", with: 'admin123'
         click_button 'ログイン'
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
         find(".admin").click
         expect(page).to have_css('.fas')
       end
@@ -38,7 +38,7 @@ RSpec.describe 'お知らせ機能', type: :system do
         fill_in "email", with: admin.email
         fill_in "password", with: 'admin123'
         click_button 'ログイン'
-        expect(page).to have_content 'My Note'
+        expect(page).to have_content 'My Nort'
         find(".admin").click
         expect(page).to have_content '通知一覧'
       end
