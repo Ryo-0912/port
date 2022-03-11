@@ -18,6 +18,11 @@
     "vuex": "^4.0.2"
   },
   "version": "0.1.0",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
   "devDependencies": {
     "@webpack-cli/serve": "^1.6.1",
     "webpack-dev-server": "^3.11.2"
