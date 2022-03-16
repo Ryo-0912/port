@@ -28,6 +28,7 @@ gem 'image_processing', '~> 1.2'
 gem 'meta-tags'
 gem 'sorcery'
 gem 'mechanize'
+gem 'carrierwave'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -46,7 +47,6 @@ group :development, :test do
   gem 'capybara'
   gem 'webdrivers'
   gem 'factory_bot_rails'
-  gem 'carrierwave'
   gem 'actiontext'
   gem 'kaminari'
   gem 'whenever', require: false
