@@ -32,6 +32,7 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'actiontext'
 gem 'whenever', require: false
+gem 'webdrivers'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -48,7 +49,6 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'webdrivers'
   gem 'factory_bot_rails'
 end
 
