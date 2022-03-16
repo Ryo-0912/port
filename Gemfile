@@ -29,6 +29,9 @@ gem 'meta-tags'
 gem 'sorcery'
 gem 'mechanize'
 gem 'carrierwave'
+gem 'kaminari'
+gem 'actiontext'
+gem 'whenever', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -47,9 +50,6 @@ group :development, :test do
   gem 'capybara'
   gem 'webdrivers'
   gem 'factory_bot_rails'
-  gem 'actiontext'
-  gem 'kaminari'
-  gem 'whenever', require: false
 end
 
 group :development do
