@@ -17,4 +17,17 @@
   <%= link_to 'プライバリーポリシー', privacy_path, {class: "privacy"} %>
 </span>
 
+<%= link_to logout_path, method: :delete do %>
+  <i class="fas fa-running fa-2x"></i>
+  <span class="logout"><%= "ログアウト" %></span>
+<% end %>
+
 <p class="copywrite"><%= "© 2022 My Nort" %></p>
+
+<li class="nav-item">
+          <span class="logoutlink"><%= link_to logout_path, method: :delete do %>
+            <i class="fas fa-running fa-2x"></i>
+            <span class="logout"><%= "ログアウト" %></span>
+          <% end %>
+          </span>
+        </li>
