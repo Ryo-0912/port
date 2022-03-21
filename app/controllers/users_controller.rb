@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def edit
-  end
+  def edit; end
 
   # /users/new
   def create
