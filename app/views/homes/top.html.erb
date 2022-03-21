@@ -15,11 +15,6 @@
 <span class="privacies">
   <%= link_to '利用規約', terms_path, {class: "terms"} %>
   <%= link_to 'プライバリーポリシー', privacy_path, {class: "privacy"} %>
+
+  <p class="copywrite"><%= "© 2022 My Nort" %></p>
 </span>
-
-<%= link_to logout_path, method: :delete do %>
-  <i class="fas fa-running fa-2x"></i>
-  <span class="logout"><%= "ログアウト" %></span>
-<% end %>
-
-<p class="copywrite"><%= "© 2022 My Nort" %></p>
