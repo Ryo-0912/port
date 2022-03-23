@@ -61,7 +61,7 @@
   </div>
 
   <span><%=link_to (t '.createq'), new_genre_question_path, { class: "createQ"} %></span>
-  <p class="page"><%= paginate @questions %></p>
+  <%= paginate @questions %>
 </div>
 
 <script>
