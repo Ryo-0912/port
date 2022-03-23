@@ -41,12 +41,12 @@
 }
 .page{
   position: fixed;
-  top: 920px;
+  top: 20px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
   color: #696969;   /*文字の色を変える*/
-  margin-left: 827px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
+  margin-left: 37px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
 }
 
 /* 表示しているページ番号のデザイン */
