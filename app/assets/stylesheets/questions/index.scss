@@ -40,12 +40,12 @@
   position: fixed;
 }
 .page{
-  margin-bottom: 1000px;
+  position: fixed;
+  top: 20px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
   color: #696969;   /*文字の色を変える*/
-  left: 10px;  /*ここでmargin: auto;を使っても適用されなかったのはなぜ？*/
 }
 
 /* 表示しているページ番号のデザイン */
