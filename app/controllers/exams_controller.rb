@@ -3,16 +3,16 @@ class ExamsController < ApplicationController
 
 
   def index
-    @answers = Answer.joins({:question => :genre}).where(genres:{ user_id: current_user.id }, exam: Time.current.to_date).order(created_at: :desc).page(params[:page]).per(10)
+    @answers = Answer.joins({:question => :genre}).where(genres:{ user_id: current_user.id }, exam: Time.current.to_date).order(created_at: :desc).page(params[:page]).per(6)
     current_user.status = "true"
     current_user.save!(status: true)
   end
 
   private
 
-  def after_current_user_status
-    current_user.status == true
-  end
+    def after_current_user_status
+      current_user.status == true
+    end
 
 
 end

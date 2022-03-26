@@ -20,7 +20,7 @@ RSpec.describe '解答の新規登録', type: :system do
   end
 
   describe 'Answer' do
-    context 'フォームの入力値が正常' do
+    context 'すべてに成功' do
       it '解答の登録に成功' do
         # 遷移されたページに'User was successfully created.'の文字列があることを期待する
         expect(page).to have_content 'さ'
@@ -55,43 +55,39 @@ RSpec.describe '解答の新規登録', type: :system do
       end
     end
 
-    context 'フォームの入力値が異常' do
-      it '解答の登録に失敗' do
-        # 遷移されたページに'User was successfully created.'の文字列があることを期待する
-        expect(page).to have_content 'さ'
-        click_button 'さ'
-        click_link 'ジャンル'
-        find(".createQ").double_click
-        expect(page).to have_content 'Q.'
-        find('#question_statement', visible: false).set('テスト作成')
-        click_button '登録'
-        expect(page).to have_content '問題の登録に成功しました'
-        find('#answer_solution', visible: false).set(nil)
-        find('#answer_process', visible: false).set('Answer_process')
-        click_button '登録'
-        expect(page).to have_content '解答を入力してください'
-      end
+    it '解答の登録に失敗' do
+      # 遷移されたページに'User was successfully created.'の文字列があることを期待する
+      expect(page).to have_content 'さ'
+      click_button 'さ'
+      click_link 'ジャンル'
+      find(".createQ").double_click
+      expect(page).to have_content 'Q.'
+      find('#question_statement', visible: false).set('テスト作成')
+      click_button '登録'
+      expect(page).to have_content '問題の登録に成功しました'
+      find('#answer_solution', visible: false).set(nil)
+      find('#answer_process', visible: false).set('Answer_process')
+      click_button '登録'
+      expect(page).to have_content '解答を入力してください'
     end
 
-    context 'フォームの入力値が異常' do
-      it '解答プロセスの登録に失敗' do
-        # 遷移されたページに'User was successfully created.'の文字列があることを期待する
-        expect(page).to have_content 'さ'
-        click_button 'さ'
-        click_link 'ジャンル'
-        find(".createQ").double_click
-        expect(page).to have_content 'Q.'
-        find('#question_statement', visible: false).set('テスト作成')
-        click_button '登録'
-        expect(page).to have_content '問題の登録に成功しました'
-        find('#answer_solution', visible: false).set('Answer')
-        find('#answer_process', visible: false).set(nil)
-        click_button '登録'
-        expect(page).to have_content 'プロセスを入力してください'
-      end
+    it '解答プロセスの登録に失敗' do
+      # 遷移されたページに'User was successfully created.'の文字列があることを期待する
+      expect(page).to have_content 'さ'
+      click_button 'さ'
+      click_link 'ジャンル'
+      find(".createQ").double_click
+      expect(page).to have_content 'Q.'
+      find('#question_statement', visible: false).set('テスト作成')
+      click_button '登録'
+      expect(page).to have_content '問題の登録に成功しました'
+      find('#answer_solution', visible: false).set('Answer')
+      find('#answer_process', visible: false).set(nil)
+      click_button '登録'
+      expect(page).to have_content 'プロセスを入力してください'
     end
 
-    context 'フォームの入力値が正常' do
+    context '途中までは成功' do
       it '解答の登録に成功' do
         # 遷移されたページに'User was successfully created.'の文字列があることを期待する
         expect(page).to have_content 'さ'
