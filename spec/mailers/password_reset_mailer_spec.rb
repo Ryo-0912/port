@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
   let(:user) { FactoryBot.create(:user) }
+
   let(:mail) { UserMailer.reset_password_email(user) }
+
   before { user.generate_reset_password_token! }
 
   describe '想定どおりのメールが作成されている' do

@@ -48,7 +48,7 @@ class AnswersController < ApplicationController
 
   private
 
-  def answer_params
-    params.require(:answer).permit(:solution, :process, :exam, :id)
-  end
+    def answer_params
+      params.require(:answer).permit(:solution, :process, :exam, :id)
+    end
 end

@@ -30,14 +30,4 @@ RSpec.describe User, type: :model do
     )
     expect(user).not_to be_valid
   end
-
-  it "is not valid with password" do
-    user = User.new(
-      name: "A君",
-      email: "aaa@example.com",
-      password: "a",
-      password_confirmation: "a"
-    )
-    expect(user).not_to be_valid
-  end
 end
