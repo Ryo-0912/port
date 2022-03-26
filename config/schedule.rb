@@ -13,6 +13,6 @@ set :environment, rails_env
 set :output, "#{Rails.root}/log/cron.log"
 
 # 1時間ごとにarticle_state.rakeのchange_to_be_publishedを実行する
-every 1.day, at: '0:00 am' do
+every 1.days, at: '0:00 am' do
   rake "reset_status:reset_user_status"
 end

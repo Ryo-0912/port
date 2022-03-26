@@ -22,7 +22,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
           # SignUpと記述のあるsubmitをクリックする
           click_button '登録'
           # login_pathへ遷移することを期待する
-          expect(page).to have_current_path("/login")
+          expect(current_path).to eq login_path
           # 遷移されたページに'User was successfully created.'の文字列があることを期待する
           expect(page).to have_content 'メールアドレスでログイン'
         end
@@ -43,7 +43,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
           # SignUpと記述のあるsubmitをクリックする
           click_button '登録'
           # users_pathへ遷移することを期待する
-          expect(page).to have_current_path("/users")
+          expect(current_path).to eq users_path
           # 遷移されたページに'Email can't be blank'の文字列があることを期待する
           expect(page).to have_content "アカウント名を入力してください"
         end
@@ -65,7 +65,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
           # SignUpと記述のあるsubmitをクリックする
           click_button '登録'
           # users_pathへ遷移することを期待する
-          expect(page).to have_current_path("/users")
+          expect(current_path).to eq users_path
           # 遷移されたページに'Email can't be blank'の文字列があることを期待する
           expect(page).to have_content "メールアドレスを入力してください"
         end
@@ -86,7 +86,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
           # SignUpと記述のあるsubmitをクリックする
           click_button '登録'
           # users_pathへ遷移することを期待する
-          expect(page).to have_current_path("/users")
+          expect(current_path).to eq users_path
           # 遷移されたページに'Email can't be blank'の文字列があることを期待する
           expect(page).to have_content "パスワードは3文字以上で入力してください"
         end
@@ -107,7 +107,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
           # SignUpと記述のあるsubmitをクリックする
           click_button '登録'
           # users_pathへ遷移することを期待する
-          expect(page).to have_current_path("/users")
+          expect(current_path).to eq users_path
           # 遷移されたページに'Email can't be blank'の文字列があることを期待する
           expect(page).to have_content "パスワード確認用を入力してください"
         end

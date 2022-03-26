@@ -21,7 +21,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
           fill_in 'email', with: 'zzz@example.com'
           fill_in 'password', with: 'test123'
           click_button 'ログイン'
-          expect(page).to have_current_path("/login")
+          expect(current_path).to eq login_path
         end
       end
 
@@ -31,7 +31,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
           fill_in 'email', with: user.email
           fill_in 'password', with: '123456'
           click_button 'ログイン'
-          expect(page).to have_current_path("/login")
+          expect(current_path).to eq login_path
         end
       end
     end

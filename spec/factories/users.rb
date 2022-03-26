@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user, class: 'User' do
+  factory :user, class: User do
     id {'1'}
     name {'テストユーザー'}
     email {'test@example.com'}
@@ -8,7 +8,7 @@ FactoryBot.define do
     admin {'false'}
   end
 
-  factory :admin, class: 'User' do
+  factory :admin, class: User do
     id {'2'}
     name {'管理者'}
     email {'admin@example.com'}

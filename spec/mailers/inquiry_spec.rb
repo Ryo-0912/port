@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe InquiryMailer do
+
   let(:inquiry) { FactoryBot.create(:inquiry) }
 
   describe '#send_mail' do

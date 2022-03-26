@@ -35,7 +35,9 @@ RSpec.describe 'お問い合わせの投稿', type: :system do
         click_button '送信'
         expect(page).to have_content 'メールアドレスを入力してください'
       end
+    end
 
+    context 'フォームの入力値が異常' do
       it 'お問い合わせフォームが不適切' do
         find(".admin").click
         expect(page).to have_content 'お問い合わせフォーム'

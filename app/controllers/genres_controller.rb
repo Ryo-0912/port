@@ -40,11 +40,11 @@ class GenresController < ApplicationController
 
   private
 
-    def before_current_user_status
-      current_user.status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
-    end
+  def before_current_user_status
+    current_user.status == false #exams_index_pathにアクセスしたらstatusをtrueにすればいい
+  end
 
-    def genre_params
-      params.require(:genre).permit(:name)
-    end
+  def genre_params
+    params.require(:genre).permit(:name)
+  end
 end
