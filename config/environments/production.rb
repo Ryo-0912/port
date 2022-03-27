@@ -117,8 +117,8 @@ Rails.application.configure do
     address: "smtp.gmail.com",
     domain: 'gmail.com',
     port: 587,
-    user_name: Rails.application.credentials.gmail[:user_name], #ここには送信先のメールアドレス
-    password: Rails.application.credentials.gmail[:password], #ここには2段階認証のパスワード
+    user_name: Rails.application.credentials.gmail[:user_name],
+    password: Rails.application.credentials.gmail[:password],
     authentication: :login
   }
 
