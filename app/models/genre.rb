@@ -14,10 +14,10 @@ class Genre < ApplicationRecord
   def self.grouping_genres
     Genre.all.group_by do |genre|
       name = genre.name
-      if genre.name.match(/[一-龠々]/)
+      if genre.name.match?(/[一-龠々]/)
         name = AGENT.get(BASE_URL + genre.name).search('#content p').first.inner_text
         genre.hiragana = name
-      elsif genre.name.match(/[ァ-ヴ]/)
+      elsif genre.name.match?(/[ァ-ヴ]/)
         genre.hiragana  = NKF.nkf("-h1 -w", name)
       else
         genre.hiragana = name

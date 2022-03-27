@@ -50,7 +50,7 @@ class QuestionsController < ApplicationController
 
   private
 
-  def question_params
-    params.require(:question).permit(:genre_id, :statement, :image, :poor, :exam)
-  end
+    def question_params
+      params.require(:question).permit(:genre_id, :statement, :image, :poor, :exam)
+    end
 end
