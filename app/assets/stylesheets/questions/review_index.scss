@@ -19,8 +19,11 @@
   max-height: 30em;
   overflow-y: auto;
 }
-.page{
-  margin-top: 1000px;
+.rev_index_page{
+  right: 800px;
+  font-size: 20px;
+  position: fixed;
+  top: 750px;
 }
 .pagination>li>a {
   border: none;     /*枠線をなくす*/

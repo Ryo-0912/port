@@ -15,7 +15,7 @@
 </div>
 
 <span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
-<div class="page"><%= paginate @answers %></div>
+<div class="ex_index_page"><%= paginate @answers %></div>
 
 <script>
     const cards = document.getElementsByClassName('cards') /* クラス名が「cards」の要素をすべて取得し、定数cardsとして代入する

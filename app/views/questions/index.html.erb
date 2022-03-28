@@ -1,5 +1,4 @@
 <%= render 'shared/header' %>
-<div class="page"><%= paginate @questions %></div>
 <div class="qu_index_main">
   <div class="side">
     <svg style="display: none;">
@@ -61,6 +60,7 @@
   </div>
 
   <span><%=link_to (t '.createq'), new_genre_question_path, { class: "createQ"} %></span>
+  <div class="qu_index_page"><%= paginate @questions %></div>
 </div>
 
 <script>
