@@ -1,9 +1,9 @@
-namespace :reset_status do
+namespace :reset_status do #名前空間 
   #ここから処理を書いていく
     #定期実行する際に、そのログを取っておくのは大事。ログがないと定期実行でエラーが起きても分からない。
     logger = Logger.new 'log/reset_status.log'
   desc 'ユーザーのstatusをデフォルト値に戻す'
-  task reset_user_status: :environment do
+  task reset_user_status: :environment do #タスク タスク名 namespaceがあるときは続けて記述する必要がある
     User.find_each do |user|
       begin
         user.update!(status: false)
