@@ -4,7 +4,7 @@ class Genre < ApplicationRecord
 
   belongs_to :user
   has_many :questions, dependent: :destroy
-  validates :name, presence: true, uniqueness: { scope: :user_id }
+  validates :name, presence: true, uniqueness: { scope: :user_id }, format: { without: /\A(?=.*[一-龠々])(?=.*[ぁ-んァ-ヴa-zA-Z0-9])/ }
 
   attr_accessor :hiragana
 
