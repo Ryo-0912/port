@@ -29,8 +29,8 @@
   
 -**画面遷移図**  
 ***
-https://xd.adobe.com/view/7598290b-8248-46a9-b9b3-a473bc88dddb-20cb/
+https://www.figma.com/proto/6vnBIqTjvOB4ADE8YjEm8K/My-Nort?node-id=3%3A4&scaling=contain&page-id=0%3A1
   
 -**ER図**  
 ***
-https://drive.google.com/file/d/1fsUsGgcNmCCOg0TeCIS7TSe3iXbDHeWs/view
+https://drive.google.com/drive/my-drive
