@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<span><%=link_to 'テストを終了する', genres_path, { class: "to_genre" } %></span>
+<span><%=link_to 'テストを終了する', genres_path(status: false), { class: "to_genre" } %></span>
 <div class="ex_index_page"><%= paginate @answers %></div>
 
 <%= javascript_pack_tag 'exams/index' %>

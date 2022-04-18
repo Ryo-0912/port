@@ -3,6 +3,10 @@ class GenresController < ApplicationController
   before_action :check_exam, only: [:index], if: :before_current_user_status # applicationコントローラーに記載
 
   def index
+    if params[:status] == "false"
+      current_user.status = "true"
+      current_user.status.save!
+    end
     @genre = Genre.new
   end
 
