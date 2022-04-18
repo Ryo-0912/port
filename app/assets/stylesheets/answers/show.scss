@@ -1,7 +1,8 @@
 .ans_show_attention{
   font-family: ヒラギノ丸ゴ Pro;
-  margin-left: 380px;
-  top: 80px;
+  font-size: 35px;
+  left: 280px;
+  bottom: 680px;
   position: absolute;
 }
 .ans_show_question-card{
@@ -77,8 +78,9 @@
 @media (max-width: 599px) {
   .ans_show_attention{
     font-family: ヒラギノ丸ゴ Pro;
-    top: 30px;
-    margin-left: 10px;
+    font-size: 35px;
+    width: 150vw;
+    left: 5px;
     position: absolute;
   }
   .ans_show_question-card{
@@ -124,7 +126,7 @@
   .testday{
     font-family: ヒラギノ丸ゴ Pro;
     font-size: 20px;
-    margin-left: 250px;
+    margin-left: 500px;
   }
   .ans_show_answer{
     font-size: 15px;
