@@ -40,3 +40,37 @@
   font-size: 30px;
   border-radius: 5px;
 }
+
+@media (max-width: 599px) {
+  .ans_new_card{
+    font-family: ヒラギノ丸ゴ Pro;
+    position: absolute;
+    padding-top: 15px;
+    margin: 100px 400px 2px 2px;
+  }
+  .ans_new_card-title{
+    font-weight: bold;
+    position: relative;
+    left: 20px;
+    display: inline;
+  }
+  .ans_new_answerform {
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+  .ans_new_answerform .ans_new_form{
+    height: 65px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 40px;
+    text-align: center;
+  }
+  .ans_new_answerform .ans_new_form-control{
+    padding-left: 2.5px;
+    height: 190px;
+    font-size: 15px;
+  }
+  .ans_new_answerform .ans_new_submit-btn{
+    font-size: 15px;
+  }
+}

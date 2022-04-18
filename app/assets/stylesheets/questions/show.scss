@@ -112,3 +112,124 @@
   padding-left: 1150px;
   font-size: 30px;
 }
+
+@media (max-width: 599px) {
+  .qu_show_guidance{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 200px;
+  }
+  .qu_show_question-card{
+    font-family: ヒラギノ丸ゴ Pro;
+    margin-top: 30px;
+    transition: 0.5s;
+    position: absolute;
+    left: 20px;
+  }
+  .qu_show_question-card .qu_show_qcard-body{
+    opacity: 1.0;
+  }
+  .qu_show_question-card:active{
+    transform-origin: 50% 50% 0;
+    transform: rotate3d(0, 0.5, 0, 180deg);
+  }
+  .qu_show_question-card:active .qu_show_qcard-body{
+    opacity: 0;
+  }
+  .qu_show_question-card .qu_show_qcard-body{
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 275px;
+    max-height: 300em;
+    overflow-y: auto;
+  }
+  .qu_show_question-card .qu_show_acard-body{
+    transform: scale(-1, 1);
+    top: -220px;
+    opacity: 0;
+  }
+  .qu_show_question-card:active .qu_show_acard-body{
+    text-align: center;
+    opacity: 1.0;
+  }
+  .qu_show_qcard-title{
+    font-weight: bold;
+    position: relative;
+    top: 7.5px;
+    left: 10px;
+    opacity: 1.0;
+  }
+  .qu_show_question-card:active .qu_show_qcard-title{
+    opacity: 0;
+  }
+  .qu_show_question-card .qu_show_acard-title{
+    position: relative;
+    transform: scale(-1, 1);
+    top: -310px;
+    left: -10px;
+    opacity: 0;
+  }
+  .qu_show_question-card:active .qu_show_acard-title{
+    opacity: 1.0;
+  }
+  .qu_show_answer{
+    display: block;
+    font-size: 22.5px;
+    margin-top: -345px;
+    margin-left: 180px;
+    width: 250px;
+    white-space:nowrap;
+    overflow:scroll;
+  }
+  .qu_show_acard-title{
+    font-weight: bold;
+  }
+  .qu_show_acard-content{
+    display: block;
+    font-size: 12.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .qu_show_review{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+    font-size: 25px;
+    margin-top: 150px;
+    position: relative;
+    padding-left: 50px;
+  }
+  .qu_show_review .qu_show_checkbox-label{
+    padding-right: 2px;
+  }
+  .qu_show_review .qu_show_checkbox-btn{
+    left: 20px;
+    border-radius: 5px;
+  }
+  .qu_show_question-edit{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+    padding-left: 300px;
+    font-size: 30px;
+    bottom: 45px;
+    position: relative;
+  }
+  .qu_show_answer-edit{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+    padding-left: 475px;
+    font-size: 30px;
+    position: relative;
+    bottom: 90px;
+  }
+  .qu_show_qdelete{
+    text-decoration: none;
+    padding-left: 630px;
+    font-size: 30px;
+    position: relative;
+    bottom: 135px;
+  }
+}

@@ -134,3 +134,264 @@
   content: "";                       /* コンテンツの挿入 */
   position: absolute;                /* 親要素を基準 */
   }
+
+  .links{
+  margin-top: 3px;
+  margin-left: 15px;
+}
+.link {
+  font-size: 40px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:5px 10px;/*内側の余白*/
+  border-radius: 20px;/*角を丸くする*/
+}
+.between{
+  font-family: ヒラギノ丸ゴ Pro;
+  font-size: 50px;
+  font-weight: bold
+}
+.sample01{
+  left: 20px;
+}
+.sample02{
+  margin-top: 120px;
+  left: 20px;
+}
+.privacies{
+  margin-left: 550px;
+  margin-top: 80px;
+}
+.terms {
+  font-size: 20px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:5px 10px;/*内側の余白*/
+  border-radius: 20px;/*角を丸くする*/
+}
+.privacy {
+  font-size: 20px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:5px 10px;/*内側の余白*/
+  border-radius: 20px;/*角を丸くする*/
+}
+.copywrite {
+  font-size: 15px;
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 650px;
+  margin-top: 20px;
+}
+
+.head_image{
+  width: 4vw;
+}
+
+.icon{
+  font-size: 2.2vw;
+}
+
+@media (max-width: 599px) {
+  .headerbar{
+    margin-bottom: 20px;
+  }
+  .header_app_title{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 25px;
+    right: 15px;
+    margin-top: 50px;
+  }
+
+  .nav{
+    float: right;
+    padding-top: 12.5px;
+    padding-right: 12.5px;
+  }
+
+  .admin{
+    position   : relative;
+    top: 4px;
+    left: -225px;
+  }
+
+  .admin:hover .admin_tag{
+    display: block;
+  }
+
+  .admin_tag{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 1px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 7px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 2.5px;
+  }
+
+  .admin_tag:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+
+  .logoutlink{
+    position   : relative;
+    top: 4px;
+    left: -165px;
+  }
+
+  .logoutlink:hover .logout{
+    display: block;
+  }
+
+  .logout{
+    font-family: ヒラギノ丸ゴ Pro;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 1px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:35px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 6px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 2.5px;
+  }
+
+  .logout:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+
+  .mypage{
+    position   : relative;
+    top: 4px;
+    left: -105px;
+  }
+
+  .mypage:hover .userinfo{
+    display: block;
+  }
+
+  .userinfo{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 1px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:42.5px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 6px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 2.5px;
+  }
+
+  .userinfo:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+  .image{
+    position   : relative;
+    top: -2px;
+    left: -45px;
+  }
+  .image:hover .image_genre{
+    display: block;
+  }
+
+  .image_genre{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-align: center;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 1px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width: 55px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 0.5px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 2.5px;
+  }
+
+  .image_genre:after{
+  content: "";                       /* コンテンツの挿入 */
+  position: absolute;                /* 親要素を基準 */
+  }
+
+  .links{
+  margin-top: 1.5px;
+  margin-left: 7.5px;
+}
+.link {
+  font-size: 20px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:2.5px 5px;/*内側の余白*/
+  border-radius: 10px;/*角を丸くする*/
+}
+.between{
+  font-family: ヒラギノ丸ゴ Pro;
+  font-size: 25px;
+  font-weight: bold
+}
+.sample01{
+  left: 10px;
+}
+.sample02{
+  margin-top: 60px;
+  left: 10px;
+}
+.privacies{
+  margin-left: 275px;
+  margin-top: 40px;
+}
+.terms {
+  font-size: 10px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:2.5px 5px;/*内側の余白*/
+  border-radius: 10px;/*角を丸くする*/
+}
+.privacy {
+  font-size: 10px;
+  font-family: ヒラギノ丸ゴ Pro;
+  font-weight: bold;/*太字に*/
+  text-decoration: none;/*下線消す*/
+  background: skyblue;/*背景を水色に*/
+  color:white;/*文字を白に*/
+  padding:2.5px 5px;/*内側の余白*/
+  border-radius: 10px;/*角を丸くする*/
+}
+.copywrite {
+  font-size: 7.5px;
+  font-family: ヒラギノ丸ゴ Pro;
+  margin-left: 325px;
+  margin-top: 10px;
+}
+}

@@ -25,10 +25,12 @@
 }
 .sample01{
   left: 20px;
+  width: 30vw;
 }
 .sample02{
   margin-top: 120px;
   left: 20px;
+  width: 30vw;
 }
 .privacies{
   margin-left: 550px;
@@ -59,4 +61,68 @@
   font-family: ヒラギノ丸ゴ Pro;
   margin-left: 650px;
   margin-top: 20px;
+}
+
+@media (max-width: 599px) {
+  .home_title{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 50px;
+    padding-top: 5%;
+  }
+  .links{
+    margin-top: 1.5px;
+    margin-left: 7.5px;
+  }
+  .link {
+    font-size: 20px;
+    font-family: ヒラギノ丸ゴ Pro;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:2.5px 5px;/*内側の余白*/
+    border-radius: 10px;/*角を丸くする*/
+  }
+  .between{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 25px;
+    font-weight: bold
+  }
+  .sample01{
+    left: 10px;
+  }
+  .sample02{
+    margin-top: 60px;
+    left: 10px;
+  }
+  .privacies{
+    margin-left: 275px;
+    margin-top: 40px;
+  }
+  .terms {
+    font-size: 10px;
+    font-family: ヒラギノ丸ゴ Pro;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:2.5px 5px;/*内側の余白*/
+    border-radius: 10px;/*角を丸くする*/
+  }
+  .privacy {
+    font-size: 10px;
+    font-family: ヒラギノ丸ゴ Pro;
+    font-weight: bold;/*太字に*/
+    text-decoration: none;/*下線消す*/
+    background: skyblue;/*背景を水色に*/
+    color:white;/*文字を白に*/
+    padding:2.5px 5px;/*内側の余白*/
+    border-radius: 10px;/*角を丸くする*/
+  }
+  .copywrite {
+    font-size: 7.5px;
+    font-family: ヒラギノ丸ゴ Pro;
+    margin-left: 325px;
+    margin-top: 10px;
+  }
 }

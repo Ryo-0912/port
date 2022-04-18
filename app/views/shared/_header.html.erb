@@ -4,7 +4,7 @@
       <% if current_user.admin == true %>
         <li class="nav-item">
           <span class="admin"><%= link_to admin_users_path do %>
-            <i class="fas fa-envelope fa-2x"></i>
+            <i class="fas fa-envelope icon"></i>
             <span class="admin_tag"><%= "管理者" %></span>
           <% end %>
           </span>
@@ -12,7 +12,7 @@
       <% else %>
         <li class="nav-item">
           <span class="admin"><%= link_to new_inquiry_path do %>
-            <i class="fas fa-paper-plane fa-2x"></i>
+            <i class="fas fa-paper-plane icon"></i>
             <span class="admin_tag"><%= "問い合わせ" %></span>
           <% end %>
           </span>
@@ -20,20 +20,20 @@
       <% end %>
         <li class="nav-item">
           <span class="logoutlink"><%= link_to logout_path, method: :delete do %>
-            <i class="fas fa-running fa-2x"></i>
+            <i class="fas fa-running icon"></i>
             <span class="logout"><%= "ログアウト" %></span>
           <% end %>
           </span>
         </li>
         <li class="nav-item">
           <span class="mypage"><%= link_to user_path(current_user) do %>
-            <i class="fas fa-user fa-2x"></i>
+            <i class="fas fa-user icon"></i>
             <span class="userinfo"><%= "ユーザー情報" %></span>
           <% end %></span>
         </li>
         <li class="nav-item">
           <span class="image"><%= link_to genres_path do %>
-            <%= image_tag 'nort.png', size: '55x55', class: 'rounded-circle mr15'%>
+            <%= image_tag 'nort.png', class: 'rounded-circle mr15 head_image'%>
             <span class="image_genre"><%= "ジャンルページへ" %></span>
           <% end %></span>
         </li>

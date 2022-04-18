@@ -76,3 +76,84 @@
 .genreform .gn_btn{
   border-radius: 5px;
 }
+
+@media (max-width: 599px) {
+  .review-index {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+  }
+  .genre {
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+  .side_head{
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .accordion {
+    font-family: ヒラギノ丸ゴ Pro;
+    max-height: 17.5em;
+    overflow-y: scroll;
+    border-radius: 0 0 7.5px 7.5px;
+  }
+  .edit-btn {
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  .gen {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+  }
+  .delete-btn {
+    right: 2.5px;
+    text-decoration: none;
+  }
+  .side {
+    border-radius: 7.5px;
+    background-color: #afeeee;
+    width : 220px;
+    max-height: 3.0em;
+    text-align: center;
+    position: relative;
+  }
+  
+  .newregister{
+    position   : relative;
+  }
+  
+  .register{
+    font-family: ヒラギノ丸ゴ Pro;
+    position   : absolute;                /* 親要素を基準 */
+    display: none;                        /* 要素を非表示 */
+    padding: 1px;                         /* テキストの前後の余白 */
+    background-color: rgba(0, 0, 0, 0.70);       /* 背景色（透明度） */
+    width:60px;                          /* 吹き出し全体の幅 */
+    left : 80%;                           /* 表示位置 */
+    bottom : -200%;                        /* 表示位置 */
+    margin-bottom : 10px;                 /* 表示位置 */
+    font-size: 80%;
+    color: #FFFFFF;
+    border-radius: 2.5px;
+  }
+  
+  .register:after{
+    content: "";
+    position: absolute;
+  }
+  .newregister:hover .register{
+    display: block;
+  }
+  .genreform {
+    font-family: ヒラギノ丸ゴ Pro;
+    border-radius: 7.5px;
+    position: absolute;
+    top: 60px;
+    left: 220px;
+    display: none;
+  }
+  .genreform .gname{
+    border-radius: 2.5px;
+  }
+  .genreform .gn_btn{
+    border-radius: 2.5px;
+  }
+}

@@ -73,3 +73,81 @@
   margin-left: 300px;
   display: flex;
 }
+
+@media (max-width: 599px) {
+  .ans_show_attention{
+    font-family: ヒラギノ丸ゴ Pro;
+    top: 30px;
+    margin-left: 10px;
+    position: absolute;
+  }
+  .ans_show_question-card{
+    font-family: ヒラギノ丸ゴ Pro;
+    margin-left: 50px;
+    margin-top: 250px;
+    border-radius: 5px;
+  }
+  .ans_show_question-card .ans_show_qu_card-body{
+    height: 300px;
+    min-height: 10em;
+    max-height: 45em;
+    overflow-y: auto;
+  }
+  .ans_show_answer-card{
+    font-family: ヒラギノ丸ゴ Pro;
+    margin-left: 750px;
+    margin-top: -320px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+  }
+  .ans_show_answer-card .ans_show_ans_card-body{
+    height: 300px;
+    overflow: scroll;
+  }
+  .ans_show_test_submit-btn{
+    font-size: 50px;
+    transform: translate(2px,100px);
+    border-radius: 5px;
+    top: 50px;
+    position: relative;
+    right: 165px;
+  }
+  .ans_show_test-form{
+    margin-left: -5px;
+    width: 125px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    transform: translate(10px,2px);
+    border-radius: 2.5px;
+  }
+  .testday{
+    font-family: ヒラギノ丸ゴ Pro;
+    font-size: 20px;
+    margin-left: 250px;
+  }
+  .ans_show_answer{
+    font-size: 15px;
+    margin-top: -25px;
+    margin-left: 40px;
+    width: 250px;
+    white-space:nowrap;
+    overflow:scroll;
+    text-align: center;
+  }
+  .card-title .answer{
+    text-align: center;
+  }
+  .card-content{
+    font-size: 15px;
+  
+  }
+  .ans_show_process{
+    text-align: center;
+  }
+  .testday .ans_show_submit_btn{
+    margin-top: 10px;
+    margin-left: 150px;
+    display: flex;
+  }
+}

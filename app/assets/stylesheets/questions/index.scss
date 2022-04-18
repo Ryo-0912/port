@@ -35,7 +35,6 @@
   font-family: ヒラギノ丸ゴ Pro;
   text-decoration: none;
   right: 50px;
-
   font-size: 30px;
   top: 120px;
   position: fixed;
@@ -61,4 +60,69 @@
 /*ホバー時のデザイン*/
 .pagination>li>a:hover {
   border-radius: 100px;    /*角を丸くする*/
+}
+
+@media (max-width: 599px) {
+  .qu_index_main{
+    display: flex;
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+  
+  .qu_index_card{
+    box-shadow: 0 0 1.5px 0 rgba(0,0,0,.12), 0 1px 1.5px 0 rgba(0,0,0,.22);
+    transition: .3s;
+  }
+  .qu_index_card:hover{
+    box-shadow: 5px 5px 7.5px -5px;
+  }
+  .qu_index_body{
+    font-family: ヒラギノ丸ゴ Pro;
+    min-height: 5em;
+    max-height: 15em;
+    overflow-y: auto;
+  }
+  .qu_index_memoryindex{
+    width: 250px;
+    margin-left: 10px;
+    max-height: 27.25em;
+  }
+  .qu_index_accordion {
+    font-family: ヒラギノ丸ゴ Pro;
+    max-height: 22.5em;
+    overflow-y: scroll;
+    border-radius: 0 0 7.5px 7.5px;
+  }
+  .qu_index_review-index {
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+  }
+  .createQ{
+    font-family: ヒラギノ丸ゴ Pro;
+    text-decoration: none;
+    right: 20px;
+    font-size: 15px;
+    top: 60px;
+  }
+  .qu_index_page{
+    right: 320px;
+    font-size: 2px;
+    position: fixed;
+    top: 10px;
+    font-family: ヒラギノ丸ゴ Pro;
+  }
+  .pagination>li>a {
+    border: none;     /*枠線をなくす*/
+    color: #696969;   /*文字の色を変える*/
+  }
+  
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {
+    background: #93c9ff;     /*背景の色を変える*/
+    border-radius: 50px;     /*角を丸くする*/
+  }
+  
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {
+    border-radius: 50px;    /*角を丸くする*/
+  }
 }
