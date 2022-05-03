@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :notifications, only: %i[create index destroy]
 
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{ENV['Rails.application.credentials.aws[:s3_bucket_name]']}/sitemaps/sitemap.xml.gz")
+
   resources :inquiries
   namespace :admin do
     resources :users
