@@ -33,6 +33,8 @@ gem 'kaminari'
 gem 'actiontext'
 gem 'whenever', require: false
 gem 'webdrivers'
+gem 'sitemap_generator' #サイトマップ作成用
+gem 'aws-sdk' #AWS接続用
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
