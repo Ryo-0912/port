@@ -9,9 +9,5 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
 )
 
 SitemapGenerator::Sitemap.create do
-  add root_path
-  add login_path
-  add terms_path
-  add privacy_path
-  add new_user_path
+
 end
