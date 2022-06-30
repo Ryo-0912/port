@@ -42,7 +42,8 @@ class GenresController < ApplicationController
 
     def before_current_user_status
       if params[:status] == "false"
-        current_user.update!(status: true)
+        current_user.status = "true"
+        current_user.status.save!
         redirect_to genres_path
       end
       current_user.status == false
